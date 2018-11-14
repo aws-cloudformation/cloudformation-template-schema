@@ -35,6 +35,10 @@ public final class Main {
             usage = "Use this flag is you are generating this for single resource")
     private Boolean single;
 
+    @Option(name = "--merge",
+            usage = "merge with the default configuration that we have")
+    private boolean merge = true;
+
     private Main() {}
 
     private void execute() throws Exception {
@@ -45,6 +49,14 @@ public final class Main {
             mapper.readValue(configFile, Config.class) :
             mapper.readValue(loader.getResource("config.yml"), Config.class);
 
+        if (merge && configFile != null) {
+            Config bundled =  mapper.readValue(loader.getResource("config.yml"), Config.class);
+            Config.Builder builder = Config.builder(bundled);
+            builder.mergeOverride(config);
+            config = builder.build();
+        }
+
+        // are their overriding args sent in outside config file
         Config.Settings settings = config.getSettings();
         String region = this.region != null ? this.region : settings.getRegion();
         File outputDir = this.outputDir != null ? this.outputDir : settings.getOutput();

@@ -1,7 +1,7 @@
 settings:
   draft: draft07
   region: us-east-2
-  output: /tmp/cfn-2
+  output: cfn-schemas
   single: false
 
 # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-resource-specification.html

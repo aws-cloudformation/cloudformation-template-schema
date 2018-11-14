@@ -37,22 +37,27 @@ public final class Config {
         private File outputDir;
         private String region;
         private boolean singleResourceSpec = false;
-        private final Map<String, URI> regions;
-        private final Map<String, GroupSpec> groups;
+        private final Map<String, URI> regions = new LinkedHashMap<>(12);
+        private final Map<String, GroupSpec> groups = new LinkedHashMap<>(5);
 
         private Builder(Config existing) {
             if (existing != null) {
-                Settings settings = existing.getSettings();
+                mergeOverride(existing);
+            }
+        }
+
+        public Builder mergeOverride(Config other) {
+            Objects.requireNonNull(other);
+            Settings settings = other.getSettings();
+            if (settings != null) {
                 this.draft = settings.getDraft();
                 this.outputDir = settings.getOutput();
                 this.region = settings.getRegion();
                 this.singleResourceSpec = settings.getSingle();
-                this.regions = existing.getSpecifications();
-                this.groups = existing.getGroups();
-                return;
             }
-            regions = new LinkedHashMap<>(12);
-            groups = new LinkedHashMap<>(5);
+            this.regions.putAll(other.getSpecifications());
+            this.groups.putAll(other.getGroups());
+            return this;
         }
 
         public Builder withJsonSchema(SchemaDraft draft) {
@@ -134,9 +139,9 @@ public final class Config {
     public Config(@JsonProperty("specifications") final Map<String, URI> specifications,
                   @JsonProperty("settings") final Settings settings,
                   @JsonProperty("groups") final Map<String, GroupSpec> groups) {
-        this.specifications = Objects.requireNonNull(specifications);
-        this.settings = Objects.requireNonNull(settings);
-        this.groups = Objects.requireNonNull(groups);
+        this.specifications = specifications != null ? specifications : new LinkedHashMap<>(1);
+        this.settings = settings;
+        this.groups = groups != null ? groups : new LinkedHashMap<>();
         validateRegionSpecs();
         validateGroups();
     }
@@ -147,7 +152,7 @@ public final class Config {
                 URI.create("https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json"));
         }
 
-        if (!specifications.containsKey(settings.getRegion())) {
+        if (settings != null && !specifications.containsKey(settings.getRegion())) {
             throw new IllegalArgumentException("No region mapping was found " + settings.getRegion());
         }
     }
@@ -158,13 +163,10 @@ public final class Config {
             groups.put(spec.getGroupName(), spec);
         }
 
-        if (!groups.containsKey("default")) {
-            GroupSpec spec = GroupSpec.includesOnly("default", "Tag.*");
-            groups.put(spec.getGroupName(), spec);
-        }
-
         // Merge as needed
-        GroupSpec defaultGrpSpec = groups.remove("default");
+        GroupSpec defaultGrpSpec = groups.containsKey("default") ?
+            groups.remove("default") :
+            GroupSpec.includesOnly("default", "Tag.*");
         Optional<Set<String>> defaultIncludes = Optional.ofNullable(defaultGrpSpec.getIncludes());
         Optional<Set<String>> defaultExcludes = Optional.ofNullable(defaultGrpSpec.getExcludes());
 
