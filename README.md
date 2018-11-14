@@ -9,7 +9,7 @@ such as Visual Studio Code & PyCharm to provide inline syntax checking and code 
 
 Here is a VSCode setup and integration that provides complete type safe template authoring completion including integration into CFN document 
 right from the text editor
-![VSCode](docs/images/VSCodeYAML.mp4)
+![VSCode](docs/images/VSCode.gif)
 
 ## How to run the tool?
 
