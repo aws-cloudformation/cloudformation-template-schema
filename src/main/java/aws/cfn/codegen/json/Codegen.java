@@ -1,6 +1,7 @@
 package aws.cfn.codegen.json;
 
 import aws.cfn.codegen.CfnSpecification;
+import aws.cfn.codegen.PropertyType;
 import aws.cfn.codegen.ResourceType;
 import aws.cfn.codegen.SingleCfnSpecification;
 import aws.cfn.codegen.SpecificationLoader;
@@ -203,27 +204,7 @@ public final class Codegen {
 
         }
         addToPerGroupRoots(definitions);
-
         generatePerGroup(resDefns);
-        /*
-        // Add Resources definition section
-        ObjectNode resourcesDefnSide = this.definitions.putObject("resources");
-        resourcesDefnSide.put("type", "object");
-        ObjectNode addProps = resourcesDefnSide.putObject("additionalProperties");
-        ArrayNode anyOf = addProps.putArray("anyOf");
-        // Collections.sort(resDefns);
-        resDefns.forEach(defn -> {
-            ObjectNode ref = anyOf.addObject();
-            ref.put("$ref", "#/definitions/" + defn);
-        });
-
-        Mustache cfnSchema = new DefaultMustacheFactory().compile("Schema.template");
-        cfnSchema.execute(new OutputStreamWriter(
-            new FileOutputStream(output),
-            StandardCharsets.UTF_8
-        ), this).flush();
-        */
-
     }
 
     private final static Map<String, Supplier<String>> PrimitiveMappings =
@@ -278,14 +259,12 @@ public final class Codegen {
                     // ArrayNode oneOf = each.putArray("oneOf");
                     // each = oneOf.insertObject(0);
                     if (propType.isPrimitive()) {
-                        each.put("type",
-                            PrimitiveMappings.get(propType.getPrimitiveType()).get());
+                        addPrimitiveType(each, propType.getPrimitiveType());
                     } else if (propType.isCollectionType()) {
                         each.put("type", "array");
                         ObjectNode itemType = each.putObject("items");
                         if (propType.isContainerInnerTypePrimitive()) {
-                            itemType.put("type",
-                                PrimitiveMappings.get(propType.getPrimitiveItemType()).get());
+                            addPrimitiveType(itemType, propType.getPrimitiveItemType());
                         } else {
                             itemType.put("$ref", "#/definitions/" +
                                 (propertyNames.contains(propType.getItemType()) ? propType.getItemType() :
@@ -302,8 +281,7 @@ public final class Codegen {
                         ObjectNode mapProps = each.putObject("patternProperties");
                         ObjectNode patPropKeyValue = mapProps.putObject("[a-zA-Z0-9]+");
                         if (propType.isContainerInnerTypePrimitive()) {
-                            patPropKeyValue.put("type",
-                                PrimitiveMappings.get(propType.getPrimitiveItemType()).get());
+                            addPrimitiveType(patPropKeyValue, propType.getPrimitiveItemType());
                         } else {
                             patPropKeyValue.put("$ref", "#/definitions/" +
                                 (propertyNames.contains(propType.getItemType()) ? propType.getItemType() :
@@ -347,5 +325,24 @@ public final class Codegen {
                 required.forEach(array::add);
             }
         }
+    }
+
+    private void addPrimitiveType(ObjectNode each, String propType) {
+        if (config.getSettings().getDraft() == SchemaDraft.draft07) {
+            String type = PrimitiveMappings.get(propType).get();
+            if (type.equals("object")) {
+                each.put("type", type);
+            }
+            else {
+                ArrayNode types = each.putArray("type");
+                types.add(type);
+                types.add("object");
+            }
+        }
+        else {
+            each.put("type",
+                PrimitiveMappings.get(propType).get());
+        }
+
     }
 }
