@@ -5,6 +5,12 @@ It is a simple code process which converts our existing Resource Specifications 
 JSONSchema formatted document. This schema can be integrated into many publicly available IDEs 
 such as Visual Studio Code & PyCharm to provide inline syntax checking and code completion.
 
+## How does an integration Look like?
+
+Here is a VSCode setup and integration that provides complete type safe template authoring completion including integration into CFN document 
+right from the text editor
+![VSCode](docs/images/VSCodeYAML.mp4)
+
 ## How to run the tool?
 
 **Requirements**
