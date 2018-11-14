@@ -1,0 +1,1670 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "type" : "object",
+  "definitions" : {
+    "FnRef": {
+      "type": "object",
+      "properties": {
+        "Ref": {
+          "type": "string"
+        }
+      },
+      "required": ["Ref"],
+      "additionalProperties": false
+    },
+    "FnGetAtt": {
+      "type": "object",
+      "properties": {
+        "Fn::GetAtt": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "maxItems": 3,
+          "minItems": 2
+        }
+      },
+      "required": ["Fn::GetAtt"],
+      "additionalProperties": false
+    },
+    
+  "AWS_EC2_CustomerGateway" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::CustomerGateway",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::CustomerGateway" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "BgpAsn" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-bgpasn",
+            "type" : [ "integer", "object" ]
+          },
+          "IpAddress" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-ipaddress",
+            "type" : [ "string", "object" ]
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          },
+          "Type" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-type",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "BgpAsn", "IpAddress", "Type" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_DHCPOptions" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::DHCPOptions",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::DHCPOptions" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "DomainName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-domainname",
+            "type" : [ "string", "object" ]
+          },
+          "DomainNameServers" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-domainnameservers",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "NetbiosNameServers" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-netbiosnameservers",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "NetbiosNodeType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-netbiosnodetype",
+            "type" : [ "integer", "object" ]
+          },
+          "NtpServers" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-ntpservers",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          }
+        }
+      }
+    },
+    "required" : [ "Type" ]
+  },
+  "AWS_EC2_EIP" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::EIP",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::EIP" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Domain" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-domain",
+            "type" : [ "string", "object" ]
+          },
+          "InstanceId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-instanceid",
+            "type" : [ "string", "object" ]
+          }
+        }
+      }
+    },
+    "required" : [ "Type" ]
+  },
+  "AWS_EC2_EIPAssociation" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::EIPAssociation",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::EIPAssociation" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "AllocationId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-allocationid",
+            "type" : [ "string", "object" ]
+          },
+          "EIP" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-eip",
+            "type" : [ "string", "object" ]
+          },
+          "InstanceId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-instanceid",
+            "type" : [ "string", "object" ]
+          },
+          "NetworkInterfaceId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-networkinterfaceid",
+            "type" : [ "string", "object" ]
+          },
+          "PrivateIpAddress" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-PrivateIpAddress",
+            "type" : [ "string", "object" ]
+          }
+        }
+      }
+    },
+    "required" : [ "Type" ]
+  },
+  "AWS_EC2_EgressOnlyInternetGateway" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-egressonlyinternetgateway.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::EgressOnlyInternetGateway",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::EgressOnlyInternetGateway" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "VpcId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-egressonlyinternetgateway.html#cfn-ec2-egressonlyinternetgateway-vpcid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "VpcId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_FlowLog" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::FlowLog",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::FlowLog" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "DeliverLogsPermissionArn" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-deliverlogspermissionarn",
+            "type" : [ "string", "object" ]
+          },
+          "LogDestination" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-logdestination",
+            "type" : [ "string", "object" ]
+          },
+          "LogDestinationType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-logdestinationtype",
+            "type" : [ "string", "object" ]
+          },
+          "LogGroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-loggroupname",
+            "type" : [ "string", "object" ]
+          },
+          "ResourceId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-resourceid",
+            "type" : [ "string", "object" ]
+          },
+          "ResourceType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-resourcetype",
+            "type" : [ "string", "object" ]
+          },
+          "TrafficType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-traffictype",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "ResourceId", "ResourceType", "TrafficType" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_InternetGateway" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-internetgateway.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::InternetGateway",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::InternetGateway" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-internetgateway.html#cfn-ec2-internetgateway-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          }
+        }
+      }
+    },
+    "required" : [ "Type" ]
+  },
+  "AWS_EC2_NatGateway" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::NatGateway",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::NatGateway" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "AllocationId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-allocationid",
+            "type" : [ "string", "object" ]
+          },
+          "SubnetId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-subnetid",
+            "type" : [ "string", "object" ]
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "AllocationId", "SubnetId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_NetworkAcl" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::NetworkAcl",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::NetworkAcl" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl.html#cfn-ec2-networkacl-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          },
+          "VpcId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl.html#cfn-ec2-networkacl-vpcid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "VpcId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_NetworkAclEntry" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::NetworkAclEntry",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::NetworkAclEntry" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "CidrBlock" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-cidrblock",
+            "type" : [ "string", "object" ]
+          },
+          "Egress" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-egress",
+            "type" : [ "boolean", "object" ]
+          },
+          "Icmp" : {
+            "$ref" : "#/definitions/AWS_EC2_NetworkAclEntry_Icmp"
+          },
+          "Ipv6CidrBlock" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-ipv6cidrblock",
+            "type" : [ "string", "object" ]
+          },
+          "NetworkAclId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-networkaclid",
+            "type" : [ "string", "object" ]
+          },
+          "PortRange" : {
+            "$ref" : "#/definitions/AWS_EC2_NetworkAclEntry_PortRange"
+          },
+          "Protocol" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-protocol",
+            "type" : [ "integer", "object" ]
+          },
+          "RuleAction" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-ruleaction",
+            "type" : [ "string", "object" ]
+          },
+          "RuleNumber" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-rulenumber",
+            "type" : [ "integer", "object" ]
+          }
+        },
+        "required" : [ "CidrBlock", "NetworkAclId", "Protocol", "RuleAction", "RuleNumber" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_NetworkInterface" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::NetworkInterface",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::NetworkInterface" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-description",
+            "type" : [ "string", "object" ]
+          },
+          "GroupSet" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-groupset",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "InterfaceType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-interfacetype",
+            "type" : [ "string", "object" ]
+          },
+          "Ipv6AddressCount" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-ipv6addresscount",
+            "type" : [ "integer", "object" ]
+          },
+          "Ipv6Addresses" : {
+            "$ref" : "#/definitions/AWS_EC2_NetworkInterface_InstanceIpv6Address"
+          },
+          "PrivateIpAddress" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-privateipaddress",
+            "type" : [ "string", "object" ]
+          },
+          "PrivateIpAddresses" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-privateipaddresses",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_EC2_NetworkInterface_PrivateIpAddressSpecification"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "SecondaryPrivateIpAddressCount" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-secondaryprivateipcount",
+            "type" : [ "integer", "object" ]
+          },
+          "SourceDestCheck" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-sourcedestcheck",
+            "type" : [ "boolean", "object" ]
+          },
+          "SubnetId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-subnetid",
+            "type" : [ "string", "object" ]
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "SubnetId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_NetworkInterfaceAttachment" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::NetworkInterfaceAttachment",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::NetworkInterfaceAttachment" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "DeleteOnTermination" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-deleteonterm",
+            "type" : [ "boolean", "object" ]
+          },
+          "DeviceIndex" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-deviceindex",
+            "type" : [ "string", "object" ]
+          },
+          "InstanceId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-instanceid",
+            "type" : [ "string", "object" ]
+          },
+          "NetworkInterfaceId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-networkinterfaceid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "DeviceIndex", "InstanceId", "NetworkInterfaceId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_NetworkInterfacePermission" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::NetworkInterfacePermission",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::NetworkInterfacePermission" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "AwsAccountId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-awsaccountid",
+            "type" : [ "string", "object" ]
+          },
+          "NetworkInterfaceId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-networkinterfaceid",
+            "type" : [ "string", "object" ]
+          },
+          "Permission" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-permission",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "AwsAccountId", "NetworkInterfaceId", "Permission" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_PlacementGroup" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::PlacementGroup",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::PlacementGroup" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Strategy" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-strategy",
+            "type" : [ "string", "object" ]
+          }
+        }
+      }
+    },
+    "required" : [ "Type" ]
+  },
+  "AWS_EC2_Route" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::Route",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::Route" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "DestinationCidrBlock" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-destinationcidrblock",
+            "type" : [ "string", "object" ]
+          },
+          "DestinationIpv6CidrBlock" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-destinationipv6cidrblock",
+            "type" : [ "string", "object" ]
+          },
+          "EgressOnlyInternetGatewayId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-egressonlyinternetgatewayid",
+            "type" : [ "string", "object" ]
+          },
+          "GatewayId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-gatewayid",
+            "type" : [ "string", "object" ]
+          },
+          "InstanceId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-instanceid",
+            "type" : [ "string", "object" ]
+          },
+          "NatGatewayId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-natgatewayid",
+            "type" : [ "string", "object" ]
+          },
+          "NetworkInterfaceId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-networkinterfaceid",
+            "type" : [ "string", "object" ]
+          },
+          "RouteTableId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-routetableid",
+            "type" : [ "string", "object" ]
+          },
+          "VpcPeeringConnectionId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-vpcpeeringconnectionid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "RouteTableId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_RouteTable" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route-table.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::RouteTable",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::RouteTable" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route-table.html#cfn-ec2-routetable-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          },
+          "VpcId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route-table.html#cfn-ec2-routetable-vpcid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "VpcId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_SecurityGroup" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::SecurityGroup",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::SecurityGroup" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "GroupDescription" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-groupdescription",
+            "type" : [ "string", "object" ]
+          },
+          "GroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-groupname",
+            "type" : [ "string", "object" ]
+          },
+          "SecurityGroupEgress" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-securitygroupegress",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_EC2_SecurityGroup_Egress"
+            },
+            "minItems" : 0
+          },
+          "SecurityGroupIngress" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-securitygroupingress",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_EC2_SecurityGroup_Ingress"
+            },
+            "minItems" : 0
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          },
+          "VpcId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-vpcid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "GroupDescription" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_SecurityGroupEgress" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::SecurityGroupEgress",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::SecurityGroupEgress" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "CidrIp" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-cidrip",
+            "type" : [ "string", "object" ]
+          },
+          "CidrIpv6" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-cidripv6",
+            "type" : [ "string", "object" ]
+          },
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-description",
+            "type" : [ "string", "object" ]
+          },
+          "DestinationPrefixListId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-destinationprefixlistid",
+            "type" : [ "string", "object" ]
+          },
+          "DestinationSecurityGroupId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-destinationsecuritygroupid",
+            "type" : [ "string", "object" ]
+          },
+          "FromPort" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-fromport",
+            "type" : [ "integer", "object" ]
+          },
+          "GroupId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-groupid",
+            "type" : [ "string", "object" ]
+          },
+          "IpProtocol" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-ipprotocol",
+            "type" : [ "string", "object" ]
+          },
+          "ToPort" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-toport",
+            "type" : [ "integer", "object" ]
+          }
+        },
+        "required" : [ "GroupId", "IpProtocol" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_SecurityGroupIngress" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::SecurityGroupIngress",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::SecurityGroupIngress" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "CidrIp" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-cidrip",
+            "type" : [ "string", "object" ]
+          },
+          "CidrIpv6" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-cidripv6",
+            "type" : [ "string", "object" ]
+          },
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-description",
+            "type" : [ "string", "object" ]
+          },
+          "FromPort" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-fromport",
+            "type" : [ "integer", "object" ]
+          },
+          "GroupId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-groupid",
+            "type" : [ "string", "object" ]
+          },
+          "GroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-groupname",
+            "type" : [ "string", "object" ]
+          },
+          "IpProtocol" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-ipprotocol",
+            "type" : [ "string", "object" ]
+          },
+          "SourcePrefixListId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-securitygroupingress-sourceprefixlistid",
+            "type" : [ "string", "object" ]
+          },
+          "SourceSecurityGroupId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-sourcesecuritygroupid",
+            "type" : [ "string", "object" ]
+          },
+          "SourceSecurityGroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-sourcesecuritygroupname",
+            "type" : [ "string", "object" ]
+          },
+          "SourceSecurityGroupOwnerId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-sourcesecuritygroupownerid",
+            "type" : [ "string", "object" ]
+          },
+          "ToPort" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-toport",
+            "type" : [ "integer", "object" ]
+          }
+        },
+        "required" : [ "IpProtocol" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_Subnet" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::Subnet",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::Subnet" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "AssignIpv6AddressOnCreation" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-assignipv6addressoncreation",
+            "type" : [ "boolean", "object" ]
+          },
+          "AvailabilityZone" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-availabilityzone",
+            "type" : [ "string", "object" ]
+          },
+          "CidrBlock" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-cidrblock",
+            "type" : [ "string", "object" ]
+          },
+          "Ipv6CidrBlock" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-ipv6cidrblock",
+            "type" : [ "string", "object" ]
+          },
+          "MapPublicIpOnLaunch" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-mappubliciponlaunch",
+            "type" : [ "boolean", "object" ]
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          },
+          "VpcId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-awsec2subnet-prop-vpcid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "CidrBlock", "VpcId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_SubnetCidrBlock" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetcidrblock.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::SubnetCidrBlock",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::SubnetCidrBlock" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Ipv6CidrBlock" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetcidrblock.html#cfn-ec2-subnetcidrblock-ipv6cidrblock",
+            "type" : [ "string", "object" ]
+          },
+          "SubnetId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetcidrblock.html#cfn-ec2-subnetcidrblock-subnetid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "Ipv6CidrBlock", "SubnetId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_SubnetNetworkAclAssociation" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::SubnetNetworkAclAssociation",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::SubnetNetworkAclAssociation" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "NetworkAclId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html#cfn-ec2-subnetnetworkaclassociation-networkaclid",
+            "type" : [ "string", "object" ]
+          },
+          "SubnetId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html#cfn-ec2-subnetnetworkaclassociation-associationid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "NetworkAclId", "SubnetId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_SubnetRouteTableAssociation" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-route-table-assoc.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::SubnetRouteTableAssociation",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::SubnetRouteTableAssociation" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "RouteTableId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-route-table-assoc.html#cfn-ec2-subnetroutetableassociation-routetableid",
+            "type" : [ "string", "object" ]
+          },
+          "SubnetId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-route-table-assoc.html#cfn-ec2-subnetroutetableassociation-subnetid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "RouteTableId", "SubnetId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_TrunkInterfaceAssociation" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trunkinterfaceassociation.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::TrunkInterfaceAssociation",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::TrunkInterfaceAssociation" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "BranchInterfaceId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trunkinterfaceassociation.html#cfn-ec2-trunkinterfaceassociation-branchinterfaceid",
+            "type" : [ "string", "object" ]
+          },
+          "GREKey" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trunkinterfaceassociation.html#cfn-ec2-trunkinterfaceassociation-grekey",
+            "type" : [ "integer", "object" ]
+          },
+          "TrunkInterfaceId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trunkinterfaceassociation.html#cfn-ec2-trunkinterfaceassociation-trunkinterfaceid",
+            "type" : [ "string", "object" ]
+          },
+          "VLANId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trunkinterfaceassociation.html#cfn-ec2-trunkinterfaceassociation-vlanid",
+            "type" : [ "integer", "object" ]
+          }
+        },
+        "required" : [ "BranchInterfaceId", "TrunkInterfaceId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_VPC" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::VPC",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::VPC" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "CidrBlock" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-cidrblock",
+            "type" : [ "string", "object" ]
+          },
+          "EnableDnsHostnames" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-EnableDnsHostnames",
+            "type" : [ "boolean", "object" ]
+          },
+          "EnableDnsSupport" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-EnableDnsSupport",
+            "type" : [ "boolean", "object" ]
+          },
+          "InstanceTenancy" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-instancetenancy",
+            "type" : [ "string", "object" ]
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "CidrBlock" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_VPCCidrBlock" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::VPCCidrBlock",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::VPCCidrBlock" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "AmazonProvidedIpv6CidrBlock" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-amazonprovidedipv6cidrblock",
+            "type" : [ "boolean", "object" ]
+          },
+          "CidrBlock" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-cidrblock",
+            "type" : [ "string", "object" ]
+          },
+          "VpcId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-vpcid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "VpcId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_VPCDHCPOptionsAssociation" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-dhcp-options-assoc.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::VPCDHCPOptionsAssociation",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::VPCDHCPOptionsAssociation" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "DhcpOptionsId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-dhcp-options-assoc.html#cfn-ec2-vpcdhcpoptionsassociation-dhcpoptionsid",
+            "type" : [ "string", "object" ]
+          },
+          "VpcId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-dhcp-options-assoc.html#cfn-ec2-vpcdhcpoptionsassociation-vpcid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "DhcpOptionsId", "VpcId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_VPCEndpoint" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::VPCEndpoint",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::VPCEndpoint" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "PolicyDocument" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-policydocument",
+            "type" : "object"
+          },
+          "PrivateDnsEnabled" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-privatednsenabled",
+            "type" : [ "boolean", "object" ]
+          },
+          "RouteTableIds" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-routetableids",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "SecurityGroupIds" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-securitygroupids",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "ServiceName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-servicename",
+            "type" : [ "string", "object" ]
+          },
+          "SubnetIds" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-subnetids",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "VPCEndpointType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-vpcendpointtype",
+            "type" : [ "string", "object" ]
+          },
+          "VpcId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-vpcid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "ServiceName", "VpcId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_VPCEndpointServicePermissions" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservicepermissions.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::VPCEndpointServicePermissions",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::VPCEndpointServicePermissions" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "AllowedPrincipals" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservicepermissions.html#cfn-ec2-vpcendpointservicepermissions-allowedprincipals",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "ServiceId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservicepermissions.html#cfn-ec2-vpcendpointservicepermissions-serviceid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "ServiceId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_VPCGatewayAttachment" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::VPCGatewayAttachment",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::VPCGatewayAttachment" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "InternetGatewayId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-internetgatewayid",
+            "type" : [ "string", "object" ]
+          },
+          "VpcId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-vpcid",
+            "type" : [ "string", "object" ]
+          },
+          "VpnGatewayId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-vpngatewayid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "VpcId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_VPCPeeringConnection" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::VPCPeeringConnection",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::VPCPeeringConnection" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "PeerOwnerId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peerownerid",
+            "type" : [ "string", "object" ]
+          },
+          "PeerRegion" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peerregion",
+            "type" : [ "string", "object" ]
+          },
+          "PeerRoleArn" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peerrolearn",
+            "type" : [ "string", "object" ]
+          },
+          "PeerVpcId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peervpcid",
+            "type" : [ "string", "object" ]
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          },
+          "VpcId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-vpcid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "PeerVpcId", "VpcId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_VPNConnection" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::VPNConnection",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::VPNConnection" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "CustomerGatewayId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-customergatewayid",
+            "type" : [ "string", "object" ]
+          },
+          "StaticRoutesOnly" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-StaticRoutesOnly",
+            "type" : [ "boolean", "object" ]
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          },
+          "Type" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-type",
+            "type" : [ "string", "object" ]
+          },
+          "VpnGatewayId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-vpngatewayid",
+            "type" : [ "string", "object" ]
+          },
+          "VpnTunnelOptionsSpecifications" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-vpntunneloptionsspecifications",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_EC2_VPNConnection_VpnTunnelOptionsSpecification"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          }
+        },
+        "required" : [ "CustomerGatewayId", "Type", "VpnGatewayId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_VPNConnectionRoute" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::VPNConnectionRoute",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::VPNConnectionRoute" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "DestinationCidrBlock" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html#cfn-ec2-vpnconnectionroute-cidrblock",
+            "type" : [ "string", "object" ]
+          },
+          "VpnConnectionId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html#cfn-ec2-vpnconnectionroute-connectionid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "DestinationCidrBlock", "VpnConnectionId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_VPNGateway" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::VPNGateway",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::VPNGateway" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "AmazonSideAsn" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-amazonsideasn",
+            "type" : [ "integer", "object" ]
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          },
+          "Type" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-type",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "Type" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_VPNGatewayRoutePropagation" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gatewayrouteprop.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::VPNGatewayRoutePropagation",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::VPNGatewayRoutePropagation" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "RouteTableIds" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gatewayrouteprop.html#cfn-ec2-vpngatewayrouteprop-routetableids",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "VpnGatewayId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gatewayrouteprop.html#cfn-ec2-vpngatewayrouteprop-vpngatewayid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "RouteTableIds", "VpnGatewayId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_EC2_NetworkAclEntry_Icmp" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-icmp.html",
+    "properties" : {
+      "Code" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-icmp.html#cfn-ec2-networkaclentry-icmp-code",
+        "type" : [ "integer", "object" ]
+      },
+      "Type" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-icmp.html#cfn-ec2-networkaclentry-icmp-type",
+        "type" : [ "integer", "object" ]
+      }
+    }
+  },
+  "AWS_EC2_NetworkAclEntry_PortRange" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-portrange.html",
+    "properties" : {
+      "From" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-portrange.html#cfn-ec2-networkaclentry-portrange-from",
+        "type" : [ "integer", "object" ]
+      },
+      "To" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-portrange.html#cfn-ec2-networkaclentry-portrange-to",
+        "type" : [ "integer", "object" ]
+      }
+    }
+  },
+  "AWS_EC2_NetworkInterface_InstanceIpv6Address" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-instanceipv6address.html",
+    "properties" : {
+      "Ipv6Address" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-instanceipv6address.html#cfn-ec2-networkinterface-instanceipv6address-ipv6address",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Ipv6Address" ]
+  },
+  "AWS_EC2_NetworkInterface_PrivateIpAddressSpecification" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-interface-privateipspec.html",
+    "properties" : {
+      "Primary" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-interface-privateipspec.html#cfn-ec2-networkinterface-privateipspecification-primary",
+        "type" : [ "boolean", "object" ]
+      },
+      "PrivateIpAddress" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-interface-privateipspec.html#cfn-ec2-networkinterface-privateipspecification-privateipaddress",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Primary", "PrivateIpAddress" ]
+  },
+  "AWS_EC2_SecurityGroup_Egress" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html",
+    "properties" : {
+      "CidrIp" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidrip",
+        "type" : [ "string", "object" ]
+      },
+      "CidrIpv6" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidripv6",
+        "type" : [ "string", "object" ]
+      },
+      "Description" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-description",
+        "type" : [ "string", "object" ]
+      },
+      "DestinationPrefixListId" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-destinationprefixlistid",
+        "type" : [ "string", "object" ]
+      },
+      "DestinationSecurityGroupId" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-destsecgroupid",
+        "type" : [ "string", "object" ]
+      },
+      "FromPort" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-fromport",
+        "type" : [ "integer", "object" ]
+      },
+      "IpProtocol" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-ipprotocol",
+        "type" : [ "string", "object" ]
+      },
+      "ToPort" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-toport",
+        "type" : [ "integer", "object" ]
+      }
+    },
+    "required" : [ "IpProtocol" ]
+  },
+  "AWS_EC2_SecurityGroup_Ingress" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html",
+    "properties" : {
+      "CidrIp" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidrip",
+        "type" : [ "string", "object" ]
+      },
+      "CidrIpv6" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidripv6",
+        "type" : [ "string", "object" ]
+      },
+      "Description" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-description",
+        "type" : [ "string", "object" ]
+      },
+      "FromPort" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-fromport",
+        "type" : [ "integer", "object" ]
+      },
+      "IpProtocol" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-ipprotocol",
+        "type" : [ "string", "object" ]
+      },
+      "SourcePrefixListId" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-securitygroup-ingress-sourceprefixlistid",
+        "type" : [ "string", "object" ]
+      },
+      "SourceSecurityGroupId" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-sourcesecuritygroupid",
+        "type" : [ "string", "object" ]
+      },
+      "SourceSecurityGroupName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-sourcesecuritygroupname",
+        "type" : [ "string", "object" ]
+      },
+      "SourceSecurityGroupOwnerId" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-sourcesecuritygroupownerid",
+        "type" : [ "string", "object" ]
+      },
+      "ToPort" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-toport",
+        "type" : [ "integer", "object" ]
+      }
+    },
+    "required" : [ "IpProtocol" ]
+  },
+  "AWS_EC2_VPNConnection_VpnTunnelOptionsSpecification" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html",
+    "properties" : {
+      "PreSharedKey" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-presharedkey",
+        "type" : [ "string", "object" ]
+      },
+      "TunnelInsideCidr" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-tunnelinsidecidr",
+        "type" : [ "string", "object" ]
+      }
+    }
+  },
+  "Tag" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-tag.html",
+    "properties" : {
+      "Value" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-tag.html#cfn-dlm-lifecyclepolicy-tag-value",
+        "type" : [ "string", "object" ]
+      },
+      "Key" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-tag.html#cfn-dlm-lifecyclepolicy-tag-key",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Value", "Key" ]
+  },
+  "resources" : {
+    "type" : "object",
+    "additionalProperties" : {
+      "anyOf" : [ {
+        "$ref" : "#/definitions/AWS_EC2_CustomerGateway"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_DHCPOptions"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_EIP"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_EIPAssociation"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_EgressOnlyInternetGateway"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_FlowLog"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_InternetGateway"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_NatGateway"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_NetworkAcl"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_NetworkAclEntry"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_NetworkInterface"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_NetworkInterfaceAttachment"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_NetworkInterfacePermission"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_PlacementGroup"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_Route"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_RouteTable"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_SecurityGroup"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_SecurityGroupEgress"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_SecurityGroupIngress"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_Subnet"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_SubnetCidrBlock"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_SubnetNetworkAclAssociation"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_SubnetRouteTableAssociation"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_TrunkInterfaceAssociation"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_VPC"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_VPCCidrBlock"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_VPCDHCPOptionsAssociation"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_VPCEndpoint"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_VPCEndpointServicePermissions"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_VPCGatewayAttachment"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_VPCPeeringConnection"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_VPNConnection"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_VPNConnectionRoute"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_VPNGateway"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_VPNGatewayRoutePropagation"
+      } ]
+    }
+  }
+
+  },
+  "additionalProperties": false,
+  "properties" : {
+    "AWSTemplateFormatVersion" : {
+      "type" : "string",
+      "enum" : [ "2010-09-09" ]
+    },
+    "Description" : {
+      "type" : "string"
+    },
+    "Metadata" : {
+      "type" : "object"
+    },
+    "Parameters" : {
+      "type" : "object"
+    },
+    "Mappings" : {
+      "type" : "object"
+    },
+    "Conditions" : {
+      "type" : "object"
+    },
+    "Transform" : {
+      "type" : "object"
+    },
+    "Outputs" : {
+      "type" : "object"
+    },
+    "Resources" : {
+        "$ref": "#/definitions/resources"
+    }
+  },
+  "description" : "CFN JSON specification generated from version 2.12.0",
+  "required" : [ "AWSTemplateFormatVersion", "Resources" ]
+}

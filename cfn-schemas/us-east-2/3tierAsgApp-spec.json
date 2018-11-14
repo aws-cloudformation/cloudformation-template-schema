@@ -1,0 +1,2743 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "type" : "object",
+  "definitions" : {
+    "FnRef": {
+      "type": "object",
+      "properties": {
+        "Ref": {
+          "type": "string"
+        }
+      },
+      "required": ["Ref"],
+      "additionalProperties": false
+    },
+    "FnGetAtt": {
+      "type": "object",
+      "properties": {
+        "Fn::GetAtt": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "maxItems": 3,
+          "minItems": 2
+        }
+      },
+      "required": ["Fn::GetAtt"],
+      "additionalProperties": false
+    },
+    
+  "AWS_AutoScaling_AutoScalingGroup" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::AutoScaling::AutoScalingGroup",
+        "type" : "string",
+        "enum" : [ "AWS::AutoScaling::AutoScalingGroup" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "AutoScalingGroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-autoscaling-autoscalinggroup-autoscalinggroupname",
+            "type" : [ "string", "object" ]
+          },
+          "AvailabilityZones" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-availabilityzones",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "Cooldown" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-cooldown",
+            "type" : [ "string", "object" ]
+          },
+          "DesiredCapacity" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-desiredcapacity",
+            "type" : [ "string", "object" ]
+          },
+          "HealthCheckGracePeriod" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-healthcheckgraceperiod",
+            "type" : [ "integer", "object" ]
+          },
+          "HealthCheckType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-healthchecktype",
+            "type" : [ "string", "object" ]
+          },
+          "InstanceId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-instanceid",
+            "type" : [ "string", "object" ]
+          },
+          "LaunchConfigurationName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-launchconfigurationname",
+            "type" : [ "string", "object" ]
+          },
+          "LaunchTemplate" : {
+            "$ref" : "#/definitions/AWS_AutoScaling_AutoScalingGroup_LaunchTemplateSpecification"
+          },
+          "LifecycleHookSpecificationList" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-autoscaling-autoscalinggroup-lifecyclehookspecificationlist",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_AutoScaling_AutoScalingGroup_LifecycleHookSpecification"
+            },
+            "minItems" : 0
+          },
+          "LoadBalancerNames" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-loadbalancernames",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "MaxSize" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-maxsize",
+            "type" : [ "string", "object" ]
+          },
+          "MetricsCollection" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-metricscollection",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_AutoScaling_AutoScalingGroup_MetricsCollection"
+            },
+            "minItems" : 0
+          },
+          "MinSize" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-minsize",
+            "type" : [ "string", "object" ]
+          },
+          "NotificationConfigurations" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-notificationconfigurations",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_AutoScaling_AutoScalingGroup_NotificationConfiguration"
+            },
+            "minItems" : 0
+          },
+          "PlacementGroup" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-placementgroup",
+            "type" : [ "string", "object" ]
+          },
+          "ServiceLinkedRoleARN" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-autoscaling-autoscalinggroup-servicelinkedrolearn",
+            "type" : [ "string", "object" ]
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_AutoScaling_AutoScalingGroup_TagProperty"
+            },
+            "minItems" : 0
+          },
+          "TargetGroupARNs" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-targetgrouparns",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "TerminationPolicies" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-termpolicy",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "VPCZoneIdentifier" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-vpczoneidentifier",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "MaxSize", "MinSize" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_AutoScaling_LaunchConfiguration" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::AutoScaling::LaunchConfiguration",
+        "type" : "string",
+        "enum" : [ "AWS::AutoScaling::LaunchConfiguration" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "AssociatePublicIpAddress" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cf-as-launchconfig-associatepubip",
+            "type" : [ "boolean", "object" ]
+          },
+          "BlockDeviceMappings" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-blockdevicemappings",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_AutoScaling_LaunchConfiguration_BlockDeviceMapping"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "ClassicLinkVPCId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-classiclinkvpcid",
+            "type" : [ "string", "object" ]
+          },
+          "ClassicLinkVPCSecurityGroups" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-classiclinkvpcsecuritygroups",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "EbsOptimized" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-ebsoptimized",
+            "type" : [ "boolean", "object" ]
+          },
+          "IamInstanceProfile" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-iaminstanceprofile",
+            "type" : [ "string", "object" ]
+          },
+          "ImageId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-imageid",
+            "type" : [ "string", "object" ]
+          },
+          "InstanceId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-instanceid",
+            "type" : [ "string", "object" ]
+          },
+          "InstanceMonitoring" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-instancemonitoring",
+            "type" : [ "boolean", "object" ]
+          },
+          "InstanceType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-instancetype",
+            "type" : [ "string", "object" ]
+          },
+          "KernelId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-kernelid",
+            "type" : [ "string", "object" ]
+          },
+          "KeyName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-keyname",
+            "type" : [ "string", "object" ]
+          },
+          "LaunchConfigurationName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-autoscaling-launchconfig-launchconfigurationname",
+            "type" : [ "string", "object" ]
+          },
+          "PlacementTenancy" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-placementtenancy",
+            "type" : [ "string", "object" ]
+          },
+          "RamDiskId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-ramdiskid",
+            "type" : [ "string", "object" ]
+          },
+          "SecurityGroups" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-securitygroups",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "SpotPrice" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-spotprice",
+            "type" : [ "string", "object" ]
+          },
+          "UserData" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-userdata",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "ImageId", "InstanceType" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_AutoScaling_LifecycleHook" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::AutoScaling::LifecycleHook",
+        "type" : "string",
+        "enum" : [ "AWS::AutoScaling::LifecycleHook" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "AutoScalingGroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-autoscalinggroupname",
+            "type" : [ "string", "object" ]
+          },
+          "DefaultResult" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-defaultresult",
+            "type" : [ "string", "object" ]
+          },
+          "HeartbeatTimeout" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-heartbeattimeout",
+            "type" : [ "integer", "object" ]
+          },
+          "LifecycleHookName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-autoscaling-lifecyclehook-lifecyclehookname",
+            "type" : [ "string", "object" ]
+          },
+          "LifecycleTransition" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-lifecycletransition",
+            "type" : [ "string", "object" ]
+          },
+          "NotificationMetadata" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationmetadata",
+            "type" : [ "string", "object" ]
+          },
+          "NotificationTargetARN" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-notificationtargetarn",
+            "type" : [ "string", "object" ]
+          },
+          "RoleARN" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#cfn-as-lifecyclehook-rolearn",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "AutoScalingGroupName", "LifecycleTransition" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_AutoScaling_ScalingPolicy" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::AutoScaling::ScalingPolicy",
+        "type" : "string",
+        "enum" : [ "AWS::AutoScaling::ScalingPolicy" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "AdjustmentType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-adjustmenttype",
+            "type" : [ "string", "object" ]
+          },
+          "AutoScalingGroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-autoscalinggroupname",
+            "type" : [ "string", "object" ]
+          },
+          "Cooldown" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-cooldown",
+            "type" : [ "string", "object" ]
+          },
+          "EstimatedInstanceWarmup" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-estimatedinstancewarmup",
+            "type" : [ "integer", "object" ]
+          },
+          "MetricAggregationType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-metricaggregationtype",
+            "type" : [ "string", "object" ]
+          },
+          "MinAdjustmentMagnitude" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-minadjustmentmagnitude",
+            "type" : [ "integer", "object" ]
+          },
+          "PolicyType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-policytype",
+            "type" : [ "string", "object" ]
+          },
+          "ScalingAdjustment" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-scalingadjustment",
+            "type" : [ "integer", "object" ]
+          },
+          "StepAdjustments" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-stepadjustments",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_AutoScaling_ScalingPolicy_StepAdjustment"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "TargetTrackingConfiguration" : {
+            "$ref" : "#/definitions/AWS_AutoScaling_ScalingPolicy_TargetTrackingConfiguration"
+          }
+        },
+        "required" : [ "AutoScalingGroupName" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_AutoScaling_ScheduledAction" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::AutoScaling::ScheduledAction",
+        "type" : "string",
+        "enum" : [ "AWS::AutoScaling::ScheduledAction" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "AutoScalingGroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-asgname",
+            "type" : [ "string", "object" ]
+          },
+          "DesiredCapacity" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-desiredcapacity",
+            "type" : [ "integer", "object" ]
+          },
+          "EndTime" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-endtime",
+            "type" : [ "string", "object" ]
+          },
+          "MaxSize" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-maxsize",
+            "type" : [ "integer", "object" ]
+          },
+          "MinSize" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-minsize",
+            "type" : [ "integer", "object" ]
+          },
+          "Recurrence" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-recurrence",
+            "type" : [ "string", "object" ]
+          },
+          "StartTime" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-starttime",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "AutoScalingGroupName" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_AutoScalingPlans_ScalingPlan" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::AutoScalingPlans::ScalingPlan",
+        "type" : "string",
+        "enum" : [ "AWS::AutoScalingPlans::ScalingPlan" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "ApplicationSource" : {
+            "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_ApplicationSource"
+          },
+          "ScalingInstructions" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html#cfn-autoscalingplans-scalingplan-scalinginstructions",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_ScalingInstruction"
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "ScalingInstructions" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_ElasticLoadBalancingV2_Listener" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ElasticLoadBalancingV2::Listener",
+        "type" : "string",
+        "enum" : [ "AWS::ElasticLoadBalancingV2::Listener" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Certificates" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-certificates",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_ElasticLoadBalancingV2_Listener_Certificate"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "DefaultActions" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-defaultactions",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_ElasticLoadBalancingV2_Listener_Action"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "LoadBalancerArn" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-loadbalancerarn",
+            "type" : [ "string", "object" ]
+          },
+          "Port" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-port",
+            "type" : [ "integer", "object" ]
+          },
+          "Protocol" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-protocol",
+            "type" : [ "string", "object" ]
+          },
+          "SslPolicy" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-sslpolicy",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "DefaultActions", "LoadBalancerArn", "Port", "Protocol" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_ElasticLoadBalancingV2_ListenerCertificate" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ElasticLoadBalancingV2::ListenerCertificate",
+        "type" : "string",
+        "enum" : [ "AWS::ElasticLoadBalancingV2::ListenerCertificate" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Certificates" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html#cfn-elasticloadbalancingv2-listenercertificate-certificates",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_ElasticLoadBalancingV2_ListenerCertificate_Certificate"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "ListenerArn" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html#cfn-elasticloadbalancingv2-listenercertificate-listenerarn",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "Certificates", "ListenerArn" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_ElasticLoadBalancingV2_ListenerRule" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ElasticLoadBalancingV2::ListenerRule",
+        "type" : "string",
+        "enum" : [ "AWS::ElasticLoadBalancingV2::ListenerRule" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Actions" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-actions",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_ElasticLoadBalancingV2_ListenerRule_Action"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "Conditions" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-conditions",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_ElasticLoadBalancingV2_ListenerRule_RuleCondition"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "ListenerArn" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-listenerarn",
+            "type" : [ "string", "object" ]
+          },
+          "Priority" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-priority",
+            "type" : [ "integer", "object" ]
+          }
+        },
+        "required" : [ "Actions", "Conditions", "ListenerArn", "Priority" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_ElasticLoadBalancingV2_LoadBalancer" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ElasticLoadBalancingV2::LoadBalancer",
+        "type" : "string",
+        "enum" : [ "AWS::ElasticLoadBalancingV2::LoadBalancer" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "IpAddressType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-ipaddresstype",
+            "type" : [ "string", "object" ]
+          },
+          "LoadBalancerAttributes" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-loadbalancerattributes",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_ElasticLoadBalancingV2_LoadBalancer_LoadBalancerAttribute"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-name",
+            "type" : [ "string", "object" ]
+          },
+          "Scheme" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-scheme",
+            "type" : [ "string", "object" ]
+          },
+          "SecurityGroups" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-securitygroups",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "SubnetMappings" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmappings",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_ElasticLoadBalancingV2_LoadBalancer_SubnetMapping"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "Subnets" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-subnets",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          },
+          "Type" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-type",
+            "type" : [ "string", "object" ]
+          }
+        }
+      }
+    },
+    "required" : [ "Type" ]
+  },
+  "AWS_ElasticLoadBalancingV2_TargetGroup" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ElasticLoadBalancingV2::TargetGroup",
+        "type" : "string",
+        "enum" : [ "AWS::ElasticLoadBalancingV2::TargetGroup" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "HealthCheckIntervalSeconds" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckintervalseconds",
+            "type" : [ "integer", "object" ]
+          },
+          "HealthCheckPath" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckpath",
+            "type" : [ "string", "object" ]
+          },
+          "HealthCheckPort" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckport",
+            "type" : [ "string", "object" ]
+          },
+          "HealthCheckProtocol" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckprotocol",
+            "type" : [ "string", "object" ]
+          },
+          "HealthCheckTimeoutSeconds" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthchecktimeoutseconds",
+            "type" : [ "integer", "object" ]
+          },
+          "HealthyThresholdCount" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthythresholdcount",
+            "type" : [ "integer", "object" ]
+          },
+          "Matcher" : {
+            "$ref" : "#/definitions/AWS_ElasticLoadBalancingV2_TargetGroup_Matcher"
+          },
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-name",
+            "type" : [ "string", "object" ]
+          },
+          "Port" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-port",
+            "type" : [ "integer", "object" ]
+          },
+          "Protocol" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-protocol",
+            "type" : [ "string", "object" ]
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          },
+          "TargetGroupAttributes" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-targetgroupattributes",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_ElasticLoadBalancingV2_TargetGroup_TargetGroupAttribute"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "TargetType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-targettype",
+            "type" : [ "string", "object" ]
+          },
+          "Targets" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-targets",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_ElasticLoadBalancingV2_TargetGroup_TargetDescription"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "UnhealthyThresholdCount" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-unhealthythresholdcount",
+            "type" : [ "integer", "object" ]
+          },
+          "VpcId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-vpcid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "Port", "Protocol", "VpcId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_IAM_AccessKey" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::IAM::AccessKey",
+        "type" : "string",
+        "enum" : [ "AWS::IAM::AccessKey" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Serial" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-serial",
+            "type" : [ "integer", "object" ]
+          },
+          "Status" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-status",
+            "type" : [ "string", "object" ]
+          },
+          "UserName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-username",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "UserName" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_IAM_Group" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::IAM::Group",
+        "type" : "string",
+        "enum" : [ "AWS::IAM::Group" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "GroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-groupname",
+            "type" : [ "string", "object" ]
+          },
+          "ManagedPolicyArns" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-managepolicyarns",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "Path" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-path",
+            "type" : [ "string", "object" ]
+          },
+          "Policies" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-policies",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_IAM_Group_Policy"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          }
+        }
+      }
+    },
+    "required" : [ "Type" ]
+  },
+  "AWS_IAM_InstanceProfile" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::IAM::InstanceProfile",
+        "type" : "string",
+        "enum" : [ "AWS::IAM::InstanceProfile" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "InstanceProfileName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-instanceprofilename",
+            "type" : [ "string", "object" ]
+          },
+          "Path" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-path",
+            "type" : [ "string", "object" ]
+          },
+          "Roles" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-roles",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "Roles" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_IAM_ManagedPolicy" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::IAM::ManagedPolicy",
+        "type" : "string",
+        "enum" : [ "AWS::IAM::ManagedPolicy" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-description",
+            "type" : [ "string", "object" ]
+          },
+          "Groups" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-groups",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "ManagedPolicyName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-managedpolicyname",
+            "type" : [ "string", "object" ]
+          },
+          "Path" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-ec2-dhcpoptions-path",
+            "type" : [ "string", "object" ]
+          },
+          "PolicyDocument" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-policydocument",
+            "type" : "object"
+          },
+          "Roles" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-roles",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "Users" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-users",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "PolicyDocument" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_IAM_Policy" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::IAM::Policy",
+        "type" : "string",
+        "enum" : [ "AWS::IAM::Policy" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Groups" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-groups",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "PolicyDocument" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-policydocument",
+            "type" : "object"
+          },
+          "PolicyName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-policyname",
+            "type" : [ "string", "object" ]
+          },
+          "Roles" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-roles",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "Users" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-users",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "PolicyDocument", "PolicyName" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_IAM_Role" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::IAM::Role",
+        "type" : "string",
+        "enum" : [ "AWS::IAM::Role" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "AssumeRolePolicyDocument" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-assumerolepolicydocument",
+            "type" : "object"
+          },
+          "ManagedPolicyArns" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-managepolicyarns",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "MaxSessionDuration" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-maxsessionduration",
+            "type" : [ "integer", "object" ]
+          },
+          "Path" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-path",
+            "type" : [ "string", "object" ]
+          },
+          "PermissionsBoundary" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-permissionsboundary",
+            "type" : [ "string", "object" ]
+          },
+          "Policies" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-policies",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_IAM_Role_Policy"
+            },
+            "minItems" : 0
+          },
+          "RoleName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-rolename",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "AssumeRolePolicyDocument" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_IAM_ServiceLinkedRole" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::IAM::ServiceLinkedRole",
+        "type" : "string",
+        "enum" : [ "AWS::IAM::ServiceLinkedRole" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "CustomSuffix" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-customsuffix",
+            "type" : [ "string", "object" ]
+          },
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-description",
+            "type" : [ "string", "object" ]
+          },
+          "AWSServiceName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-awsservicename",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "AWSServiceName" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_IAM_User" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::IAM::User",
+        "type" : "string",
+        "enum" : [ "AWS::IAM::User" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Groups" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-groups",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "LoginProfile" : {
+            "$ref" : "#/definitions/AWS_IAM_User_LoginProfile"
+          },
+          "ManagedPolicyArns" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-managepolicyarns",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "Path" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-path",
+            "type" : [ "string", "object" ]
+          },
+          "PermissionsBoundary" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-permissionsboundary",
+            "type" : [ "string", "object" ]
+          },
+          "Policies" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-policies",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_IAM_User_Policy"
+            },
+            "minItems" : 0
+          },
+          "UserName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-username",
+            "type" : [ "string", "object" ]
+          }
+        }
+      }
+    },
+    "required" : [ "Type" ]
+  },
+  "AWS_IAM_UserToGroupAddition" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::IAM::UserToGroupAddition",
+        "type" : "string",
+        "enum" : [ "AWS::IAM::UserToGroupAddition" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "GroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html#cfn-iam-addusertogroup-groupname",
+            "type" : [ "string", "object" ]
+          },
+          "Users" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html#cfn-iam-addusertogroup-users",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "GroupName", "Users" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_RDS_DBCluster" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::RDS::DBCluster",
+        "type" : "string",
+        "enum" : [ "AWS::RDS::DBCluster" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "AvailabilityZones" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-availabilityzones",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "BacktrackWindow" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-backtrackwindow",
+            "type" : [ "integer", "object" ]
+          },
+          "BackupRetentionPeriod" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-backuprententionperiod",
+            "type" : [ "integer", "object" ]
+          },
+          "DBClusterIdentifier" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbclusteridentifier",
+            "type" : [ "string", "object" ]
+          },
+          "DBClusterParameterGroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbclusterparametergroupname",
+            "type" : [ "string", "object" ]
+          },
+          "DBSubnetGroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbsubnetgroupname",
+            "type" : [ "string", "object" ]
+          },
+          "DatabaseName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-databasename",
+            "type" : [ "string", "object" ]
+          },
+          "EnableCloudwatchLogsExports" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enablecloudwatchlogsexports",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "EnableIAMDatabaseAuthentication" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enableiamdatabaseauthentication",
+            "type" : [ "boolean", "object" ]
+          },
+          "Engine" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-engine",
+            "type" : [ "string", "object" ]
+          },
+          "EngineMode" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enginemode",
+            "type" : [ "string", "object" ]
+          },
+          "EngineVersion" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-engineversion",
+            "type" : [ "string", "object" ]
+          },
+          "KmsKeyId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-kmskeyid",
+            "type" : [ "string", "object" ]
+          },
+          "MasterUserPassword" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-masteruserpassword",
+            "type" : [ "string", "object" ]
+          },
+          "MasterUsername" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-masterusername",
+            "type" : [ "string", "object" ]
+          },
+          "Port" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-port",
+            "type" : [ "integer", "object" ]
+          },
+          "PreferredBackupWindow" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-preferredbackupwindow",
+            "type" : [ "string", "object" ]
+          },
+          "PreferredMaintenanceWindow" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-preferredmaintenancewindow",
+            "type" : [ "string", "object" ]
+          },
+          "ReplicationSourceIdentifier" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-replicationsourceidentifier",
+            "type" : [ "string", "object" ]
+          },
+          "ScalingConfiguration" : {
+            "$ref" : "#/definitions/AWS_RDS_DBCluster_ScalingConfiguration"
+          },
+          "SnapshotIdentifier" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-snapshotidentifier",
+            "type" : [ "string", "object" ]
+          },
+          "StorageEncrypted" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-storageencrypted",
+            "type" : [ "boolean", "object" ]
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          },
+          "VpcSecurityGroupIds" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-vpcsecuritygroupids",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          }
+        },
+        "required" : [ "Engine" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_RDS_DBClusterParameterGroup" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::RDS::DBClusterParameterGroup",
+        "type" : "string",
+        "enum" : [ "AWS::RDS::DBClusterParameterGroup" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html#cfn-rds-dbclusterparametergroup-description",
+            "type" : [ "string", "object" ]
+          },
+          "Family" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html#cfn-rds-dbclusterparametergroup-family",
+            "type" : [ "string", "object" ]
+          },
+          "Parameters" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html#cfn-rds-dbclusterparametergroup-parameters",
+            "type" : "object"
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbclusterparametergroup.html#cfn-rds-dbclusterparametergroup-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "Description", "Family", "Parameters" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_RDS_DBInstance" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::RDS::DBInstance",
+        "type" : "string",
+        "enum" : [ "AWS::RDS::DBInstance" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "AllocatedStorage" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-allocatedstorage",
+            "type" : [ "string", "object" ]
+          },
+          "AllowMajorVersionUpgrade" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-allowmajorversionupgrade",
+            "type" : [ "boolean", "object" ]
+          },
+          "AutoMinorVersionUpgrade" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-autominorversionupgrade",
+            "type" : [ "boolean", "object" ]
+          },
+          "AvailabilityZone" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-availabilityzone",
+            "type" : [ "string", "object" ]
+          },
+          "BackupRetentionPeriod" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-backupretentionperiod",
+            "type" : [ "string", "object" ]
+          },
+          "CharacterSetName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-charactersetname",
+            "type" : [ "string", "object" ]
+          },
+          "CopyTagsToSnapshot" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-copytagstosnapshot",
+            "type" : [ "boolean", "object" ]
+          },
+          "DBClusterIdentifier" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbclusteridentifier",
+            "type" : [ "string", "object" ]
+          },
+          "DBInstanceClass" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbinstanceclass",
+            "type" : [ "string", "object" ]
+          },
+          "DBInstanceIdentifier" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbinstanceidentifier",
+            "type" : [ "string", "object" ]
+          },
+          "DBName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbname",
+            "type" : [ "string", "object" ]
+          },
+          "DBParameterGroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbparametergroupname",
+            "type" : [ "string", "object" ]
+          },
+          "DBSecurityGroups" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbsecuritygroups",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "DBSnapshotIdentifier" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbsnapshotidentifier",
+            "type" : [ "string", "object" ]
+          },
+          "DBSubnetGroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-dbsubnetgroupname",
+            "type" : [ "string", "object" ]
+          },
+          "Domain" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-domain",
+            "type" : [ "string", "object" ]
+          },
+          "DomainIAMRoleName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-domainiamrolename",
+            "type" : [ "string", "object" ]
+          },
+          "EnableCloudwatchLogsExports" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-enablecloudwatchlogsexports",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "EnableIAMDatabaseAuthentication" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-enableiamdatabaseauthentication",
+            "type" : [ "boolean", "object" ]
+          },
+          "EnablePerformanceInsights" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-enableperformanceinsights",
+            "type" : [ "boolean", "object" ]
+          },
+          "Engine" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-engine",
+            "type" : [ "string", "object" ]
+          },
+          "EngineVersion" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-engineversion",
+            "type" : [ "string", "object" ]
+          },
+          "Iops" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-iops",
+            "type" : [ "integer", "object" ]
+          },
+          "KmsKeyId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-kmskeyid",
+            "type" : [ "string", "object" ]
+          },
+          "LicenseModel" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-licensemodel",
+            "type" : [ "string", "object" ]
+          },
+          "MasterUserPassword" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-masteruserpassword",
+            "type" : [ "string", "object" ]
+          },
+          "MasterUsername" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-masterusername",
+            "type" : [ "string", "object" ]
+          },
+          "MonitoringInterval" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-monitoringinterval",
+            "type" : [ "integer", "object" ]
+          },
+          "MonitoringRoleArn" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-monitoringrolearn",
+            "type" : [ "string", "object" ]
+          },
+          "MultiAZ" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-multiaz",
+            "type" : [ "boolean", "object" ]
+          },
+          "OptionGroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-optiongroupname",
+            "type" : [ "string", "object" ]
+          },
+          "PerformanceInsightsKMSKeyId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-performanceinsightskmskeyid",
+            "type" : [ "string", "object" ]
+          },
+          "PerformanceInsightsRetentionPeriod" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-performanceinsightsretentionperiod",
+            "type" : [ "integer", "object" ]
+          },
+          "Port" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-port",
+            "type" : [ "string", "object" ]
+          },
+          "PreferredBackupWindow" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-preferredbackupwindow",
+            "type" : [ "string", "object" ]
+          },
+          "PreferredMaintenanceWindow" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-preferredmaintenancewindow",
+            "type" : [ "string", "object" ]
+          },
+          "ProcessorFeatures" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-processorfeatures",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_RDS_DBInstance_ProcessorFeature"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "PromotionTier" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-promotiontier",
+            "type" : [ "integer", "object" ]
+          },
+          "PubliclyAccessible" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-publiclyaccessible",
+            "type" : [ "boolean", "object" ]
+          },
+          "SourceDBInstanceIdentifier" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-sourcedbinstanceidentifier",
+            "type" : [ "string", "object" ]
+          },
+          "SourceRegion" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-sourceregion",
+            "type" : [ "string", "object" ]
+          },
+          "StorageEncrypted" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-storageencrypted",
+            "type" : [ "boolean", "object" ]
+          },
+          "StorageType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-storagetype",
+            "type" : [ "string", "object" ]
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          },
+          "Timezone" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-timezone",
+            "type" : [ "string", "object" ]
+          },
+          "VPCSecurityGroups" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-vpcsecuritygroups",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "DBInstanceClass" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_RDS_DBParameterGroup" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::RDS::DBParameterGroup",
+        "type" : "string",
+        "enum" : [ "AWS::RDS::DBParameterGroup" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-description",
+            "type" : [ "string", "object" ]
+          },
+          "Family" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-family",
+            "type" : [ "string", "object" ]
+          },
+          "Parameters" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-parameters",
+            "type" : "object",
+            "patternProperties" : {
+              "[a-zA-Z0-9]+" : {
+                "type" : [ "string", "object" ]
+              }
+            }
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbparametergroup.html#cfn-rds-dbparametergroup-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "Description", "Family" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_RDS_DBSecurityGroup" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::RDS::DBSecurityGroup",
+        "type" : "string",
+        "enum" : [ "AWS::RDS::DBSecurityGroup" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "DBSecurityGroupIngress" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-dbsecuritygroupingress",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_RDS_DBSecurityGroup_Ingress"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "EC2VpcId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-ec2vpcid",
+            "type" : [ "string", "object" ]
+          },
+          "GroupDescription" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-groupdescription",
+            "type" : [ "string", "object" ]
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "DBSecurityGroupIngress", "GroupDescription" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_RDS_DBSecurityGroupIngress" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::RDS::DBSecurityGroupIngress",
+        "type" : "string",
+        "enum" : [ "AWS::RDS::DBSecurityGroupIngress" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "CIDRIP" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-cidrip",
+            "type" : [ "string", "object" ]
+          },
+          "DBSecurityGroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-dbsecuritygroupname",
+            "type" : [ "string", "object" ]
+          },
+          "EC2SecurityGroupId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-ec2securitygroupid",
+            "type" : [ "string", "object" ]
+          },
+          "EC2SecurityGroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-ec2securitygroupname",
+            "type" : [ "string", "object" ]
+          },
+          "EC2SecurityGroupOwnerId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-ec2securitygroupownerid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "DBSecurityGroupName" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_RDS_DBSubnetGroup" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::RDS::DBSubnetGroup",
+        "type" : "string",
+        "enum" : [ "AWS::RDS::DBSubnetGroup" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "DBSubnetGroupDescription" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-dbsubnetgroupdescription",
+            "type" : [ "string", "object" ]
+          },
+          "DBSubnetGroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-dbsubnetgroupname",
+            "type" : [ "string", "object" ]
+          },
+          "SubnetIds" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-subnetids",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "DBSubnetGroupDescription", "SubnetIds" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_RDS_EventSubscription" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::RDS::EventSubscription",
+        "type" : "string",
+        "enum" : [ "AWS::RDS::EventSubscription" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Enabled" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-enabled",
+            "type" : [ "boolean", "object" ]
+          },
+          "EventCategories" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-eventcategories",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "SnsTopicArn" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-snstopicarn",
+            "type" : [ "string", "object" ]
+          },
+          "SourceIds" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-sourceids",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "SourceType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-sourcetype",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "SnsTopicArn" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_RDS_OptionGroup" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::RDS::OptionGroup",
+        "type" : "string",
+        "enum" : [ "AWS::RDS::OptionGroup" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "EngineName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-enginename",
+            "type" : [ "string", "object" ]
+          },
+          "MajorEngineVersion" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-majorengineversion",
+            "type" : [ "string", "object" ]
+          },
+          "OptionConfigurations" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-optionconfigurations",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_RDS_OptionGroup_OptionConfiguration"
+            },
+            "minItems" : 0
+          },
+          "OptionGroupDescription" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-optiongroupdescription",
+            "type" : [ "string", "object" ]
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "EngineName", "MajorEngineVersion", "OptionConfigurations", "OptionGroupDescription" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_AutoScaling_AutoScalingGroup_LaunchTemplateSpecification" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-launchtemplatespecification.html",
+    "properties" : {
+      "LaunchTemplateId" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-launchtemplatespecification.html#cfn-autoscaling-autoscalinggroup-launchtemplatespecification-launchtemplateid",
+        "type" : [ "string", "object" ]
+      },
+      "LaunchTemplateName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-launchtemplatespecification.html#cfn-autoscaling-autoscalinggroup-launchtemplatespecification-launchtemplatename",
+        "type" : [ "string", "object" ]
+      },
+      "Version" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-launchtemplatespecification.html#cfn-autoscaling-autoscalinggroup-launchtemplatespecification-version",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Version" ]
+  },
+  "AWS_AutoScaling_AutoScalingGroup_LifecycleHookSpecification" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-lifecyclehookspecification.html",
+    "properties" : {
+      "DefaultResult" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-lifecyclehookspecification.html#cfn-autoscaling-autoscalinggroup-lifecyclehookspecification-defaultresult",
+        "type" : [ "string", "object" ]
+      },
+      "HeartbeatTimeout" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-lifecyclehookspecification.html#cfn-autoscaling-autoscalinggroup-lifecyclehookspecification-heartbeattimeout",
+        "type" : [ "integer", "object" ]
+      },
+      "LifecycleHookName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-lifecyclehookspecification.html#cfn-autoscaling-autoscalinggroup-lifecyclehookspecification-lifecyclehookname",
+        "type" : [ "string", "object" ]
+      },
+      "LifecycleTransition" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-lifecyclehookspecification.html#cfn-autoscaling-autoscalinggroup-lifecyclehookspecification-lifecycletransition",
+        "type" : [ "string", "object" ]
+      },
+      "NotificationMetadata" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-lifecyclehookspecification.html#cfn-autoscaling-autoscalinggroup-lifecyclehookspecification-notificationmetadata",
+        "type" : [ "string", "object" ]
+      },
+      "NotificationTargetARN" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-lifecyclehookspecification.html#cfn-autoscaling-autoscalinggroup-lifecyclehookspecification-notificationtargetarn",
+        "type" : [ "string", "object" ]
+      },
+      "RoleARN" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-lifecyclehookspecification.html#cfn-autoscaling-autoscalinggroup-lifecyclehookspecification-rolearn",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "LifecycleHookName", "LifecycleTransition" ]
+  },
+  "AWS_AutoScaling_AutoScalingGroup_MetricsCollection" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html",
+    "properties" : {
+      "Granularity" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html#cfn-as-metricscollection-granularity",
+        "type" : [ "string", "object" ]
+      },
+      "Metrics" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html#cfn-as-metricscollection-metrics",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "minItems" : 0
+      }
+    },
+    "required" : [ "Granularity" ]
+  },
+  "AWS_AutoScaling_AutoScalingGroup_NotificationConfiguration" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-notificationconfigurations.html",
+    "properties" : {
+      "NotificationTypes" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-notificationconfigurations.html#cfn-as-group-notificationconfigurations-notificationtypes",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "minItems" : 0
+      },
+      "TopicARN" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-notificationconfigurations.html#cfn-autoscaling-autoscalinggroup-notificationconfigurations-topicarn",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "TopicARN" ]
+  },
+  "AWS_AutoScaling_AutoScalingGroup_TagProperty" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html",
+    "properties" : {
+      "Key" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html#cfn-as-tags-Key",
+        "type" : [ "string", "object" ]
+      },
+      "PropagateAtLaunch" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html#cfn-as-tags-PropagateAtLaunch",
+        "type" : [ "boolean", "object" ]
+      },
+      "Value" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html#cfn-as-tags-Value",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Key", "PropagateAtLaunch", "Value" ]
+  },
+  "AWS_AutoScaling_LaunchConfiguration_BlockDevice" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-template.html",
+    "properties" : {
+      "DeleteOnTermination" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-template.html#cfn-as-launchconfig-blockdev-template-deleteonterm",
+        "type" : [ "boolean", "object" ]
+      },
+      "Encrypted" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-template.html#cfn-as-launchconfig-blockdev-template-encrypted",
+        "type" : [ "boolean", "object" ]
+      },
+      "Iops" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-template.html#cfn-as-launchconfig-blockdev-template-iops",
+        "type" : [ "integer", "object" ]
+      },
+      "SnapshotId" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-template.html#cfn-as-launchconfig-blockdev-template-snapshotid",
+        "type" : [ "string", "object" ]
+      },
+      "VolumeSize" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-template.html#cfn-as-launchconfig-blockdev-template-volumesize",
+        "type" : [ "integer", "object" ]
+      },
+      "VolumeType" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-template.html#cfn-as-launchconfig-blockdev-template-volumetype",
+        "type" : [ "string", "object" ]
+      }
+    }
+  },
+  "AWS_AutoScaling_LaunchConfiguration_BlockDeviceMapping" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-mapping.html",
+    "properties" : {
+      "DeviceName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-mapping.html#cfn-as-launchconfig-blockdev-mapping-devicename",
+        "type" : [ "string", "object" ]
+      },
+      "Ebs" : {
+        "$ref" : "#/definitions/AWS_AutoScaling_LaunchConfiguration_BlockDevice"
+      },
+      "NoDevice" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-mapping.html#cfn-as-launchconfig-blockdev-mapping-nodevice",
+        "type" : [ "boolean", "object" ]
+      },
+      "VirtualName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-mapping.html#cfn-as-launchconfig-blockdev-mapping-virtualname",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "DeviceName" ]
+  },
+  "AWS_AutoScaling_ScalingPolicy_CustomizedMetricSpecification" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html",
+    "properties" : {
+      "Dimensions" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-dimensions",
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/definitions/AWS_AutoScaling_ScalingPolicy_MetricDimension"
+        },
+        "uniqueItems" : true,
+        "minItems" : 0
+      },
+      "MetricName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-metricname",
+        "type" : [ "string", "object" ]
+      },
+      "Namespace" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-namespace",
+        "type" : [ "string", "object" ]
+      },
+      "Statistic" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-statistic",
+        "type" : [ "string", "object" ]
+      },
+      "Unit" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-unit",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "MetricName", "Namespace", "Statistic" ]
+  },
+  "AWS_AutoScaling_ScalingPolicy_MetricDimension" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-metricdimension.html",
+    "properties" : {
+      "Name" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-metricdimension.html#cfn-autoscaling-scalingpolicy-metricdimension-name",
+        "type" : [ "string", "object" ]
+      },
+      "Value" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-metricdimension.html#cfn-autoscaling-scalingpolicy-metricdimension-value",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Name", "Value" ]
+  },
+  "AWS_AutoScaling_ScalingPolicy_PredefinedMetricSpecification" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predefinedmetricspecification.html",
+    "properties" : {
+      "PredefinedMetricType" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predefinedmetricspecification.html#cfn-autoscaling-scalingpolicy-predefinedmetricspecification-predefinedmetrictype",
+        "type" : [ "string", "object" ]
+      },
+      "ResourceLabel" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predefinedmetricspecification.html#cfn-autoscaling-scalingpolicy-predefinedmetricspecification-resourcelabel",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "PredefinedMetricType" ]
+  },
+  "AWS_AutoScaling_ScalingPolicy_StepAdjustment" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-stepadjustments.html",
+    "properties" : {
+      "MetricIntervalLowerBound" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-stepadjustments.html#cfn-autoscaling-scalingpolicy-stepadjustment-metricintervallowerbound",
+        "type" : [ "number", "object" ]
+      },
+      "MetricIntervalUpperBound" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-stepadjustments.html#cfn-autoscaling-scalingpolicy-stepadjustment-metricintervalupperbound",
+        "type" : [ "number", "object" ]
+      },
+      "ScalingAdjustment" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-stepadjustments.html#cfn-autoscaling-scalingpolicy-stepadjustment-scalingadjustment",
+        "type" : [ "integer", "object" ]
+      }
+    },
+    "required" : [ "ScalingAdjustment" ]
+  },
+  "AWS_AutoScaling_ScalingPolicy_TargetTrackingConfiguration" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html",
+    "properties" : {
+      "CustomizedMetricSpecification" : {
+        "$ref" : "#/definitions/AWS_AutoScaling_ScalingPolicy_CustomizedMetricSpecification"
+      },
+      "DisableScaleIn" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-disablescalein",
+        "type" : [ "boolean", "object" ]
+      },
+      "PredefinedMetricSpecification" : {
+        "$ref" : "#/definitions/AWS_AutoScaling_ScalingPolicy_PredefinedMetricSpecification"
+      },
+      "TargetValue" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-targetvalue",
+        "type" : [ "number", "object" ]
+      }
+    },
+    "required" : [ "TargetValue" ]
+  },
+  "AWS_AutoScalingPlans_ScalingPlan_ApplicationSource" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-applicationsource.html",
+    "properties" : {
+      "CloudFormationStackARN" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-applicationsource.html#cfn-autoscalingplans-scalingplan-applicationsource-cloudformationstackarn",
+        "type" : [ "string", "object" ]
+      },
+      "TagFilters" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-applicationsource.html#cfn-autoscalingplans-scalingplan-applicationsource-tagfilters",
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_TagFilter"
+        },
+        "minItems" : 0
+      }
+    }
+  },
+  "AWS_AutoScalingPlans_ScalingPlan_CustomizedLoadMetricSpecification" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedloadmetricspecification.html",
+    "properties" : {
+      "MetricName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedloadmetricspecification-metricname",
+        "type" : [ "string", "object" ]
+      },
+      "Statistic" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedloadmetricspecification-statistic",
+        "type" : [ "string", "object" ]
+      },
+      "Dimensions" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedloadmetricspecification-dimensions",
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_MetricDimension"
+        },
+        "minItems" : 0
+      },
+      "Unit" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedloadmetricspecification-unit",
+        "type" : [ "string", "object" ]
+      },
+      "Namespace" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedloadmetricspecification-namespace",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "MetricName", "Statistic", "Namespace" ]
+  },
+  "AWS_AutoScalingPlans_ScalingPlan_CustomizedScalingMetricSpecification" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html",
+    "properties" : {
+      "MetricName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedscalingmetricspecification-metricname",
+        "type" : [ "string", "object" ]
+      },
+      "Statistic" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedscalingmetricspecification-statistic",
+        "type" : [ "string", "object" ]
+      },
+      "Dimensions" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedscalingmetricspecification-dimensions",
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_MetricDimension"
+        },
+        "minItems" : 0
+      },
+      "Unit" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedscalingmetricspecification-unit",
+        "type" : [ "string", "object" ]
+      },
+      "Namespace" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedscalingmetricspecification-namespace",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "MetricName", "Statistic", "Namespace" ]
+  },
+  "AWS_AutoScalingPlans_ScalingPlan_MetricDimension" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-metricdimension.html",
+    "properties" : {
+      "Value" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-metricdimension.html#cfn-autoscalingplans-scalingplan-metricdimension-value",
+        "type" : [ "string", "object" ]
+      },
+      "Name" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-metricdimension.html#cfn-autoscalingplans-scalingplan-metricdimension-name",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Value", "Name" ]
+  },
+  "AWS_AutoScalingPlans_ScalingPlan_PredefinedLoadMetricSpecification" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedloadmetricspecification.html",
+    "properties" : {
+      "PredefinedLoadMetricType" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-predefinedloadmetricspecification-predefinedloadmetrictype",
+        "type" : [ "string", "object" ]
+      },
+      "ResourceLabel" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-predefinedloadmetricspecification-resourcelabel",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "PredefinedLoadMetricType" ]
+  },
+  "AWS_AutoScalingPlans_ScalingPlan_PredefinedScalingMetricSpecification" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedscalingmetricspecification.html",
+    "properties" : {
+      "ResourceLabel" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedscalingmetricspecification.html#cfn-autoscalingplans-scalingplan-predefinedscalingmetricspecification-resourcelabel",
+        "type" : [ "string", "object" ]
+      },
+      "PredefinedScalingMetricType" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedscalingmetricspecification.html#cfn-autoscalingplans-scalingplan-predefinedscalingmetricspecification-predefinedscalingmetrictype",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "PredefinedScalingMetricType" ]
+  },
+  "AWS_AutoScalingPlans_ScalingPlan_ScalingInstruction" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html",
+    "properties" : {
+      "DisableDynamicScaling" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-disabledynamicscaling",
+        "type" : [ "boolean", "object" ]
+      },
+      "ServiceNamespace" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-servicenamespace",
+        "type" : [ "string", "object" ]
+      },
+      "PredictiveScalingMaxCapacityBehavior" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-predictivescalingmaxcapacitybehavior",
+        "type" : [ "string", "object" ]
+      },
+      "ScalableDimension" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-scalabledimension",
+        "type" : [ "string", "object" ]
+      },
+      "ScalingPolicyUpdateBehavior" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-scalingpolicyupdatebehavior",
+        "type" : [ "string", "object" ]
+      },
+      "MinCapacity" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-mincapacity",
+        "type" : [ "integer", "object" ]
+      },
+      "TargetTrackingConfigurations" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-targettrackingconfigurations",
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_TargetTrackingConfiguration"
+        },
+        "minItems" : 0
+      },
+      "PredictiveScalingMaxCapacityBuffer" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-predictivescalingmaxcapacitybuffer",
+        "type" : [ "integer", "object" ]
+      },
+      "CustomizedLoadMetricSpecification" : {
+        "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_CustomizedLoadMetricSpecification"
+      },
+      "PredefinedLoadMetricSpecification" : {
+        "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_PredefinedLoadMetricSpecification"
+      },
+      "ResourceId" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-resourceid",
+        "type" : [ "string", "object" ]
+      },
+      "ScheduledActionBufferTime" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-scheduledactionbuffertime",
+        "type" : [ "integer", "object" ]
+      },
+      "MaxCapacity" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-maxcapacity",
+        "type" : [ "integer", "object" ]
+      },
+      "PredictiveScalingMode" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-predictivescalingmode",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "ServiceNamespace", "ScalableDimension", "MinCapacity", "TargetTrackingConfigurations", "ResourceId", "MaxCapacity" ]
+  },
+  "AWS_AutoScalingPlans_ScalingPlan_TagFilter" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-tagfilter.html",
+    "properties" : {
+      "Values" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-tagfilter.html#cfn-autoscalingplans-scalingplan-tagfilter-values",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "minItems" : 0
+      },
+      "Key" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-tagfilter.html#cfn-autoscalingplans-scalingplan-tagfilter-key",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Key" ]
+  },
+  "AWS_AutoScalingPlans_ScalingPlan_TargetTrackingConfiguration" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html",
+    "properties" : {
+      "ScaleOutCooldown" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-scaleoutcooldown",
+        "type" : [ "integer", "object" ]
+      },
+      "TargetValue" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-targetvalue",
+        "type" : [ "number", "object" ]
+      },
+      "PredefinedScalingMetricSpecification" : {
+        "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_PredefinedScalingMetricSpecification"
+      },
+      "DisableScaleIn" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-disablescalein",
+        "type" : [ "boolean", "object" ]
+      },
+      "ScaleInCooldown" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-scaleincooldown",
+        "type" : [ "integer", "object" ]
+      },
+      "EstimatedInstanceWarmup" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-estimatedinstancewarmup",
+        "type" : [ "integer", "object" ]
+      },
+      "CustomizedScalingMetricSpecification" : {
+        "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_CustomizedScalingMetricSpecification"
+      }
+    },
+    "required" : [ "TargetValue" ]
+  },
+  "AWS_ElasticLoadBalancingV2_Listener_Action" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html",
+    "properties" : {
+      "TargetGroupArn" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-defaultactions-targetgrouparn",
+        "type" : [ "string", "object" ]
+      },
+      "Type" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-defaultactions-type",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "TargetGroupArn", "Type" ]
+  },
+  "AWS_ElasticLoadBalancingV2_Listener_Certificate" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-certificates.html",
+    "properties" : {
+      "CertificateArn" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-certificates.html#cfn-elasticloadbalancingv2-listener-certificates-certificatearn",
+        "type" : [ "string", "object" ]
+      }
+    }
+  },
+  "AWS_ElasticLoadBalancingV2_ListenerCertificate_Certificate" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-certificates.html",
+    "properties" : {
+      "CertificateArn" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-certificates.html#cfn-elasticloadbalancingv2-listener-certificates-certificatearn",
+        "type" : [ "string", "object" ]
+      }
+    }
+  },
+  "AWS_ElasticLoadBalancingV2_ListenerRule_Action" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html",
+    "properties" : {
+      "TargetGroupArn" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html#cfn-elasticloadbalancingv2-listener-actions-targetgrouparn",
+        "type" : [ "string", "object" ]
+      },
+      "Type" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html#cfn-elasticloadbalancingv2-listener-actions-type",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "TargetGroupArn", "Type" ]
+  },
+  "AWS_ElasticLoadBalancingV2_ListenerRule_RuleCondition" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-conditions.html",
+    "properties" : {
+      "Field" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-conditions.html#cfn-elasticloadbalancingv2-listenerrule-conditions-field",
+        "type" : [ "string", "object" ]
+      },
+      "Values" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-conditions.html#cfn-elasticloadbalancingv2-listenerrule-conditions-values",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "uniqueItems" : true,
+        "minItems" : 0
+      }
+    }
+  },
+  "AWS_ElasticLoadBalancingV2_LoadBalancer_LoadBalancerAttribute" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-loadbalancerattributes.html",
+    "properties" : {
+      "Key" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-loadbalancerattributes.html#cfn-elasticloadbalancingv2-loadbalancer-loadbalancerattributes-key",
+        "type" : [ "string", "object" ]
+      },
+      "Value" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-loadbalancerattributes.html#cfn-elasticloadbalancingv2-loadbalancer-loadbalancerattributes-value",
+        "type" : [ "string", "object" ]
+      }
+    }
+  },
+  "AWS_ElasticLoadBalancingV2_LoadBalancer_SubnetMapping" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html",
+    "properties" : {
+      "AllocationId" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmapping-allocationid",
+        "type" : [ "string", "object" ]
+      },
+      "SubnetId" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmapping-subnetid",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "AllocationId", "SubnetId" ]
+  },
+  "AWS_ElasticLoadBalancingV2_TargetGroup_Matcher" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-matcher.html",
+    "properties" : {
+      "HttpCode" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-matcher.html#cfn-elasticloadbalancingv2-targetgroup-matcher-httpcode",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "HttpCode" ]
+  },
+  "AWS_ElasticLoadBalancingV2_TargetGroup_TargetDescription" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetdescription.html",
+    "properties" : {
+      "AvailabilityZone" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetdescription.html#cfn-elasticloadbalancingv2-targetgroup-targetdescription-availabilityzone",
+        "type" : [ "string", "object" ]
+      },
+      "Id" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetdescription.html#cfn-elasticloadbalancingv2-targetgroup-targetdescription-id",
+        "type" : [ "string", "object" ]
+      },
+      "Port" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetdescription.html#cfn-elasticloadbalancingv2-targetgroup-targetdescription-port",
+        "type" : [ "integer", "object" ]
+      }
+    },
+    "required" : [ "Id" ]
+  },
+  "AWS_ElasticLoadBalancingV2_TargetGroup_TargetGroupAttribute" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetgroupattribute.html",
+    "properties" : {
+      "Key" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetgroupattribute.html#cfn-elasticloadbalancingv2-targetgroup-targetgroupattribute-key",
+        "type" : [ "string", "object" ]
+      },
+      "Value" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetgroupattribute.html#cfn-elasticloadbalancingv2-targetgroup-targetgroupattribute-value",
+        "type" : [ "string", "object" ]
+      }
+    }
+  },
+  "AWS_IAM_Group_Policy" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html",
+    "properties" : {
+      "PolicyDocument" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policydocument",
+        "type" : "object"
+      },
+      "PolicyName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policyname",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "PolicyDocument", "PolicyName" ]
+  },
+  "AWS_IAM_Role_Policy" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html",
+    "properties" : {
+      "PolicyDocument" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policydocument",
+        "type" : "object"
+      },
+      "PolicyName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policyname",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "PolicyDocument", "PolicyName" ]
+  },
+  "AWS_IAM_User_LoginProfile" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-loginprofile.html",
+    "properties" : {
+      "Password" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-loginprofile.html#cfn-iam-user-loginprofile-password",
+        "type" : [ "string", "object" ]
+      },
+      "PasswordResetRequired" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-loginprofile.html#cfn-iam-user-loginprofile-passwordresetrequired",
+        "type" : [ "boolean", "object" ]
+      }
+    },
+    "required" : [ "Password" ]
+  },
+  "AWS_IAM_User_Policy" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html",
+    "properties" : {
+      "PolicyDocument" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policydocument",
+        "type" : "object"
+      },
+      "PolicyName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policyname",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "PolicyDocument", "PolicyName" ]
+  },
+  "AWS_RDS_DBCluster_ScalingConfiguration" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html",
+    "properties" : {
+      "AutoPause" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-autopause",
+        "type" : [ "boolean", "object" ]
+      },
+      "MaxCapacity" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-maxcapacity",
+        "type" : [ "integer", "object" ]
+      },
+      "MinCapacity" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-mincapacity",
+        "type" : [ "integer", "object" ]
+      },
+      "SecondsUntilAutoPause" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-secondsuntilautopause",
+        "type" : [ "integer", "object" ]
+      }
+    }
+  },
+  "AWS_RDS_DBInstance_ProcessorFeature" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-processorfeature.html",
+    "properties" : {
+      "Name" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-processorfeature.html#cfn-rds-dbinstance-processorfeature-name",
+        "type" : [ "string", "object" ]
+      },
+      "Value" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-processorfeature.html#cfn-rds-dbinstance-processorfeature-value",
+        "type" : [ "string", "object" ]
+      }
+    }
+  },
+  "AWS_RDS_DBSecurityGroup_Ingress" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html",
+    "properties" : {
+      "CIDRIP" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-cidrip",
+        "type" : [ "string", "object" ]
+      },
+      "EC2SecurityGroupId" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupid",
+        "type" : [ "string", "object" ]
+      },
+      "EC2SecurityGroupName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupname",
+        "type" : [ "string", "object" ]
+      },
+      "EC2SecurityGroupOwnerId" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupownerid",
+        "type" : [ "string", "object" ]
+      }
+    }
+  },
+  "AWS_RDS_OptionGroup_OptionConfiguration" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html",
+    "properties" : {
+      "DBSecurityGroupMemberships" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-dbsecuritygroupmemberships",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "minItems" : 0
+      },
+      "OptionName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-optionname",
+        "type" : [ "string", "object" ]
+      },
+      "OptionSettings" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-optionsettings",
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/definitions/AWS_RDS_OptionGroup_OptionSetting"
+        },
+        "uniqueItems" : true,
+        "minItems" : 0
+      },
+      "OptionVersion" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfiguration-optionversion",
+        "type" : [ "string", "object" ]
+      },
+      "Port" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-port",
+        "type" : [ "integer", "object" ]
+      },
+      "VpcSecurityGroupMemberships" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-vpcsecuritygroupmemberships",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "minItems" : 0
+      }
+    },
+    "required" : [ "OptionName" ]
+  },
+  "AWS_RDS_OptionGroup_OptionSetting" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations-optionsettings.html",
+    "properties" : {
+      "Name" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations-optionsettings.html#cfn-rds-optiongroup-optionconfigurations-optionsettings-name",
+        "type" : [ "string", "object" ]
+      },
+      "Value" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations-optionsettings.html#cfn-rds-optiongroup-optionconfigurations-optionsettings-value",
+        "type" : [ "string", "object" ]
+      }
+    }
+  },
+  "Tag" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-tag.html",
+    "properties" : {
+      "Value" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-tag.html#cfn-dlm-lifecyclepolicy-tag-value",
+        "type" : [ "string", "object" ]
+      },
+      "Key" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-tag.html#cfn-dlm-lifecyclepolicy-tag-key",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Value", "Key" ]
+  },
+  "resources" : {
+    "type" : "object",
+    "additionalProperties" : {
+      "anyOf" : [ {
+        "$ref" : "#/definitions/AWS_AutoScaling_AutoScalingGroup"
+      }, {
+        "$ref" : "#/definitions/AWS_AutoScaling_LaunchConfiguration"
+      }, {
+        "$ref" : "#/definitions/AWS_AutoScaling_LifecycleHook"
+      }, {
+        "$ref" : "#/definitions/AWS_AutoScaling_ScalingPolicy"
+      }, {
+        "$ref" : "#/definitions/AWS_AutoScaling_ScheduledAction"
+      }, {
+        "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan"
+      }, {
+        "$ref" : "#/definitions/AWS_ElasticLoadBalancingV2_Listener"
+      }, {
+        "$ref" : "#/definitions/AWS_ElasticLoadBalancingV2_ListenerCertificate"
+      }, {
+        "$ref" : "#/definitions/AWS_ElasticLoadBalancingV2_ListenerRule"
+      }, {
+        "$ref" : "#/definitions/AWS_ElasticLoadBalancingV2_LoadBalancer"
+      }, {
+        "$ref" : "#/definitions/AWS_ElasticLoadBalancingV2_TargetGroup"
+      }, {
+        "$ref" : "#/definitions/AWS_IAM_AccessKey"
+      }, {
+        "$ref" : "#/definitions/AWS_IAM_Group"
+      }, {
+        "$ref" : "#/definitions/AWS_IAM_InstanceProfile"
+      }, {
+        "$ref" : "#/definitions/AWS_IAM_ManagedPolicy"
+      }, {
+        "$ref" : "#/definitions/AWS_IAM_Policy"
+      }, {
+        "$ref" : "#/definitions/AWS_IAM_Role"
+      }, {
+        "$ref" : "#/definitions/AWS_IAM_ServiceLinkedRole"
+      }, {
+        "$ref" : "#/definitions/AWS_IAM_User"
+      }, {
+        "$ref" : "#/definitions/AWS_IAM_UserToGroupAddition"
+      }, {
+        "$ref" : "#/definitions/AWS_RDS_DBCluster"
+      }, {
+        "$ref" : "#/definitions/AWS_RDS_DBClusterParameterGroup"
+      }, {
+        "$ref" : "#/definitions/AWS_RDS_DBInstance"
+      }, {
+        "$ref" : "#/definitions/AWS_RDS_DBParameterGroup"
+      }, {
+        "$ref" : "#/definitions/AWS_RDS_DBSecurityGroup"
+      }, {
+        "$ref" : "#/definitions/AWS_RDS_DBSecurityGroupIngress"
+      }, {
+        "$ref" : "#/definitions/AWS_RDS_DBSubnetGroup"
+      }, {
+        "$ref" : "#/definitions/AWS_RDS_EventSubscription"
+      }, {
+        "$ref" : "#/definitions/AWS_RDS_OptionGroup"
+      } ]
+    }
+  }
+
+  },
+  "additionalProperties": false,
+  "properties" : {
+    "AWSTemplateFormatVersion" : {
+      "type" : "string",
+      "enum" : [ "2010-09-09" ]
+    },
+    "Description" : {
+      "type" : "string"
+    },
+    "Metadata" : {
+      "type" : "object"
+    },
+    "Parameters" : {
+      "type" : "object"
+    },
+    "Mappings" : {
+      "type" : "object"
+    },
+    "Conditions" : {
+      "type" : "object"
+    },
+    "Transform" : {
+      "type" : "object"
+    },
+    "Outputs" : {
+      "type" : "object"
+    },
+    "Resources" : {
+        "$ref": "#/definitions/resources"
+    }
+  },
+  "description" : "CFN JSON specification generated from version 2.12.0",
+  "required" : [ "AWSTemplateFormatVersion", "Resources" ]
+}

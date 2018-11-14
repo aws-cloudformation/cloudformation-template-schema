@@ -1,5 +1,4 @@
 target/
-cfn-schemas/
 .idea/
 .DS_Store
 

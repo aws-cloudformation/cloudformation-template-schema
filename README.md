@@ -5,11 +5,36 @@ It is a simple code process which converts our existing Resource Specifications 
 JSONSchema formatted document. This schema can be integrated into many publicly available IDEs 
 such as Visual Studio Code & PyCharm to provide inline syntax checking and code completion.
 
-## How does an integration Look like?
+## Key Features 
 
-Here is a VSCode setup and integration that provides complete type safe template authoring completion including integration into CFN document 
-right from the text editor
+1. complete type safe template authoring with intellisence based completion.
+1. Support for both YAML and JSON templates.
+1. Errors flagged for missing required properties 
+1. integrated deep links to CFN documentation pertinent to the resource you are editing
+
+## How does an integration look like?
+
+Here is a VSCode setup integration example
 ![VSCode](docs/images/VSCode.gif)
+
+## How do i set it up?
+
+For VSCode 
+
+1. Install the [YAML validation]() and completion tool by redhat
+
+CFN covers several hundreds of resources. The tool will generate json [draft07](https://json-schema.org/draft-07/schema) 
+compliant schema for all AWS resources. However attempting to load the entire specification has its own challenges 
+as it is huge (approx. 1.3M). In order to reduce the burden on the IDE, it is recommended that you generate targeted
+resources for the application you are assembling.
+
+### How i get targeted resource subset?
+
+The tool is bundled with [config.yml](src/main/resources/config.yml) that provided a set of default bundles
+
+- all: this generates it for the entire AWS service resources AWS::*
+- networking: this includes all resources pertinent to AWS networking, setting up VPC, subnet, landing zones 
+- 
 
 ## How to run the tool?
 

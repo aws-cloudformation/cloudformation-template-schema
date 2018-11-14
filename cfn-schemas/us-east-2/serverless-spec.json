@@ -1,0 +1,2320 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "type" : "object",
+  "definitions" : {
+    "FnRef": {
+      "type": "object",
+      "properties": {
+        "Ref": {
+          "type": "string"
+        }
+      },
+      "required": ["Ref"],
+      "additionalProperties": false
+    },
+    "FnGetAtt": {
+      "type": "object",
+      "properties": {
+        "Fn::GetAtt": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "maxItems": 3,
+          "minItems": 2
+        }
+      },
+      "required": ["Fn::GetAtt"],
+      "additionalProperties": false
+    },
+    
+  "AWS_ApiGateway_Account" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-account.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ApiGateway::Account",
+        "type" : "string",
+        "enum" : [ "AWS::ApiGateway::Account" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "CloudWatchRoleArn" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-account.html#cfn-apigateway-account-cloudwatchrolearn",
+            "type" : [ "string", "object" ]
+          }
+        }
+      }
+    },
+    "required" : [ "Type" ]
+  },
+  "AWS_ApiGateway_ApiKey" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ApiGateway::ApiKey",
+        "type" : "string",
+        "enum" : [ "AWS::ApiGateway::ApiKey" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "CustomerId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-customerid",
+            "type" : [ "string", "object" ]
+          },
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-description",
+            "type" : [ "string", "object" ]
+          },
+          "Enabled" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-enabled",
+            "type" : [ "boolean", "object" ]
+          },
+          "GenerateDistinctId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-generatedistinctid",
+            "type" : [ "boolean", "object" ]
+          },
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-name",
+            "type" : [ "string", "object" ]
+          },
+          "StageKeys" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-stagekeys",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_ApiGateway_ApiKey_StageKey"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          }
+        }
+      }
+    },
+    "required" : [ "Type" ]
+  },
+  "AWS_ApiGateway_Authorizer" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ApiGateway::Authorizer",
+        "type" : "string",
+        "enum" : [ "AWS::ApiGateway::Authorizer" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "AuthType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authtype",
+            "type" : [ "string", "object" ]
+          },
+          "AuthorizerCredentials" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizercredentials",
+            "type" : [ "string", "object" ]
+          },
+          "AuthorizerResultTtlInSeconds" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizerresultttlinseconds",
+            "type" : [ "integer", "object" ]
+          },
+          "AuthorizerUri" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizeruri",
+            "type" : [ "string", "object" ]
+          },
+          "IdentitySource" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-identitysource",
+            "type" : [ "string", "object" ]
+          },
+          "IdentityValidationExpression" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-identityvalidationexpression",
+            "type" : [ "string", "object" ]
+          },
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-name",
+            "type" : [ "string", "object" ]
+          },
+          "ProviderARNs" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-providerarns",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "RestApiId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-restapiid",
+            "type" : [ "string", "object" ]
+          },
+          "Type" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-type",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "RestApiId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_ApiGateway_BasePathMapping" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ApiGateway::BasePathMapping",
+        "type" : "string",
+        "enum" : [ "AWS::ApiGateway::BasePathMapping" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "BasePath" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-basepath",
+            "type" : [ "string", "object" ]
+          },
+          "DomainName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-domainname",
+            "type" : [ "string", "object" ]
+          },
+          "RestApiId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-restapiid",
+            "type" : [ "string", "object" ]
+          },
+          "Stage" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-stage",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "DomainName" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_ApiGateway_ClientCertificate" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-clientcertificate.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ApiGateway::ClientCertificate",
+        "type" : "string",
+        "enum" : [ "AWS::ApiGateway::ClientCertificate" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-clientcertificate.html#cfn-apigateway-clientcertificate-description",
+            "type" : [ "string", "object" ]
+          }
+        }
+      }
+    },
+    "required" : [ "Type" ]
+  },
+  "AWS_ApiGateway_Deployment" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ApiGateway::Deployment",
+        "type" : "string",
+        "enum" : [ "AWS::ApiGateway::Deployment" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "DeploymentCanarySettings" : {
+            "$ref" : "#/definitions/AWS_ApiGateway_Deployment_DeploymentCanarySettings"
+          },
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-description",
+            "type" : [ "string", "object" ]
+          },
+          "RestApiId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-restapiid",
+            "type" : [ "string", "object" ]
+          },
+          "StageDescription" : {
+            "$ref" : "#/definitions/AWS_ApiGateway_Deployment_StageDescription"
+          },
+          "StageName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-stagename",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "RestApiId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_ApiGateway_DocumentationPart" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ApiGateway::DocumentationPart",
+        "type" : "string",
+        "enum" : [ "AWS::ApiGateway::DocumentationPart" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Location" : {
+            "$ref" : "#/definitions/AWS_ApiGateway_DocumentationPart_Location"
+          },
+          "Properties" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-properties",
+            "type" : [ "string", "object" ]
+          },
+          "RestApiId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-restapiid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "Properties", "RestApiId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_ApiGateway_DocumentationVersion" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationversion.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ApiGateway::DocumentationVersion",
+        "type" : "string",
+        "enum" : [ "AWS::ApiGateway::DocumentationVersion" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationversion.html#cfn-apigateway-documentationversion-description",
+            "type" : [ "string", "object" ]
+          },
+          "DocumentationVersion" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationversion.html#cfn-apigateway-documentationversion-documentationversion",
+            "type" : [ "string", "object" ]
+          },
+          "RestApiId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationversion.html#cfn-apigateway-documentationversion-restapiid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "DocumentationVersion", "RestApiId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_ApiGateway_DomainName" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ApiGateway::DomainName",
+        "type" : "string",
+        "enum" : [ "AWS::ApiGateway::DomainName" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "CertificateArn" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-certificatearn",
+            "type" : [ "string", "object" ]
+          },
+          "DomainName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-domainname",
+            "type" : [ "string", "object" ]
+          },
+          "EndpointConfiguration" : {
+            "$ref" : "#/definitions/AWS_ApiGateway_DomainName_EndpointConfiguration"
+          },
+          "RegionalCertificateArn" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-regionalcertificatearn",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "DomainName" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_ApiGateway_GatewayResponse" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ApiGateway::GatewayResponse",
+        "type" : "string",
+        "enum" : [ "AWS::ApiGateway::GatewayResponse" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "ResponseParameters" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responseparameters",
+            "type" : "object",
+            "patternProperties" : {
+              "[a-zA-Z0-9]+" : {
+                "type" : [ "string", "object" ]
+              }
+            }
+          },
+          "ResponseTemplates" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responsetemplates",
+            "type" : "object",
+            "patternProperties" : {
+              "[a-zA-Z0-9]+" : {
+                "type" : [ "string", "object" ]
+              }
+            }
+          },
+          "ResponseType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responsetype",
+            "type" : [ "string", "object" ]
+          },
+          "RestApiId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-restapiid",
+            "type" : [ "string", "object" ]
+          },
+          "StatusCode" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-statuscode",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "ResponseType", "RestApiId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_ApiGateway_Method" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ApiGateway::Method",
+        "type" : "string",
+        "enum" : [ "AWS::ApiGateway::Method" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "ApiKeyRequired" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-apikeyrequired",
+            "type" : [ "boolean", "object" ]
+          },
+          "AuthorizationScopes" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizationscopes",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "AuthorizationType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizationtype",
+            "type" : [ "string", "object" ]
+          },
+          "AuthorizerId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizerid",
+            "type" : [ "string", "object" ]
+          },
+          "HttpMethod" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-httpmethod",
+            "type" : [ "string", "object" ]
+          },
+          "Integration" : {
+            "$ref" : "#/definitions/AWS_ApiGateway_Method_Integration"
+          },
+          "MethodResponses" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-methodresponses",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_ApiGateway_Method_MethodResponse"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "OperationName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-operationname",
+            "type" : [ "string", "object" ]
+          },
+          "RequestModels" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestmodels",
+            "type" : "object",
+            "patternProperties" : {
+              "[a-zA-Z0-9]+" : {
+                "type" : [ "string", "object" ]
+              }
+            }
+          },
+          "RequestParameters" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestparameters",
+            "type" : "object",
+            "patternProperties" : {
+              "[a-zA-Z0-9]+" : {
+                "type" : [ "boolean", "object" ]
+              }
+            }
+          },
+          "RequestValidatorId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestvalidatorid",
+            "type" : [ "string", "object" ]
+          },
+          "ResourceId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-resourceid",
+            "type" : [ "string", "object" ]
+          },
+          "RestApiId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-restapiid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "HttpMethod", "ResourceId", "RestApiId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_ApiGateway_Model" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ApiGateway::Model",
+        "type" : "string",
+        "enum" : [ "AWS::ApiGateway::Model" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "ContentType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-contenttype",
+            "type" : [ "string", "object" ]
+          },
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-description",
+            "type" : [ "string", "object" ]
+          },
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-name",
+            "type" : [ "string", "object" ]
+          },
+          "RestApiId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-restapiid",
+            "type" : [ "string", "object" ]
+          },
+          "Schema" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-schema",
+            "type" : "object"
+          }
+        },
+        "required" : [ "RestApiId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_ApiGateway_RequestValidator" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ApiGateway::RequestValidator",
+        "type" : "string",
+        "enum" : [ "AWS::ApiGateway::RequestValidator" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-name",
+            "type" : [ "string", "object" ]
+          },
+          "RestApiId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-restapiid",
+            "type" : [ "string", "object" ]
+          },
+          "ValidateRequestBody" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestbody",
+            "type" : [ "boolean", "object" ]
+          },
+          "ValidateRequestParameters" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestparameters",
+            "type" : [ "boolean", "object" ]
+          }
+        },
+        "required" : [ "RestApiId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_ApiGateway_Resource" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ApiGateway::Resource",
+        "type" : "string",
+        "enum" : [ "AWS::ApiGateway::Resource" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "ParentId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-parentid",
+            "type" : [ "string", "object" ]
+          },
+          "PathPart" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-pathpart",
+            "type" : [ "string", "object" ]
+          },
+          "RestApiId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-restapiid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "ParentId", "PathPart", "RestApiId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_ApiGateway_RestApi" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ApiGateway::RestApi",
+        "type" : "string",
+        "enum" : [ "AWS::ApiGateway::RestApi" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "ApiKeySourceType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-apikeysourcetype",
+            "type" : [ "string", "object" ]
+          },
+          "BinaryMediaTypes" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-binarymediatypes",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "Body" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-body",
+            "type" : "object"
+          },
+          "BodyS3Location" : {
+            "$ref" : "#/definitions/AWS_ApiGateway_RestApi_S3Location"
+          },
+          "CloneFrom" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-clonefrom",
+            "type" : [ "string", "object" ]
+          },
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-description",
+            "type" : [ "string", "object" ]
+          },
+          "EndpointConfiguration" : {
+            "$ref" : "#/definitions/AWS_ApiGateway_RestApi_EndpointConfiguration"
+          },
+          "FailOnWarnings" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-failonwarnings",
+            "type" : [ "boolean", "object" ]
+          },
+          "MinimumCompressionSize" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-minimumcompressionsize",
+            "type" : [ "integer", "object" ]
+          },
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-name",
+            "type" : [ "string", "object" ]
+          },
+          "Parameters" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-parameters",
+            "type" : "object",
+            "patternProperties" : {
+              "[a-zA-Z0-9]+" : {
+                "type" : [ "string", "object" ]
+              }
+            }
+          },
+          "Policy" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-policy",
+            "type" : "object"
+          }
+        }
+      }
+    },
+    "required" : [ "Type" ]
+  },
+  "AWS_ApiGateway_Stage" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ApiGateway::Stage",
+        "type" : "string",
+        "enum" : [ "AWS::ApiGateway::Stage" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "AccessLogSetting" : {
+            "$ref" : "#/definitions/AWS_ApiGateway_Stage_AccessLogSetting"
+          },
+          "CacheClusterEnabled" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclusterenabled",
+            "type" : [ "boolean", "object" ]
+          },
+          "CacheClusterSize" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclustersize",
+            "type" : [ "string", "object" ]
+          },
+          "CanarySetting" : {
+            "$ref" : "#/definitions/AWS_ApiGateway_Stage_CanarySetting"
+          },
+          "ClientCertificateId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-clientcertificateid",
+            "type" : [ "string", "object" ]
+          },
+          "DeploymentId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-deploymentid",
+            "type" : [ "string", "object" ]
+          },
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-description",
+            "type" : [ "string", "object" ]
+          },
+          "DocumentationVersion" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-documentationversion",
+            "type" : [ "string", "object" ]
+          },
+          "MethodSettings" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-methodsettings",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_ApiGateway_Stage_MethodSetting"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "RestApiId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-restapiid",
+            "type" : [ "string", "object" ]
+          },
+          "StageName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-stagename",
+            "type" : [ "string", "object" ]
+          },
+          "TracingEnabled" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tracingenabled",
+            "type" : [ "boolean", "object" ]
+          },
+          "Variables" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-variables",
+            "type" : "object",
+            "patternProperties" : {
+              "[a-zA-Z0-9]+" : {
+                "type" : [ "string", "object" ]
+              }
+            }
+          }
+        },
+        "required" : [ "RestApiId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_ApiGateway_UsagePlan" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ApiGateway::UsagePlan",
+        "type" : "string",
+        "enum" : [ "AWS::ApiGateway::UsagePlan" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "ApiStages" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-apistages",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_ApiGateway_UsagePlan_ApiStage"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-description",
+            "type" : [ "string", "object" ]
+          },
+          "Quota" : {
+            "$ref" : "#/definitions/AWS_ApiGateway_UsagePlan_QuotaSettings"
+          },
+          "Throttle" : {
+            "$ref" : "#/definitions/AWS_ApiGateway_UsagePlan_ThrottleSettings"
+          },
+          "UsagePlanName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-usageplanname",
+            "type" : [ "string", "object" ]
+          }
+        }
+      }
+    },
+    "required" : [ "Type" ]
+  },
+  "AWS_ApiGateway_UsagePlanKey" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ApiGateway::UsagePlanKey",
+        "type" : "string",
+        "enum" : [ "AWS::ApiGateway::UsagePlanKey" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "KeyId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplankey-keyid",
+            "type" : [ "string", "object" ]
+          },
+          "KeyType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplankey-keytype",
+            "type" : [ "string", "object" ]
+          },
+          "UsagePlanId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplankey-usageplanid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "KeyId", "KeyType", "UsagePlanId" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_ApiGateway_VpcLink" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::ApiGateway::VpcLink",
+        "type" : "string",
+        "enum" : [ "AWS::ApiGateway::VpcLink" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-description",
+            "type" : [ "string", "object" ]
+          },
+          "TargetArns" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-targetarns",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-name",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "TargetArns", "Name" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_IAM_AccessKey" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::IAM::AccessKey",
+        "type" : "string",
+        "enum" : [ "AWS::IAM::AccessKey" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Serial" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-serial",
+            "type" : [ "integer", "object" ]
+          },
+          "Status" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-status",
+            "type" : [ "string", "object" ]
+          },
+          "UserName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-username",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "UserName" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_IAM_Group" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::IAM::Group",
+        "type" : "string",
+        "enum" : [ "AWS::IAM::Group" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "GroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-groupname",
+            "type" : [ "string", "object" ]
+          },
+          "ManagedPolicyArns" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-managepolicyarns",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "Path" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-path",
+            "type" : [ "string", "object" ]
+          },
+          "Policies" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-policies",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_IAM_Group_Policy"
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          }
+        }
+      }
+    },
+    "required" : [ "Type" ]
+  },
+  "AWS_IAM_InstanceProfile" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::IAM::InstanceProfile",
+        "type" : "string",
+        "enum" : [ "AWS::IAM::InstanceProfile" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "InstanceProfileName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-instanceprofilename",
+            "type" : [ "string", "object" ]
+          },
+          "Path" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-path",
+            "type" : [ "string", "object" ]
+          },
+          "Roles" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-roles",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "Roles" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_IAM_ManagedPolicy" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::IAM::ManagedPolicy",
+        "type" : "string",
+        "enum" : [ "AWS::IAM::ManagedPolicy" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-description",
+            "type" : [ "string", "object" ]
+          },
+          "Groups" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-groups",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "ManagedPolicyName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-managedpolicyname",
+            "type" : [ "string", "object" ]
+          },
+          "Path" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-ec2-dhcpoptions-path",
+            "type" : [ "string", "object" ]
+          },
+          "PolicyDocument" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-policydocument",
+            "type" : "object"
+          },
+          "Roles" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-roles",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "Users" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-users",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "PolicyDocument" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_IAM_Policy" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::IAM::Policy",
+        "type" : "string",
+        "enum" : [ "AWS::IAM::Policy" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Groups" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-groups",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "PolicyDocument" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-policydocument",
+            "type" : "object"
+          },
+          "PolicyName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-policyname",
+            "type" : [ "string", "object" ]
+          },
+          "Roles" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-roles",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "Users" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-users",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "PolicyDocument", "PolicyName" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_IAM_Role" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::IAM::Role",
+        "type" : "string",
+        "enum" : [ "AWS::IAM::Role" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "AssumeRolePolicyDocument" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-assumerolepolicydocument",
+            "type" : "object"
+          },
+          "ManagedPolicyArns" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-managepolicyarns",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "MaxSessionDuration" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-maxsessionduration",
+            "type" : [ "integer", "object" ]
+          },
+          "Path" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-path",
+            "type" : [ "string", "object" ]
+          },
+          "PermissionsBoundary" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-permissionsboundary",
+            "type" : [ "string", "object" ]
+          },
+          "Policies" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-policies",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_IAM_Role_Policy"
+            },
+            "minItems" : 0
+          },
+          "RoleName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-rolename",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "AssumeRolePolicyDocument" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_IAM_ServiceLinkedRole" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::IAM::ServiceLinkedRole",
+        "type" : "string",
+        "enum" : [ "AWS::IAM::ServiceLinkedRole" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "CustomSuffix" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-customsuffix",
+            "type" : [ "string", "object" ]
+          },
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-description",
+            "type" : [ "string", "object" ]
+          },
+          "AWSServiceName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-awsservicename",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "AWSServiceName" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_IAM_User" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::IAM::User",
+        "type" : "string",
+        "enum" : [ "AWS::IAM::User" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Groups" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-groups",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "LoginProfile" : {
+            "$ref" : "#/definitions/AWS_IAM_User_LoginProfile"
+          },
+          "ManagedPolicyArns" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-managepolicyarns",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "uniqueItems" : true,
+            "minItems" : 0
+          },
+          "Path" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-path",
+            "type" : [ "string", "object" ]
+          },
+          "PermissionsBoundary" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-permissionsboundary",
+            "type" : [ "string", "object" ]
+          },
+          "Policies" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-policies",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_IAM_User_Policy"
+            },
+            "minItems" : 0
+          },
+          "UserName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-username",
+            "type" : [ "string", "object" ]
+          }
+        }
+      }
+    },
+    "required" : [ "Type" ]
+  },
+  "AWS_IAM_UserToGroupAddition" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::IAM::UserToGroupAddition",
+        "type" : "string",
+        "enum" : [ "AWS::IAM::UserToGroupAddition" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "GroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html#cfn-iam-addusertogroup-groupname",
+            "type" : [ "string", "object" ]
+          },
+          "Users" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html#cfn-iam-addusertogroup-users",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "GroupName", "Users" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_Lambda_Alias" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::Lambda::Alias",
+        "type" : "string",
+        "enum" : [ "AWS::Lambda::Alias" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-description",
+            "type" : [ "string", "object" ]
+          },
+          "FunctionName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-functionname",
+            "type" : [ "string", "object" ]
+          },
+          "FunctionVersion" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-functionversion",
+            "type" : [ "string", "object" ]
+          },
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-name",
+            "type" : [ "string", "object" ]
+          },
+          "RoutingConfig" : {
+            "$ref" : "#/definitions/AWS_Lambda_Alias_AliasRoutingConfiguration"
+          }
+        },
+        "required" : [ "FunctionName", "FunctionVersion", "Name" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_Lambda_EventSourceMapping" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::Lambda::EventSourceMapping",
+        "type" : "string",
+        "enum" : [ "AWS::Lambda::EventSourceMapping" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "BatchSize" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-batchsize",
+            "type" : [ "integer", "object" ]
+          },
+          "Enabled" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-enabled",
+            "type" : [ "boolean", "object" ]
+          },
+          "EventSourceArn" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-eventsourcearn",
+            "type" : [ "string", "object" ]
+          },
+          "FunctionName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-functionname",
+            "type" : [ "string", "object" ]
+          },
+          "StartingPosition" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-startingposition",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "EventSourceArn", "FunctionName" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_Lambda_Function" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::Lambda::Function",
+        "type" : "string",
+        "enum" : [ "AWS::Lambda::Function" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Code" : {
+            "$ref" : "#/definitions/AWS_Lambda_Function_Code"
+          },
+          "DeadLetterConfig" : {
+            "$ref" : "#/definitions/AWS_Lambda_Function_DeadLetterConfig"
+          },
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-description",
+            "type" : [ "string", "object" ]
+          },
+          "Environment" : {
+            "$ref" : "#/definitions/AWS_Lambda_Function_Environment"
+          },
+          "FunctionName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-functionname",
+            "type" : [ "string", "object" ]
+          },
+          "Handler" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-handler",
+            "type" : [ "string", "object" ]
+          },
+          "KmsKeyArn" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-kmskeyarn",
+            "type" : [ "string", "object" ]
+          },
+          "MemorySize" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-memorysize",
+            "type" : [ "integer", "object" ]
+          },
+          "ReservedConcurrentExecutions" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-reservedconcurrentexecutions",
+            "type" : [ "integer", "object" ]
+          },
+          "Role" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-role",
+            "type" : [ "string", "object" ]
+          },
+          "Runtime" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtime",
+            "type" : [ "string", "object" ]
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          },
+          "Timeout" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-timeout",
+            "type" : [ "integer", "object" ]
+          },
+          "TracingConfig" : {
+            "$ref" : "#/definitions/AWS_Lambda_Function_TracingConfig"
+          },
+          "VpcConfig" : {
+            "$ref" : "#/definitions/AWS_Lambda_Function_VpcConfig"
+          }
+        },
+        "required" : [ "Handler", "Role", "Runtime" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_Lambda_Permission" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::Lambda::Permission",
+        "type" : "string",
+        "enum" : [ "AWS::Lambda::Permission" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Action" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-action",
+            "type" : [ "string", "object" ]
+          },
+          "EventSourceToken" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-eventsourcetoken",
+            "type" : [ "string", "object" ]
+          },
+          "FunctionName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-functionname",
+            "type" : [ "string", "object" ]
+          },
+          "Principal" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-principal",
+            "type" : [ "string", "object" ]
+          },
+          "SourceAccount" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourceaccount",
+            "type" : [ "string", "object" ]
+          },
+          "SourceArn" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourcearn",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "Action", "FunctionName", "Principal" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_Lambda_Version" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::Lambda::Version",
+        "type" : "string",
+        "enum" : [ "AWS::Lambda::Version" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "CodeSha256" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-codesha256",
+            "type" : [ "string", "object" ]
+          },
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-description",
+            "type" : [ "string", "object" ]
+          },
+          "FunctionName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-functionname",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "FunctionName" ]
+      }
+    },
+    "required" : [ "Type", "Properties" ]
+  },
+  "AWS_ApiGateway_ApiKey_StageKey" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-apikey-stagekey.html",
+    "properties" : {
+      "RestApiId" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-apikey-stagekey.html#cfn-apigateway-apikey-stagekey-restapiid",
+        "type" : [ "string", "object" ]
+      },
+      "StageName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-apikey-stagekey.html#cfn-apigateway-apikey-stagekey-stagename",
+        "type" : [ "string", "object" ]
+      }
+    }
+  },
+  "AWS_ApiGateway_Deployment_AccessLogSetting" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-accesslogsetting.html",
+    "properties" : {
+      "DestinationArn" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-accesslogsetting.html#cfn-apigateway-deployment-accesslogsetting-destinationarn",
+        "type" : [ "string", "object" ]
+      },
+      "Format" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-accesslogsetting.html#cfn-apigateway-deployment-accesslogsetting-format",
+        "type" : [ "string", "object" ]
+      }
+    }
+  },
+  "AWS_ApiGateway_Deployment_CanarySetting" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-canarysetting.html",
+    "properties" : {
+      "PercentTraffic" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-canarysetting.html#cfn-apigateway-deployment-canarysetting-percenttraffic",
+        "type" : [ "number", "object" ]
+      },
+      "StageVariableOverrides" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-canarysetting.html#cfn-apigateway-deployment-canarysetting-stagevariableoverrides",
+        "type" : "object",
+        "patternProperties" : {
+          "[a-zA-Z0-9]+" : {
+            "type" : [ "string", "object" ]
+          }
+        }
+      },
+      "UseStageCache" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-canarysetting.html#cfn-apigateway-deployment-canarysetting-usestagecache",
+        "type" : [ "boolean", "object" ]
+      }
+    }
+  },
+  "AWS_ApiGateway_Deployment_DeploymentCanarySettings" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-deploymentcanarysettings.html",
+    "properties" : {
+      "PercentTraffic" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-deploymentcanarysettings.html#cfn-apigateway-deployment-deploymentcanarysettings-percenttraffic",
+        "type" : [ "number", "object" ]
+      },
+      "StageVariableOverrides" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-deploymentcanarysettings.html#cfn-apigateway-deployment-deploymentcanarysettings-stagevariableoverrides",
+        "type" : "object",
+        "patternProperties" : {
+          "[a-zA-Z0-9]+" : {
+            "type" : [ "string", "object" ]
+          }
+        }
+      },
+      "UseStageCache" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-deploymentcanarysettings.html#cfn-apigateway-deployment-deploymentcanarysettings-usestagecache",
+        "type" : [ "boolean", "object" ]
+      }
+    }
+  },
+  "AWS_ApiGateway_Deployment_MethodSetting" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html",
+    "properties" : {
+      "CacheDataEncrypted" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-cachedataencrypted",
+        "type" : [ "boolean", "object" ]
+      },
+      "CacheTtlInSeconds" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-cachettlinseconds",
+        "type" : [ "integer", "object" ]
+      },
+      "CachingEnabled" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-cachingenabled",
+        "type" : [ "boolean", "object" ]
+      },
+      "DataTraceEnabled" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-datatraceenabled",
+        "type" : [ "boolean", "object" ]
+      },
+      "HttpMethod" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-httpmethod",
+        "type" : [ "string", "object" ]
+      },
+      "LoggingLevel" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-logginglevel",
+        "type" : [ "string", "object" ]
+      },
+      "MetricsEnabled" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-metricsenabled",
+        "type" : [ "boolean", "object" ]
+      },
+      "ResourcePath" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-resourcepath",
+        "type" : [ "string", "object" ]
+      },
+      "ThrottlingBurstLimit" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-throttlingburstlimit",
+        "type" : [ "integer", "object" ]
+      },
+      "ThrottlingRateLimit" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-throttlingratelimit",
+        "type" : [ "number", "object" ]
+      }
+    }
+  },
+  "AWS_ApiGateway_Deployment_StageDescription" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html",
+    "properties" : {
+      "AccessLogSetting" : {
+        "$ref" : "#/definitions/AWS_ApiGateway_Deployment_AccessLogSetting"
+      },
+      "CacheClusterEnabled" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cacheclusterenabled",
+        "type" : [ "boolean", "object" ]
+      },
+      "CacheClusterSize" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cacheclustersize",
+        "type" : [ "string", "object" ]
+      },
+      "CacheDataEncrypted" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachedataencrypted",
+        "type" : [ "boolean", "object" ]
+      },
+      "CacheTtlInSeconds" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachettlinseconds",
+        "type" : [ "integer", "object" ]
+      },
+      "CachingEnabled" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachingenabled",
+        "type" : [ "boolean", "object" ]
+      },
+      "CanarySetting" : {
+        "$ref" : "#/definitions/AWS_ApiGateway_Deployment_CanarySetting"
+      },
+      "ClientCertificateId" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-clientcertificateid",
+        "type" : [ "string", "object" ]
+      },
+      "DataTraceEnabled" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-datatraceenabled",
+        "type" : [ "boolean", "object" ]
+      },
+      "Description" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-description",
+        "type" : [ "string", "object" ]
+      },
+      "DocumentationVersion" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-documentationversion",
+        "type" : [ "string", "object" ]
+      },
+      "LoggingLevel" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-logginglevel",
+        "type" : [ "string", "object" ]
+      },
+      "MethodSettings" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-methodsettings",
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/definitions/AWS_ApiGateway_Deployment_MethodSetting"
+        },
+        "uniqueItems" : true,
+        "minItems" : 0
+      },
+      "MetricsEnabled" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-metricsenabled",
+        "type" : [ "boolean", "object" ]
+      },
+      "ThrottlingBurstLimit" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-throttlingburstlimit",
+        "type" : [ "integer", "object" ]
+      },
+      "ThrottlingRateLimit" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-throttlingratelimit",
+        "type" : [ "number", "object" ]
+      },
+      "TracingEnabled" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-tracingenabled",
+        "type" : [ "boolean", "object" ]
+      },
+      "Variables" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-variables",
+        "type" : "object",
+        "patternProperties" : {
+          "[a-zA-Z0-9]+" : {
+            "type" : [ "string", "object" ]
+          }
+        }
+      }
+    }
+  },
+  "AWS_ApiGateway_DocumentationPart_Location" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html",
+    "properties" : {
+      "Method" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-method",
+        "type" : [ "string", "object" ]
+      },
+      "Name" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-name",
+        "type" : [ "string", "object" ]
+      },
+      "Path" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-path",
+        "type" : [ "string", "object" ]
+      },
+      "StatusCode" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-statuscode",
+        "type" : [ "string", "object" ]
+      },
+      "Type" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-type",
+        "type" : [ "string", "object" ]
+      }
+    }
+  },
+  "AWS_ApiGateway_DomainName_EndpointConfiguration" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-domainname-endpointconfiguration.html",
+    "properties" : {
+      "Types" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-domainname-endpointconfiguration.html#cfn-apigateway-domainname-endpointconfiguration-types",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "uniqueItems" : true,
+        "minItems" : 0
+      }
+    }
+  },
+  "AWS_ApiGateway_Method_Integration" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html",
+    "properties" : {
+      "CacheKeyParameters" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-cachekeyparameters",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "uniqueItems" : true,
+        "minItems" : 0
+      },
+      "CacheNamespace" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-cachenamespace",
+        "type" : [ "string", "object" ]
+      },
+      "ConnectionId" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-connectionid",
+        "type" : [ "string", "object" ]
+      },
+      "ConnectionType" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-connectiontype",
+        "type" : [ "string", "object" ]
+      },
+      "ContentHandling" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-contenthandling",
+        "type" : [ "string", "object" ]
+      },
+      "Credentials" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-credentials",
+        "type" : [ "string", "object" ]
+      },
+      "IntegrationHttpMethod" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-integrationhttpmethod",
+        "type" : [ "string", "object" ]
+      },
+      "IntegrationResponses" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-integrationresponses",
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/definitions/AWS_ApiGateway_Method_IntegrationResponse"
+        },
+        "uniqueItems" : true,
+        "minItems" : 0
+      },
+      "PassthroughBehavior" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-passthroughbehavior",
+        "type" : [ "string", "object" ]
+      },
+      "RequestParameters" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-requestparameters",
+        "type" : "object",
+        "patternProperties" : {
+          "[a-zA-Z0-9]+" : {
+            "type" : [ "string", "object" ]
+          }
+        }
+      },
+      "RequestTemplates" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-requesttemplates",
+        "type" : "object",
+        "patternProperties" : {
+          "[a-zA-Z0-9]+" : {
+            "type" : [ "string", "object" ]
+          }
+        }
+      },
+      "TimeoutInMillis" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-timeoutinmillis",
+        "type" : [ "integer", "object" ]
+      },
+      "Type" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-type",
+        "type" : [ "string", "object" ]
+      },
+      "Uri" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-uri",
+        "type" : [ "string", "object" ]
+      }
+    }
+  },
+  "AWS_ApiGateway_Method_IntegrationResponse" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html",
+    "properties" : {
+      "ContentHandling" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html#cfn-apigateway-method-integrationresponse-contenthandling",
+        "type" : [ "string", "object" ]
+      },
+      "ResponseParameters" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html#cfn-apigateway-method-integration-integrationresponse-responseparameters",
+        "type" : "object",
+        "patternProperties" : {
+          "[a-zA-Z0-9]+" : {
+            "type" : [ "string", "object" ]
+          }
+        }
+      },
+      "ResponseTemplates" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html#cfn-apigateway-method-integration-integrationresponse-responsetemplates",
+        "type" : "object",
+        "patternProperties" : {
+          "[a-zA-Z0-9]+" : {
+            "type" : [ "string", "object" ]
+          }
+        }
+      },
+      "SelectionPattern" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html#cfn-apigateway-method-integration-integrationresponse-selectionpattern",
+        "type" : [ "string", "object" ]
+      },
+      "StatusCode" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html#cfn-apigateway-method-integration-integrationresponse-statuscode",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "StatusCode" ]
+  },
+  "AWS_ApiGateway_Method_MethodResponse" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-methodresponse.html",
+    "properties" : {
+      "ResponseModels" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-methodresponse.html#cfn-apigateway-method-methodresponse-responsemodels",
+        "type" : "object",
+        "patternProperties" : {
+          "[a-zA-Z0-9]+" : {
+            "type" : [ "string", "object" ]
+          }
+        }
+      },
+      "ResponseParameters" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-methodresponse.html#cfn-apigateway-method-methodresponse-responseparameters",
+        "type" : "object",
+        "patternProperties" : {
+          "[a-zA-Z0-9]+" : {
+            "type" : [ "boolean", "object" ]
+          }
+        }
+      },
+      "StatusCode" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-methodresponse.html#cfn-apigateway-method-methodresponse-statuscode",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "StatusCode" ]
+  },
+  "AWS_ApiGateway_RestApi_EndpointConfiguration" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-endpointconfiguration.html",
+    "properties" : {
+      "Types" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-endpointconfiguration.html#cfn-apigateway-restapi-endpointconfiguration-types",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "uniqueItems" : true,
+        "minItems" : 0
+      }
+    }
+  },
+  "AWS_ApiGateway_RestApi_S3Location" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html",
+    "properties" : {
+      "Bucket" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-bucket",
+        "type" : [ "string", "object" ]
+      },
+      "ETag" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-etag",
+        "type" : [ "string", "object" ]
+      },
+      "Key" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-key",
+        "type" : [ "string", "object" ]
+      },
+      "Version" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-version",
+        "type" : [ "string", "object" ]
+      }
+    }
+  },
+  "AWS_ApiGateway_Stage_AccessLogSetting" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-accesslogsetting.html",
+    "properties" : {
+      "DestinationArn" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-accesslogsetting.html#cfn-apigateway-stage-accesslogsetting-destinationarn",
+        "type" : [ "string", "object" ]
+      },
+      "Format" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-accesslogsetting.html#cfn-apigateway-stage-accesslogsetting-format",
+        "type" : [ "string", "object" ]
+      }
+    }
+  },
+  "AWS_ApiGateway_Stage_CanarySetting" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html",
+    "properties" : {
+      "DeploymentId" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-deploymentid",
+        "type" : [ "string", "object" ]
+      },
+      "PercentTraffic" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-percenttraffic",
+        "type" : [ "number", "object" ]
+      },
+      "StageVariableOverrides" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-stagevariableoverrides",
+        "type" : "object",
+        "patternProperties" : {
+          "[a-zA-Z0-9]+" : {
+            "type" : [ "string", "object" ]
+          }
+        }
+      },
+      "UseStageCache" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-usestagecache",
+        "type" : [ "boolean", "object" ]
+      }
+    }
+  },
+  "AWS_ApiGateway_Stage_MethodSetting" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html",
+    "properties" : {
+      "CacheDataEncrypted" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-cachedataencrypted",
+        "type" : [ "boolean", "object" ]
+      },
+      "CacheTtlInSeconds" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-cachettlinseconds",
+        "type" : [ "integer", "object" ]
+      },
+      "CachingEnabled" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-cachingenabled",
+        "type" : [ "boolean", "object" ]
+      },
+      "DataTraceEnabled" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-datatraceenabled",
+        "type" : [ "boolean", "object" ]
+      },
+      "HttpMethod" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-httpmethod",
+        "type" : [ "string", "object" ]
+      },
+      "LoggingLevel" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-logginglevel",
+        "type" : [ "string", "object" ]
+      },
+      "MetricsEnabled" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-metricsenabled",
+        "type" : [ "boolean", "object" ]
+      },
+      "ResourcePath" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-resourcepath",
+        "type" : [ "string", "object" ]
+      },
+      "ThrottlingBurstLimit" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-throttlingburstlimit",
+        "type" : [ "integer", "object" ]
+      },
+      "ThrottlingRateLimit" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-throttlingratelimit",
+        "type" : [ "number", "object" ]
+      }
+    }
+  },
+  "AWS_ApiGateway_UsagePlan_ApiStage" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html",
+    "properties" : {
+      "ApiId" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-apiid",
+        "type" : [ "string", "object" ]
+      },
+      "Stage" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-stage",
+        "type" : [ "string", "object" ]
+      },
+      "Throttle" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-throttle",
+        "type" : "object",
+        "patternProperties" : {
+          "[a-zA-Z0-9]+" : {
+            "$ref" : "#/definitions/AWS_ApiGateway_UsagePlan_ThrottleSettings"
+          }
+        }
+      }
+    }
+  },
+  "AWS_ApiGateway_UsagePlan_QuotaSettings" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html",
+    "properties" : {
+      "Limit" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-limit",
+        "type" : [ "integer", "object" ]
+      },
+      "Offset" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-offset",
+        "type" : [ "integer", "object" ]
+      },
+      "Period" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-period",
+        "type" : [ "string", "object" ]
+      }
+    }
+  },
+  "AWS_ApiGateway_UsagePlan_ThrottleSettings" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html",
+    "properties" : {
+      "BurstLimit" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html#cfn-apigateway-usageplan-throttlesettings-burstlimit",
+        "type" : [ "integer", "object" ]
+      },
+      "RateLimit" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html#cfn-apigateway-usageplan-throttlesettings-ratelimit",
+        "type" : [ "number", "object" ]
+      }
+    }
+  },
+  "AWS_IAM_Group_Policy" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html",
+    "properties" : {
+      "PolicyDocument" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policydocument",
+        "type" : "object"
+      },
+      "PolicyName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policyname",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "PolicyDocument", "PolicyName" ]
+  },
+  "AWS_IAM_Role_Policy" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html",
+    "properties" : {
+      "PolicyDocument" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policydocument",
+        "type" : "object"
+      },
+      "PolicyName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policyname",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "PolicyDocument", "PolicyName" ]
+  },
+  "AWS_IAM_User_LoginProfile" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-loginprofile.html",
+    "properties" : {
+      "Password" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-loginprofile.html#cfn-iam-user-loginprofile-password",
+        "type" : [ "string", "object" ]
+      },
+      "PasswordResetRequired" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-loginprofile.html#cfn-iam-user-loginprofile-passwordresetrequired",
+        "type" : [ "boolean", "object" ]
+      }
+    },
+    "required" : [ "Password" ]
+  },
+  "AWS_IAM_User_Policy" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html",
+    "properties" : {
+      "PolicyDocument" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policydocument",
+        "type" : "object"
+      },
+      "PolicyName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policyname",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "PolicyDocument", "PolicyName" ]
+  },
+  "AWS_Lambda_Alias_AliasRoutingConfiguration" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-aliasroutingconfiguration.html",
+    "properties" : {
+      "AdditionalVersionWeights" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-aliasroutingconfiguration.html#cfn-lambda-alias-aliasroutingconfiguration-additionalversionweights",
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/definitions/AWS_Lambda_Alias_VersionWeight"
+        },
+        "uniqueItems" : true,
+        "minItems" : 0
+      }
+    },
+    "required" : [ "AdditionalVersionWeights" ]
+  },
+  "AWS_Lambda_Alias_VersionWeight" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html",
+    "properties" : {
+      "FunctionVersion" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html#cfn-lambda-alias-versionweight-functionversion",
+        "type" : [ "string", "object" ]
+      },
+      "FunctionWeight" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html#cfn-lambda-alias-versionweight-functionweight",
+        "type" : [ "number", "object" ]
+      }
+    },
+    "required" : [ "FunctionVersion", "FunctionWeight" ]
+  },
+  "AWS_Lambda_Function_Code" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html",
+    "properties" : {
+      "S3Bucket" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-s3bucket",
+        "type" : [ "string", "object" ]
+      },
+      "S3Key" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-s3key",
+        "type" : [ "string", "object" ]
+      },
+      "S3ObjectVersion" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-s3objectversion",
+        "type" : [ "string", "object" ]
+      },
+      "ZipFile" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-zipfile",
+        "type" : [ "string", "object" ]
+      }
+    }
+  },
+  "AWS_Lambda_Function_DeadLetterConfig" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-deadletterconfig.html",
+    "properties" : {
+      "TargetArn" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-deadletterconfig.html#cfn-lambda-function-deadletterconfig-targetarn",
+        "type" : [ "string", "object" ]
+      }
+    }
+  },
+  "AWS_Lambda_Function_Environment" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-environment.html",
+    "properties" : {
+      "Variables" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-environment.html#cfn-lambda-function-environment-variables",
+        "type" : "object",
+        "patternProperties" : {
+          "[a-zA-Z0-9]+" : {
+            "type" : [ "string", "object" ]
+          }
+        }
+      }
+    }
+  },
+  "AWS_Lambda_Function_TracingConfig" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-tracingconfig.html",
+    "properties" : {
+      "Mode" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-tracingconfig.html#cfn-lambda-function-tracingconfig-mode",
+        "type" : [ "string", "object" ]
+      }
+    }
+  },
+  "AWS_Lambda_Function_VpcConfig" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html",
+    "properties" : {
+      "SecurityGroupIds" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html#cfn-lambda-function-vpcconfig-securitygroupids",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "uniqueItems" : true,
+        "minItems" : 0
+      },
+      "SubnetIds" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html#cfn-lambda-function-vpcconfig-subnetids",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "uniqueItems" : true,
+        "minItems" : 0
+      }
+    },
+    "required" : [ "SecurityGroupIds", "SubnetIds" ]
+  },
+  "Tag" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-tag.html",
+    "properties" : {
+      "Value" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-tag.html#cfn-dlm-lifecyclepolicy-tag-value",
+        "type" : [ "string", "object" ]
+      },
+      "Key" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-tag.html#cfn-dlm-lifecyclepolicy-tag-key",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Value", "Key" ]
+  },
+  "resources" : {
+    "type" : "object",
+    "additionalProperties" : {
+      "anyOf" : [ {
+        "$ref" : "#/definitions/AWS_ApiGateway_Account"
+      }, {
+        "$ref" : "#/definitions/AWS_ApiGateway_ApiKey"
+      }, {
+        "$ref" : "#/definitions/AWS_ApiGateway_Authorizer"
+      }, {
+        "$ref" : "#/definitions/AWS_ApiGateway_BasePathMapping"
+      }, {
+        "$ref" : "#/definitions/AWS_ApiGateway_ClientCertificate"
+      }, {
+        "$ref" : "#/definitions/AWS_ApiGateway_Deployment"
+      }, {
+        "$ref" : "#/definitions/AWS_ApiGateway_DocumentationPart"
+      }, {
+        "$ref" : "#/definitions/AWS_ApiGateway_DocumentationVersion"
+      }, {
+        "$ref" : "#/definitions/AWS_ApiGateway_DomainName"
+      }, {
+        "$ref" : "#/definitions/AWS_ApiGateway_GatewayResponse"
+      }, {
+        "$ref" : "#/definitions/AWS_ApiGateway_Method"
+      }, {
+        "$ref" : "#/definitions/AWS_ApiGateway_Model"
+      }, {
+        "$ref" : "#/definitions/AWS_ApiGateway_RequestValidator"
+      }, {
+        "$ref" : "#/definitions/AWS_ApiGateway_Resource"
+      }, {
+        "$ref" : "#/definitions/AWS_ApiGateway_RestApi"
+      }, {
+        "$ref" : "#/definitions/AWS_ApiGateway_Stage"
+      }, {
+        "$ref" : "#/definitions/AWS_ApiGateway_UsagePlan"
+      }, {
+        "$ref" : "#/definitions/AWS_ApiGateway_UsagePlanKey"
+      }, {
+        "$ref" : "#/definitions/AWS_ApiGateway_VpcLink"
+      }, {
+        "$ref" : "#/definitions/AWS_IAM_AccessKey"
+      }, {
+        "$ref" : "#/definitions/AWS_IAM_Group"
+      }, {
+        "$ref" : "#/definitions/AWS_IAM_InstanceProfile"
+      }, {
+        "$ref" : "#/definitions/AWS_IAM_ManagedPolicy"
+      }, {
+        "$ref" : "#/definitions/AWS_IAM_Policy"
+      }, {
+        "$ref" : "#/definitions/AWS_IAM_Role"
+      }, {
+        "$ref" : "#/definitions/AWS_IAM_ServiceLinkedRole"
+      }, {
+        "$ref" : "#/definitions/AWS_IAM_User"
+      }, {
+        "$ref" : "#/definitions/AWS_IAM_UserToGroupAddition"
+      }, {
+        "$ref" : "#/definitions/AWS_Lambda_Alias"
+      }, {
+        "$ref" : "#/definitions/AWS_Lambda_EventSourceMapping"
+      }, {
+        "$ref" : "#/definitions/AWS_Lambda_Function"
+      }, {
+        "$ref" : "#/definitions/AWS_Lambda_Permission"
+      }, {
+        "$ref" : "#/definitions/AWS_Lambda_Version"
+      } ]
+    }
+  }
+
+  },
+  "additionalProperties": false,
+  "properties" : {
+    "AWSTemplateFormatVersion" : {
+      "type" : "string",
+      "enum" : [ "2010-09-09" ]
+    },
+    "Description" : {
+      "type" : "string"
+    },
+    "Metadata" : {
+      "type" : "object"
+    },
+    "Parameters" : {
+      "type" : "object"
+    },
+    "Mappings" : {
+      "type" : "object"
+    },
+    "Conditions" : {
+      "type" : "object"
+    },
+    "Transform" : {
+      "type" : "object"
+    },
+    "Outputs" : {
+      "type" : "object"
+    },
+    "Resources" : {
+        "$ref": "#/definitions/resources"
+    }
+  },
+  "description" : "CFN JSON specification generated from version 2.12.0",
+  "required" : [ "AWSTemplateFormatVersion", "Resources" ]
+}
