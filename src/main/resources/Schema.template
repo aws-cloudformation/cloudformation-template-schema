@@ -1,0 +1,88 @@
+{
+  "$schema" : "{{{draft}}}",
+  "type" : "object",
+  "definitions" : {
+    "FnRef": {
+      "type": "object",
+      "properties": {
+        "Ref": {
+          "type": "string"
+        }
+      },
+      "required": ["Ref"],
+      "additionalProperties": false
+    },
+    "FnGetAtt": {
+      "type": "object",
+      "properties": {
+        "Fn::GetAtt": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "maxItems": 3,
+          "minItems": 2
+        }
+      },
+      "required": ["Fn::GetAtt"],
+      "additionalProperties": false
+    },
+    {{{resources}}}
+  },
+  "additionalProperties": false,
+  "properties" : {
+    "AWSTemplateFormatVersion" : {
+      "type" : "string",
+      "enum" : [ "2010-09-09" ]
+    },
+    "Description" : {
+      "type" : "string"
+    },
+    "Metadata" : {
+      "type" : "object"
+    },
+    "Parameters" : {
+      "type" : "object",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "$ref": "../cfn-parameter.json#/definitions/StringParam"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/StringLikeParam"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/NumberParam"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/CommonDelimitedList"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/StringLikeList"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/NumberList"
+          }
+        ]
+      }
+    },
+    "Mappings" : {
+      "type" : "object"
+    },
+    "Conditions" : {
+      "type" : "object"
+    },
+    "Transform" : {
+      "type" : "object"
+    },
+    "Outputs" : {
+      "type" : "object"
+    },
+    "Resources" : {
+        "$ref": "#/definitions/resources"
+    }
+  },
+  "description" : "{{description}}",
+  "required" : [ "AWSTemplateFormatVersion", "Resources" ]
+}
