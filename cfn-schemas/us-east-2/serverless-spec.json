@@ -45,10 +45,12 @@
             "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-account.html#cfn-apigateway-account-cloudwatchrolearn",
             "type" : [ "string", "object" ]
           }
-        }
+        },
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type" ]
+    "required" : [ "Type" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_ApiKey" : {
     "type" : "object",
@@ -91,10 +93,12 @@
             "uniqueItems" : true,
             "minItems" : 0
           }
-        }
+        },
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type" ]
+    "required" : [ "Type" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_Authorizer" : {
     "type" : "object",
@@ -154,10 +158,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "RestApiId" ]
+        "required" : [ "RestApiId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_BasePathMapping" : {
     "type" : "object",
@@ -188,10 +194,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "DomainName" ]
+        "required" : [ "DomainName" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_ClientCertificate" : {
     "type" : "object",
@@ -209,10 +217,12 @@
             "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-clientcertificate.html#cfn-apigateway-clientcertificate-description",
             "type" : [ "string", "object" ]
           }
-        }
+        },
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type" ]
+    "required" : [ "Type" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_Deployment" : {
     "type" : "object",
@@ -245,10 +255,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "RestApiId" ]
+        "required" : [ "RestApiId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_DocumentationPart" : {
     "type" : "object",
@@ -274,10 +286,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "Properties", "RestApiId" ]
+        "required" : [ "Properties", "RestApiId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_DocumentationVersion" : {
     "type" : "object",
@@ -304,10 +318,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "DocumentationVersion", "RestApiId" ]
+        "required" : [ "DocumentationVersion", "RestApiId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_DomainName" : {
     "type" : "object",
@@ -337,10 +353,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "DomainName" ]
+        "required" : [ "DomainName" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_GatewayResponse" : {
     "type" : "object",
@@ -385,10 +403,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "ResponseType", "RestApiId" ]
+        "required" : [ "ResponseType", "RestApiId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_Method" : {
     "type" : "object",
@@ -474,10 +494,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "HttpMethod", "ResourceId", "RestApiId" ]
+        "required" : [ "HttpMethod", "ResourceId", "RestApiId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_Model" : {
     "type" : "object",
@@ -512,10 +534,12 @@
             "type" : "object"
           }
         },
-        "required" : [ "RestApiId" ]
+        "required" : [ "RestApiId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_RequestValidator" : {
     "type" : "object",
@@ -546,10 +570,12 @@
             "type" : [ "boolean", "object" ]
           }
         },
-        "required" : [ "RestApiId" ]
+        "required" : [ "RestApiId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_Resource" : {
     "type" : "object",
@@ -576,10 +602,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "ParentId", "PathPart", "RestApiId" ]
+        "required" : [ "ParentId", "PathPart", "RestApiId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_RestApi" : {
     "type" : "object",
@@ -649,10 +677,12 @@
             "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-policy",
             "type" : "object"
           }
-        }
+        },
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type" ]
+    "required" : [ "Type" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_Stage" : {
     "type" : "object",
@@ -727,10 +757,12 @@
             }
           }
         },
-        "required" : [ "RestApiId" ]
+        "required" : [ "RestApiId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_UsagePlan" : {
     "type" : "object",
@@ -767,10 +799,12 @@
             "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-usageplanname",
             "type" : [ "string", "object" ]
           }
-        }
+        },
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type" ]
+    "required" : [ "Type" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_UsagePlanKey" : {
     "type" : "object",
@@ -797,10 +831,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "KeyId", "KeyType", "UsagePlanId" ]
+        "required" : [ "KeyId", "KeyType", "UsagePlanId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_VpcLink" : {
     "type" : "object",
@@ -831,10 +867,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "TargetArns", "Name" ]
+        "required" : [ "TargetArns", "Name" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_AccessKey" : {
     "type" : "object",
@@ -861,10 +899,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "UserName" ]
+        "required" : [ "UserName" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_Group" : {
     "type" : "object",
@@ -904,10 +944,12 @@
             "uniqueItems" : true,
             "minItems" : 0
           }
-        }
+        },
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type" ]
+    "required" : [ "Type" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_InstanceProfile" : {
     "type" : "object",
@@ -938,10 +980,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "Roles" ]
+        "required" : [ "Roles" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_ManagedPolicy" : {
     "type" : "object",
@@ -997,10 +1041,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "PolicyDocument" ]
+        "required" : [ "PolicyDocument" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_Policy" : {
     "type" : "object",
@@ -1047,10 +1093,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "PolicyDocument", "PolicyName" ]
+        "required" : [ "PolicyDocument", "PolicyName" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_Role" : {
     "type" : "object",
@@ -1102,10 +1150,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "AssumeRolePolicyDocument" ]
+        "required" : [ "AssumeRolePolicyDocument" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_ServiceLinkedRole" : {
     "type" : "object",
@@ -1132,10 +1182,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "AWSServiceName" ]
+        "required" : [ "AWSServiceName" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_User" : {
     "type" : "object",
@@ -1189,10 +1241,12 @@
             "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-username",
             "type" : [ "string", "object" ]
           }
-        }
+        },
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type" ]
+    "required" : [ "Type" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_UserToGroupAddition" : {
     "type" : "object",
@@ -1219,10 +1273,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "GroupName", "Users" ]
+        "required" : [ "GroupName", "Users" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_Lambda_Alias" : {
     "type" : "object",
@@ -1256,10 +1312,12 @@
             "$ref" : "#/definitions/AWS_Lambda_Alias_AliasRoutingConfiguration"
           }
         },
-        "required" : [ "FunctionName", "FunctionVersion", "Name" ]
+        "required" : [ "FunctionName", "FunctionVersion", "Name" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_Lambda_EventSourceMapping" : {
     "type" : "object",
@@ -1294,10 +1352,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "EventSourceArn", "FunctionName" ]
+        "required" : [ "EventSourceArn", "FunctionName" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_Lambda_Function" : {
     "type" : "object",
@@ -1371,10 +1431,12 @@
             "$ref" : "#/definitions/AWS_Lambda_Function_VpcConfig"
           }
         },
-        "required" : [ "Handler", "Role", "Runtime" ]
+        "required" : [ "Handler", "Role", "Runtime" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_Lambda_Permission" : {
     "type" : "object",
@@ -1413,10 +1475,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "Action", "FunctionName", "Principal" ]
+        "required" : [ "Action", "FunctionName", "Principal" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_Lambda_Version" : {
     "type" : "object",
@@ -1443,10 +1507,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "FunctionName" ]
+        "required" : [ "FunctionName" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_ApiKey_StageKey" : {
     "type" : "object",
@@ -1460,7 +1526,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-apikey-stagekey.html#cfn-apigateway-apikey-stagekey-stagename",
         "type" : [ "string", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_Deployment_AccessLogSetting" : {
     "type" : "object",
@@ -1474,7 +1541,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-accesslogsetting.html#cfn-apigateway-deployment-accesslogsetting-format",
         "type" : [ "string", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_Deployment_CanarySetting" : {
     "type" : "object",
@@ -1497,7 +1565,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-canarysetting.html#cfn-apigateway-deployment-canarysetting-usestagecache",
         "type" : [ "boolean", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_Deployment_DeploymentCanarySettings" : {
     "type" : "object",
@@ -1520,7 +1589,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-deploymentcanarysettings.html#cfn-apigateway-deployment-deploymentcanarysettings-usestagecache",
         "type" : [ "boolean", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_Deployment_MethodSetting" : {
     "type" : "object",
@@ -1566,7 +1636,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-throttlingratelimit",
         "type" : [ "number", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_Deployment_StageDescription" : {
     "type" : "object",
@@ -1652,7 +1723,8 @@
           }
         }
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_DocumentationPart_Location" : {
     "type" : "object",
@@ -1678,7 +1750,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-type",
         "type" : [ "string", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_DomainName_EndpointConfiguration" : {
     "type" : "object",
@@ -1693,7 +1766,8 @@
         "uniqueItems" : true,
         "minItems" : 0
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_Method_Integration" : {
     "type" : "object",
@@ -1775,7 +1849,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-uri",
         "type" : [ "string", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_Method_IntegrationResponse" : {
     "type" : "object",
@@ -1812,7 +1887,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "StatusCode" ]
+    "required" : [ "StatusCode" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_Method_MethodResponse" : {
     "type" : "object",
@@ -1841,7 +1917,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "StatusCode" ]
+    "required" : [ "StatusCode" ],
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_RestApi_EndpointConfiguration" : {
     "type" : "object",
@@ -1856,7 +1933,8 @@
         "uniqueItems" : true,
         "minItems" : 0
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_RestApi_S3Location" : {
     "type" : "object",
@@ -1878,7 +1956,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-version",
         "type" : [ "string", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_Stage_AccessLogSetting" : {
     "type" : "object",
@@ -1892,7 +1971,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-accesslogsetting.html#cfn-apigateway-stage-accesslogsetting-format",
         "type" : [ "string", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_Stage_CanarySetting" : {
     "type" : "object",
@@ -1919,7 +1999,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-usestagecache",
         "type" : [ "boolean", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_Stage_MethodSetting" : {
     "type" : "object",
@@ -1965,7 +2046,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-throttlingratelimit",
         "type" : [ "number", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_UsagePlan_ApiStage" : {
     "type" : "object",
@@ -1988,7 +2070,8 @@
           }
         }
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_UsagePlan_QuotaSettings" : {
     "type" : "object",
@@ -2006,7 +2089,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-period",
         "type" : [ "string", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_ApiGateway_UsagePlan_ThrottleSettings" : {
     "type" : "object",
@@ -2020,7 +2104,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html#cfn-apigateway-usageplan-throttlesettings-ratelimit",
         "type" : [ "number", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_IAM_Group_Policy" : {
     "type" : "object",
@@ -2035,7 +2120,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "PolicyDocument", "PolicyName" ]
+    "required" : [ "PolicyDocument", "PolicyName" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_Role_Policy" : {
     "type" : "object",
@@ -2050,7 +2136,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "PolicyDocument", "PolicyName" ]
+    "required" : [ "PolicyDocument", "PolicyName" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_User_LoginProfile" : {
     "type" : "object",
@@ -2065,7 +2152,8 @@
         "type" : [ "boolean", "object" ]
       }
     },
-    "required" : [ "Password" ]
+    "required" : [ "Password" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_User_Policy" : {
     "type" : "object",
@@ -2080,7 +2168,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "PolicyDocument", "PolicyName" ]
+    "required" : [ "PolicyDocument", "PolicyName" ],
+    "additionalProperties" : false
   },
   "AWS_Lambda_Alias_AliasRoutingConfiguration" : {
     "type" : "object",
@@ -2096,7 +2185,8 @@
         "minItems" : 0
       }
     },
-    "required" : [ "AdditionalVersionWeights" ]
+    "required" : [ "AdditionalVersionWeights" ],
+    "additionalProperties" : false
   },
   "AWS_Lambda_Alias_VersionWeight" : {
     "type" : "object",
@@ -2111,7 +2201,8 @@
         "type" : [ "number", "object" ]
       }
     },
-    "required" : [ "FunctionVersion", "FunctionWeight" ]
+    "required" : [ "FunctionVersion", "FunctionWeight" ],
+    "additionalProperties" : false
   },
   "AWS_Lambda_Function_Code" : {
     "type" : "object",
@@ -2133,7 +2224,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-zipfile",
         "type" : [ "string", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_Lambda_Function_DeadLetterConfig" : {
     "type" : "object",
@@ -2143,7 +2235,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-deadletterconfig.html#cfn-lambda-function-deadletterconfig-targetarn",
         "type" : [ "string", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_Lambda_Function_Environment" : {
     "type" : "object",
@@ -2158,7 +2251,8 @@
           }
         }
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_Lambda_Function_TracingConfig" : {
     "type" : "object",
@@ -2168,7 +2262,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-tracingconfig.html#cfn-lambda-function-tracingconfig-mode",
         "type" : [ "string", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_Lambda_Function_VpcConfig" : {
     "type" : "object",
@@ -2193,27 +2288,29 @@
         "minItems" : 0
       }
     },
-    "required" : [ "SecurityGroupIds", "SubnetIds" ]
+    "required" : [ "SecurityGroupIds", "SubnetIds" ],
+    "additionalProperties" : false
   },
   "Tag" : {
     "type" : "object",
-    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-tag.html",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html",
     "properties" : {
       "Value" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-tag.html#cfn-dlm-lifecyclepolicy-tag-value",
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html#cfn-neptune-dbsubnetgroup-tag-value",
         "type" : [ "string", "object" ]
       },
       "Key" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-tag.html#cfn-dlm-lifecyclepolicy-tag-key",
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html#cfn-neptune-dbsubnetgroup-tag-key",
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "Value", "Key" ]
+    "required" : [ "Value", "Key" ],
+    "additionalProperties" : false
   },
   "resources" : {
     "type" : "object",
     "additionalProperties" : {
-      "anyOf" : [ {
+      "oneOf" : [ {
         "$ref" : "#/definitions/AWS_ApiGateway_Account"
       }, {
         "$ref" : "#/definitions/AWS_ApiGateway_ApiKey"
@@ -2297,7 +2394,29 @@
       "type" : "object"
     },
     "Parameters" : {
-      "type" : "object"
+      "type" : "object",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "$ref": "../cfn-parameter.json#/definitions/StringParam"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/StringLikeParam"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/NumberParam"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/CommonDelimitedList"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/StringLikeList"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/NumberList"
+          }
+        ]
+      }
     },
     "Mappings" : {
       "type" : "object"
@@ -2315,6 +2434,6 @@
         "$ref": "#/definitions/resources"
     }
   },
-  "description" : "CFN JSON specification generated from version 2.12.0",
+  "description" : "CFN JSON specification generated from version 2.13.0",
   "required" : [ "AWSTemplateFormatVersion", "Resources" ]
 }

@@ -163,10 +163,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "MaxSize", "MinSize" ]
+        "required" : [ "MaxSize", "MinSize" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScaling_LaunchConfiguration" : {
     "type" : "object",
@@ -268,10 +270,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "ImageId", "InstanceType" ]
+        "required" : [ "ImageId", "InstanceType" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScaling_LifecycleHook" : {
     "type" : "object",
@@ -318,10 +322,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "AutoScalingGroupName", "LifecycleTransition" ]
+        "required" : [ "AutoScalingGroupName", "LifecycleTransition" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScaling_ScalingPolicy" : {
     "type" : "object",
@@ -380,10 +386,12 @@
             "$ref" : "#/definitions/AWS_AutoScaling_ScalingPolicy_TargetTrackingConfiguration"
           }
         },
-        "required" : [ "AutoScalingGroupName" ]
+        "required" : [ "AutoScalingGroupName" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScaling_ScheduledAction" : {
     "type" : "object",
@@ -426,10 +434,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "AutoScalingGroupName" ]
+        "required" : [ "AutoScalingGroupName" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScalingPlans_ScalingPlan" : {
     "type" : "object",
@@ -455,10 +465,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "ScalingInstructions" ]
+        "required" : [ "ScalingInstructions" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_ElasticLoadBalancingV2_Listener" : {
     "type" : "object",
@@ -507,10 +519,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "DefaultActions", "LoadBalancerArn", "Port", "Protocol" ]
+        "required" : [ "DefaultActions", "LoadBalancerArn", "Port", "Protocol" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_ElasticLoadBalancingV2_ListenerCertificate" : {
     "type" : "object",
@@ -538,10 +552,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "Certificates", "ListenerArn" ]
+        "required" : [ "Certificates", "ListenerArn" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_ElasticLoadBalancingV2_ListenerRule" : {
     "type" : "object",
@@ -582,10 +598,12 @@
             "type" : [ "integer", "object" ]
           }
         },
-        "required" : [ "Actions", "Conditions", "ListenerArn", "Priority" ]
+        "required" : [ "Actions", "Conditions", "ListenerArn", "Priority" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_ElasticLoadBalancingV2_LoadBalancer" : {
     "type" : "object",
@@ -659,10 +677,12 @@
             "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-type",
             "type" : [ "string", "object" ]
           }
-        }
+        },
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type" ]
+    "required" : [ "Type" ],
+    "additionalProperties" : false
   },
   "AWS_ElasticLoadBalancingV2_TargetGroup" : {
     "type" : "object",
@@ -754,10 +774,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "Port", "Protocol", "VpcId" ]
+        "required" : [ "Port", "Protocol", "VpcId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_AccessKey" : {
     "type" : "object",
@@ -784,10 +806,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "UserName" ]
+        "required" : [ "UserName" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_Group" : {
     "type" : "object",
@@ -827,10 +851,12 @@
             "uniqueItems" : true,
             "minItems" : 0
           }
-        }
+        },
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type" ]
+    "required" : [ "Type" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_InstanceProfile" : {
     "type" : "object",
@@ -861,10 +887,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "Roles" ]
+        "required" : [ "Roles" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_ManagedPolicy" : {
     "type" : "object",
@@ -920,10 +948,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "PolicyDocument" ]
+        "required" : [ "PolicyDocument" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_Policy" : {
     "type" : "object",
@@ -970,10 +1000,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "PolicyDocument", "PolicyName" ]
+        "required" : [ "PolicyDocument", "PolicyName" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_Role" : {
     "type" : "object",
@@ -1025,10 +1057,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "AssumeRolePolicyDocument" ]
+        "required" : [ "AssumeRolePolicyDocument" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_ServiceLinkedRole" : {
     "type" : "object",
@@ -1055,10 +1089,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "AWSServiceName" ]
+        "required" : [ "AWSServiceName" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_User" : {
     "type" : "object",
@@ -1112,10 +1148,12 @@
             "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-username",
             "type" : [ "string", "object" ]
           }
-        }
+        },
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type" ]
+    "required" : [ "Type" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_UserToGroupAddition" : {
     "type" : "object",
@@ -1142,10 +1180,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "GroupName", "Users" ]
+        "required" : [ "GroupName", "Users" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_RDS_DBCluster" : {
     "type" : "object",
@@ -1274,10 +1314,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "Engine" ]
+        "required" : [ "Engine" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_RDS_DBClusterParameterGroup" : {
     "type" : "object",
@@ -1312,10 +1354,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "Description", "Family", "Parameters" ]
+        "required" : [ "Description", "Family", "Parameters" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_RDS_DBInstance" : {
     "type" : "object",
@@ -1536,10 +1580,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "DBInstanceClass" ]
+        "required" : [ "DBInstanceClass" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_RDS_DBParameterGroup" : {
     "type" : "object",
@@ -1579,10 +1625,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "Description", "Family" ]
+        "required" : [ "Description", "Family" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_RDS_DBSecurityGroup" : {
     "type" : "object",
@@ -1622,10 +1670,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "DBSecurityGroupIngress", "GroupDescription" ]
+        "required" : [ "DBSecurityGroupIngress", "GroupDescription" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_RDS_DBSecurityGroupIngress" : {
     "type" : "object",
@@ -1660,10 +1710,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "DBSecurityGroupName" ]
+        "required" : [ "DBSecurityGroupName" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_RDS_DBSubnetGroup" : {
     "type" : "object",
@@ -1703,10 +1755,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "DBSubnetGroupDescription", "SubnetIds" ]
+        "required" : [ "DBSubnetGroupDescription", "SubnetIds" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_RDS_EventSubscription" : {
     "type" : "object",
@@ -1750,10 +1804,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "SnsTopicArn" ]
+        "required" : [ "SnsTopicArn" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_RDS_OptionGroup" : {
     "type" : "object",
@@ -1796,10 +1852,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "EngineName", "MajorEngineVersion", "OptionConfigurations", "OptionGroupDescription" ]
+        "required" : [ "EngineName", "MajorEngineVersion", "OptionConfigurations", "OptionGroupDescription" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScaling_AutoScalingGroup_LaunchTemplateSpecification" : {
     "type" : "object",
@@ -1818,7 +1876,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "Version" ]
+    "required" : [ "Version" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScaling_AutoScalingGroup_LifecycleHookSpecification" : {
     "type" : "object",
@@ -1853,7 +1912,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "LifecycleHookName", "LifecycleTransition" ]
+    "required" : [ "LifecycleHookName", "LifecycleTransition" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScaling_AutoScalingGroup_MetricsCollection" : {
     "type" : "object",
@@ -1872,7 +1932,8 @@
         "minItems" : 0
       }
     },
-    "required" : [ "Granularity" ]
+    "required" : [ "Granularity" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScaling_AutoScalingGroup_NotificationConfiguration" : {
     "type" : "object",
@@ -1891,7 +1952,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "TopicARN" ]
+    "required" : [ "TopicARN" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScaling_AutoScalingGroup_TagProperty" : {
     "type" : "object",
@@ -1910,7 +1972,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "Key", "PropagateAtLaunch", "Value" ]
+    "required" : [ "Key", "PropagateAtLaunch", "Value" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScaling_LaunchConfiguration_BlockDevice" : {
     "type" : "object",
@@ -1940,7 +2003,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-template.html#cfn-as-launchconfig-blockdev-template-volumetype",
         "type" : [ "string", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_AutoScaling_LaunchConfiguration_BlockDeviceMapping" : {
     "type" : "object",
@@ -1962,7 +2026,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "DeviceName" ]
+    "required" : [ "DeviceName" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScaling_ScalingPolicy_CustomizedMetricSpecification" : {
     "type" : "object",
@@ -1994,7 +2059,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "MetricName", "Namespace", "Statistic" ]
+    "required" : [ "MetricName", "Namespace", "Statistic" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScaling_ScalingPolicy_MetricDimension" : {
     "type" : "object",
@@ -2009,7 +2075,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "Name", "Value" ]
+    "required" : [ "Name", "Value" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScaling_ScalingPolicy_PredefinedMetricSpecification" : {
     "type" : "object",
@@ -2024,7 +2091,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "PredefinedMetricType" ]
+    "required" : [ "PredefinedMetricType" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScaling_ScalingPolicy_StepAdjustment" : {
     "type" : "object",
@@ -2043,7 +2111,8 @@
         "type" : [ "integer", "object" ]
       }
     },
-    "required" : [ "ScalingAdjustment" ]
+    "required" : [ "ScalingAdjustment" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScaling_ScalingPolicy_TargetTrackingConfiguration" : {
     "type" : "object",
@@ -2064,7 +2133,8 @@
         "type" : [ "number", "object" ]
       }
     },
-    "required" : [ "TargetValue" ]
+    "required" : [ "TargetValue" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScalingPlans_ScalingPlan_ApplicationSource" : {
     "type" : "object",
@@ -2082,7 +2152,8 @@
         },
         "minItems" : 0
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_AutoScalingPlans_ScalingPlan_CustomizedLoadMetricSpecification" : {
     "type" : "object",
@@ -2113,7 +2184,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "MetricName", "Statistic", "Namespace" ]
+    "required" : [ "MetricName", "Statistic", "Namespace" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScalingPlans_ScalingPlan_CustomizedScalingMetricSpecification" : {
     "type" : "object",
@@ -2144,7 +2216,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "MetricName", "Statistic", "Namespace" ]
+    "required" : [ "MetricName", "Statistic", "Namespace" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScalingPlans_ScalingPlan_MetricDimension" : {
     "type" : "object",
@@ -2159,7 +2232,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "Value", "Name" ]
+    "required" : [ "Value", "Name" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScalingPlans_ScalingPlan_PredefinedLoadMetricSpecification" : {
     "type" : "object",
@@ -2174,7 +2248,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "PredefinedLoadMetricType" ]
+    "required" : [ "PredefinedLoadMetricType" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScalingPlans_ScalingPlan_PredefinedScalingMetricSpecification" : {
     "type" : "object",
@@ -2189,7 +2264,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "PredefinedScalingMetricType" ]
+    "required" : [ "PredefinedScalingMetricType" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScalingPlans_ScalingPlan_ScalingInstruction" : {
     "type" : "object",
@@ -2254,7 +2330,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "ServiceNamespace", "ScalableDimension", "MinCapacity", "TargetTrackingConfigurations", "ResourceId", "MaxCapacity" ]
+    "required" : [ "ServiceNamespace", "ScalableDimension", "MinCapacity", "TargetTrackingConfigurations", "ResourceId", "MaxCapacity" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScalingPlans_ScalingPlan_TagFilter" : {
     "type" : "object",
@@ -2273,7 +2350,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "Key" ]
+    "required" : [ "Key" ],
+    "additionalProperties" : false
   },
   "AWS_AutoScalingPlans_ScalingPlan_TargetTrackingConfiguration" : {
     "type" : "object",
@@ -2306,7 +2384,8 @@
         "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_CustomizedScalingMetricSpecification"
       }
     },
-    "required" : [ "TargetValue" ]
+    "required" : [ "TargetValue" ],
+    "additionalProperties" : false
   },
   "AWS_ElasticLoadBalancingV2_Listener_Action" : {
     "type" : "object",
@@ -2321,7 +2400,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "TargetGroupArn", "Type" ]
+    "required" : [ "TargetGroupArn", "Type" ],
+    "additionalProperties" : false
   },
   "AWS_ElasticLoadBalancingV2_Listener_Certificate" : {
     "type" : "object",
@@ -2331,7 +2411,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-certificates.html#cfn-elasticloadbalancingv2-listener-certificates-certificatearn",
         "type" : [ "string", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_ElasticLoadBalancingV2_ListenerCertificate_Certificate" : {
     "type" : "object",
@@ -2341,7 +2422,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-certificates.html#cfn-elasticloadbalancingv2-listener-certificates-certificatearn",
         "type" : [ "string", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_ElasticLoadBalancingV2_ListenerRule_Action" : {
     "type" : "object",
@@ -2356,7 +2438,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "TargetGroupArn", "Type" ]
+    "required" : [ "TargetGroupArn", "Type" ],
+    "additionalProperties" : false
   },
   "AWS_ElasticLoadBalancingV2_ListenerRule_RuleCondition" : {
     "type" : "object",
@@ -2375,7 +2458,8 @@
         "uniqueItems" : true,
         "minItems" : 0
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_ElasticLoadBalancingV2_LoadBalancer_LoadBalancerAttribute" : {
     "type" : "object",
@@ -2389,7 +2473,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-loadbalancerattributes.html#cfn-elasticloadbalancingv2-loadbalancer-loadbalancerattributes-value",
         "type" : [ "string", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_ElasticLoadBalancingV2_LoadBalancer_SubnetMapping" : {
     "type" : "object",
@@ -2404,7 +2489,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "AllocationId", "SubnetId" ]
+    "required" : [ "AllocationId", "SubnetId" ],
+    "additionalProperties" : false
   },
   "AWS_ElasticLoadBalancingV2_TargetGroup_Matcher" : {
     "type" : "object",
@@ -2415,7 +2501,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "HttpCode" ]
+    "required" : [ "HttpCode" ],
+    "additionalProperties" : false
   },
   "AWS_ElasticLoadBalancingV2_TargetGroup_TargetDescription" : {
     "type" : "object",
@@ -2434,7 +2521,8 @@
         "type" : [ "integer", "object" ]
       }
     },
-    "required" : [ "Id" ]
+    "required" : [ "Id" ],
+    "additionalProperties" : false
   },
   "AWS_ElasticLoadBalancingV2_TargetGroup_TargetGroupAttribute" : {
     "type" : "object",
@@ -2448,7 +2536,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetgroupattribute.html#cfn-elasticloadbalancingv2-targetgroup-targetgroupattribute-value",
         "type" : [ "string", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_IAM_Group_Policy" : {
     "type" : "object",
@@ -2463,7 +2552,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "PolicyDocument", "PolicyName" ]
+    "required" : [ "PolicyDocument", "PolicyName" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_Role_Policy" : {
     "type" : "object",
@@ -2478,7 +2568,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "PolicyDocument", "PolicyName" ]
+    "required" : [ "PolicyDocument", "PolicyName" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_User_LoginProfile" : {
     "type" : "object",
@@ -2493,7 +2584,8 @@
         "type" : [ "boolean", "object" ]
       }
     },
-    "required" : [ "Password" ]
+    "required" : [ "Password" ],
+    "additionalProperties" : false
   },
   "AWS_IAM_User_Policy" : {
     "type" : "object",
@@ -2508,7 +2600,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "PolicyDocument", "PolicyName" ]
+    "required" : [ "PolicyDocument", "PolicyName" ],
+    "additionalProperties" : false
   },
   "AWS_RDS_DBCluster_ScalingConfiguration" : {
     "type" : "object",
@@ -2530,7 +2623,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-secondsuntilautopause",
         "type" : [ "integer", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_RDS_DBInstance_ProcessorFeature" : {
     "type" : "object",
@@ -2544,7 +2638,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-processorfeature.html#cfn-rds-dbinstance-processorfeature-value",
         "type" : [ "string", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_RDS_DBSecurityGroup_Ingress" : {
     "type" : "object",
@@ -2566,7 +2661,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupownerid",
         "type" : [ "string", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_RDS_OptionGroup_OptionConfiguration" : {
     "type" : "object",
@@ -2610,7 +2706,8 @@
         "minItems" : 0
       }
     },
-    "required" : [ "OptionName" ]
+    "required" : [ "OptionName" ],
+    "additionalProperties" : false
   },
   "AWS_RDS_OptionGroup_OptionSetting" : {
     "type" : "object",
@@ -2624,27 +2721,29 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations-optionsettings.html#cfn-rds-optiongroup-optionconfigurations-optionsettings-value",
         "type" : [ "string", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "Tag" : {
     "type" : "object",
-    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-tag.html",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html",
     "properties" : {
       "Value" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-tag.html#cfn-dlm-lifecyclepolicy-tag-value",
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html#cfn-neptune-dbsubnetgroup-tag-value",
         "type" : [ "string", "object" ]
       },
       "Key" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-tag.html#cfn-dlm-lifecyclepolicy-tag-key",
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html#cfn-neptune-dbsubnetgroup-tag-key",
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "Value", "Key" ]
+    "required" : [ "Value", "Key" ],
+    "additionalProperties" : false
   },
   "resources" : {
     "type" : "object",
     "additionalProperties" : {
-      "anyOf" : [ {
+      "oneOf" : [ {
         "$ref" : "#/definitions/AWS_AutoScaling_AutoScalingGroup"
       }, {
         "$ref" : "#/definitions/AWS_AutoScaling_LaunchConfiguration"
@@ -2720,7 +2819,29 @@
       "type" : "object"
     },
     "Parameters" : {
-      "type" : "object"
+      "type" : "object",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "$ref": "../cfn-parameter.json#/definitions/StringParam"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/StringLikeParam"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/NumberParam"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/CommonDelimitedList"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/StringLikeList"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/NumberList"
+          }
+        ]
+      }
     },
     "Mappings" : {
       "type" : "object"
@@ -2738,6 +2859,6 @@
         "$ref": "#/definitions/resources"
     }
   },
-  "description" : "CFN JSON specification generated from version 2.12.0",
+  "description" : "CFN JSON specification generated from version 2.13.0",
   "required" : [ "AWSTemplateFormatVersion", "Resources" ]
 }

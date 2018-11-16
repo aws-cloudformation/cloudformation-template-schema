@@ -130,10 +130,10 @@ public final class Codegen {
                 ObjectNode resourcesDefnSide = definitions.putObject("resources");
                 resourcesDefnSide.put("type", "object");
                 ObjectNode addProps = resourcesDefnSide.putObject("additionalProperties");
-                ArrayNode anyOf = addProps.putArray("anyOf");
+                ArrayNode oneOf = addProps.putArray("oneOf");
                 for (String eachDefn: definitionNames) {
                     if (definitions.has(eachDefn)) {
-                        ObjectNode ref = anyOf.addObject();
+                        ObjectNode ref = oneOf.addObject();
                         ref.put("$ref", "#/definitions/" + eachDefn);
                     }
                 }
@@ -313,6 +313,7 @@ public final class Codegen {
                 ArrayNode array = innerProps.putArray("required");
                 required.forEach(array::add);
             }
+            innerProps.put("additionalProperties", false);
             ArrayNode array = typeDefn.putArray("required");
             array.add("Type");
             if (!required.isEmpty()) {
@@ -325,6 +326,7 @@ public final class Codegen {
                 required.forEach(array::add);
             }
         }
+        typeDefn.put("additionalProperties", false);
     }
 
     private void addPrimitiveType(ObjectNode each, String propType) {

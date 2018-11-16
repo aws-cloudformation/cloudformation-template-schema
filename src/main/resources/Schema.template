@@ -43,7 +43,29 @@
       "type" : "object"
     },
     "Parameters" : {
-      "type" : "object"
+      "type" : "object",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "$ref": "../cfn-parameter.json#/definitions/StringParam"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/StringLikeParam"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/NumberParam"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/CommonDelimitedList"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/StringLikeList"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/NumberList"
+          }
+        ]
+      }
     },
     "Mappings" : {
       "type" : "object"

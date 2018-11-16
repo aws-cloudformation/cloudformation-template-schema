@@ -62,10 +62,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "BgpAsn", "IpAddress", "Type" ]
+        "required" : [ "BgpAsn", "IpAddress", "Type" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_DHCPOptions" : {
     "type" : "object",
@@ -121,10 +123,12 @@
             },
             "minItems" : 0
           }
-        }
+        },
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type" ]
+    "required" : [ "Type" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_EIP" : {
     "type" : "object",
@@ -146,10 +150,12 @@
             "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-instanceid",
             "type" : [ "string", "object" ]
           }
-        }
+        },
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type" ]
+    "required" : [ "Type" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_EIPAssociation" : {
     "type" : "object",
@@ -183,10 +189,12 @@
             "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-PrivateIpAddress",
             "type" : [ "string", "object" ]
           }
-        }
+        },
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type" ]
+    "required" : [ "Type" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_EgressOnlyInternetGateway" : {
     "type" : "object",
@@ -205,10 +213,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "VpcId" ]
+        "required" : [ "VpcId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_FlowLog" : {
     "type" : "object",
@@ -251,10 +261,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "ResourceId", "ResourceType", "TrafficType" ]
+        "required" : [ "ResourceId", "ResourceType", "TrafficType" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_InternetGateway" : {
     "type" : "object",
@@ -276,10 +288,12 @@
             },
             "minItems" : 0
           }
-        }
+        },
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type" ]
+    "required" : [ "Type" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_NatGateway" : {
     "type" : "object",
@@ -310,10 +324,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "AllocationId", "SubnetId" ]
+        "required" : [ "AllocationId", "SubnetId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_NetworkAcl" : {
     "type" : "object",
@@ -340,10 +356,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "VpcId" ]
+        "required" : [ "VpcId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_NetworkAclEntry" : {
     "type" : "object",
@@ -392,10 +410,12 @@
             "type" : [ "integer", "object" ]
           }
         },
-        "required" : [ "CidrBlock", "NetworkAclId", "Protocol", "RuleAction", "RuleNumber" ]
+        "required" : [ "CidrBlock", "NetworkAclId", "Protocol", "RuleAction", "RuleNumber" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_NetworkInterface" : {
     "type" : "object",
@@ -467,10 +487,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "SubnetId" ]
+        "required" : [ "SubnetId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_NetworkInterfaceAttachment" : {
     "type" : "object",
@@ -501,10 +523,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "DeviceIndex", "InstanceId", "NetworkInterfaceId" ]
+        "required" : [ "DeviceIndex", "InstanceId", "NetworkInterfaceId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_NetworkInterfacePermission" : {
     "type" : "object",
@@ -531,10 +555,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "AwsAccountId", "NetworkInterfaceId", "Permission" ]
+        "required" : [ "AwsAccountId", "NetworkInterfaceId", "Permission" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_PlacementGroup" : {
     "type" : "object",
@@ -552,10 +578,12 @@
             "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-strategy",
             "type" : [ "string", "object" ]
           }
-        }
+        },
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type" ]
+    "required" : [ "Type" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_Route" : {
     "type" : "object",
@@ -606,10 +634,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "RouteTableId" ]
+        "required" : [ "RouteTableId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_RouteTable" : {
     "type" : "object",
@@ -636,10 +666,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "VpcId" ]
+        "required" : [ "VpcId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_SecurityGroup" : {
     "type" : "object",
@@ -690,10 +722,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "GroupDescription" ]
+        "required" : [ "GroupDescription" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_SecurityGroupEgress" : {
     "type" : "object",
@@ -744,10 +778,12 @@
             "type" : [ "integer", "object" ]
           }
         },
-        "required" : [ "GroupId", "IpProtocol" ]
+        "required" : [ "GroupId", "IpProtocol" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_SecurityGroupIngress" : {
     "type" : "object",
@@ -810,10 +846,12 @@
             "type" : [ "integer", "object" ]
           }
         },
-        "required" : [ "IpProtocol" ]
+        "required" : [ "IpProtocol" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_Subnet" : {
     "type" : "object",
@@ -860,10 +898,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "CidrBlock", "VpcId" ]
+        "required" : [ "CidrBlock", "VpcId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_SubnetCidrBlock" : {
     "type" : "object",
@@ -886,10 +926,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "Ipv6CidrBlock", "SubnetId" ]
+        "required" : [ "Ipv6CidrBlock", "SubnetId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_SubnetNetworkAclAssociation" : {
     "type" : "object",
@@ -912,10 +954,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "NetworkAclId", "SubnetId" ]
+        "required" : [ "NetworkAclId", "SubnetId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_SubnetRouteTableAssociation" : {
     "type" : "object",
@@ -938,10 +982,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "RouteTableId", "SubnetId" ]
+        "required" : [ "RouteTableId", "SubnetId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_TrunkInterfaceAssociation" : {
     "type" : "object",
@@ -972,10 +1018,12 @@
             "type" : [ "integer", "object" ]
           }
         },
-        "required" : [ "BranchInterfaceId", "TrunkInterfaceId" ]
+        "required" : [ "BranchInterfaceId", "TrunkInterfaceId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_VPC" : {
     "type" : "object",
@@ -1014,10 +1062,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "CidrBlock" ]
+        "required" : [ "CidrBlock" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_VPCCidrBlock" : {
     "type" : "object",
@@ -1044,10 +1094,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "VpcId" ]
+        "required" : [ "VpcId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_VPCDHCPOptionsAssociation" : {
     "type" : "object",
@@ -1070,10 +1122,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "DhcpOptionsId", "VpcId" ]
+        "required" : [ "DhcpOptionsId", "VpcId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_VPCEndpoint" : {
     "type" : "object",
@@ -1135,10 +1189,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "ServiceName", "VpcId" ]
+        "required" : [ "ServiceName", "VpcId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_VPCEndpointServicePermissions" : {
     "type" : "object",
@@ -1165,10 +1221,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "ServiceId" ]
+        "required" : [ "ServiceId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_VPCGatewayAttachment" : {
     "type" : "object",
@@ -1195,10 +1253,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "VpcId" ]
+        "required" : [ "VpcId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_VPCPeeringConnection" : {
     "type" : "object",
@@ -1241,10 +1301,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "PeerVpcId", "VpcId" ]
+        "required" : [ "PeerVpcId", "VpcId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_VPNConnection" : {
     "type" : "object",
@@ -1292,10 +1354,12 @@
             "minItems" : 0
           }
         },
-        "required" : [ "CustomerGatewayId", "Type", "VpnGatewayId" ]
+        "required" : [ "CustomerGatewayId", "Type", "VpnGatewayId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_VPNConnectionRoute" : {
     "type" : "object",
@@ -1318,10 +1382,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "DestinationCidrBlock", "VpnConnectionId" ]
+        "required" : [ "DestinationCidrBlock", "VpnConnectionId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_VPNGateway" : {
     "type" : "object",
@@ -1352,10 +1418,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "Type" ]
+        "required" : [ "Type" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_VPNGatewayRoutePropagation" : {
     "type" : "object",
@@ -1382,10 +1450,12 @@
             "type" : [ "string", "object" ]
           }
         },
-        "required" : [ "RouteTableIds", "VpnGatewayId" ]
+        "required" : [ "RouteTableIds", "VpnGatewayId" ],
+        "additionalProperties" : false
       }
     },
-    "required" : [ "Type", "Properties" ]
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_NetworkAclEntry_Icmp" : {
     "type" : "object",
@@ -1399,7 +1469,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-icmp.html#cfn-ec2-networkaclentry-icmp-type",
         "type" : [ "integer", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_EC2_NetworkAclEntry_PortRange" : {
     "type" : "object",
@@ -1413,7 +1484,8 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-portrange.html#cfn-ec2-networkaclentry-portrange-to",
         "type" : [ "integer", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "AWS_EC2_NetworkInterface_InstanceIpv6Address" : {
     "type" : "object",
@@ -1424,7 +1496,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "Ipv6Address" ]
+    "required" : [ "Ipv6Address" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_NetworkInterface_PrivateIpAddressSpecification" : {
     "type" : "object",
@@ -1439,7 +1512,8 @@
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "Primary", "PrivateIpAddress" ]
+    "required" : [ "Primary", "PrivateIpAddress" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_SecurityGroup_Egress" : {
     "type" : "object",
@@ -1478,7 +1552,8 @@
         "type" : [ "integer", "object" ]
       }
     },
-    "required" : [ "IpProtocol" ]
+    "required" : [ "IpProtocol" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_SecurityGroup_Ingress" : {
     "type" : "object",
@@ -1525,7 +1600,8 @@
         "type" : [ "integer", "object" ]
       }
     },
-    "required" : [ "IpProtocol" ]
+    "required" : [ "IpProtocol" ],
+    "additionalProperties" : false
   },
   "AWS_EC2_VPNConnection_VpnTunnelOptionsSpecification" : {
     "type" : "object",
@@ -1539,27 +1615,29 @@
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-tunnelinsidecidr",
         "type" : [ "string", "object" ]
       }
-    }
+    },
+    "additionalProperties" : false
   },
   "Tag" : {
     "type" : "object",
-    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-tag.html",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html",
     "properties" : {
       "Value" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-tag.html#cfn-dlm-lifecyclepolicy-tag-value",
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html#cfn-neptune-dbsubnetgroup-tag-value",
         "type" : [ "string", "object" ]
       },
       "Key" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-tag.html#cfn-dlm-lifecyclepolicy-tag-key",
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html#cfn-neptune-dbsubnetgroup-tag-key",
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "Value", "Key" ]
+    "required" : [ "Value", "Key" ],
+    "additionalProperties" : false
   },
   "resources" : {
     "type" : "object",
     "additionalProperties" : {
-      "anyOf" : [ {
+      "oneOf" : [ {
         "$ref" : "#/definitions/AWS_EC2_CustomerGateway"
       }, {
         "$ref" : "#/definitions/AWS_EC2_DHCPOptions"
@@ -1647,7 +1725,29 @@
       "type" : "object"
     },
     "Parameters" : {
-      "type" : "object"
+      "type" : "object",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "$ref": "../cfn-parameter.json#/definitions/StringParam"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/StringLikeParam"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/NumberParam"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/CommonDelimitedList"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/StringLikeList"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/NumberList"
+          }
+        ]
+      }
     },
     "Mappings" : {
       "type" : "object"
@@ -1665,6 +1765,6 @@
         "$ref": "#/definitions/resources"
     }
   },
-  "description" : "CFN JSON specification generated from version 2.12.0",
+  "description" : "CFN JSON specification generated from version 2.13.0",
   "required" : [ "AWSTemplateFormatVersion", "Resources" ]
 }
