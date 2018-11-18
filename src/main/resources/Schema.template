@@ -37,6 +37,29 @@
         }
       ]
     },
+    "Attribute": {
+      "$comment": "Attribute defines the content of a Mapping",
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9._-]{1,255}$": {
+          "type": [ "boolean", "integer", "number", "string" ]
+        }
+      },
+      "minProperties": 1,
+      "maxProperties": 64,
+      "additionalProperties": false
+    },
+    "Mapping": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9._-]{1,255}$": {
+          "$ref": "#/definitions/Attribute"
+        }
+      },
+      "minProperties": 1,
+      "maxProperties": 64,
+      "additionalProperties": false
+    },
     "FnRef": {
       "type": "object",
       "properties": {
@@ -104,8 +127,15 @@
         ]
       }
     },
-    "Mappings" : {
-      "type" : "object"
+    "Mappings": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9._-]{1,255}$": {
+          "$ref": "#/definitions/Mapping"
+        }
+      },
+      "maxProperties": 100,
+      "additionalProperties": false
     },
     "Conditions" : {
       "type" : "object"
