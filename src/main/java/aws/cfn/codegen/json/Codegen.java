@@ -129,8 +129,12 @@ public final class Codegen {
                 ObjectNode definitions = e.getValue();
                 ObjectNode resourcesDefnSide = definitions.putObject("resources");
                 resourcesDefnSide.put("type", "object");
-                ObjectNode addProps = resourcesDefnSide.putObject("additionalProperties");
-                ArrayNode oneOf = addProps.putArray("oneOf");
+                resourcesDefnSide.put("additionalProperties", false);
+                resourcesDefnSide.put("maxProperties", 200);
+                resourcesDefnSide.put("minProperties", 1);
+                ObjectNode patternProps = resourcesDefnSide.putObject("patternProperties");
+                ObjectNode resourceProps = patternProps.putObject("^[a-zA-Z0-9]{1,255}$");
+                ArrayNode oneOf = resourceProps.putArray("oneOf");
                 for (String eachDefn: definitionNames) {
                     if (definitions.has(eachDefn)) {
                         ObjectNode ref = oneOf.addObject();
