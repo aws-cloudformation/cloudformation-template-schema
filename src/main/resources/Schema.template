@@ -36,8 +36,10 @@
       "type" : "string",
       "enum" : [ "2010-09-09" ]
     },
-    "Description" : {
-      "type" : "string"
+    "Description": {
+      "$comment": "The Description section (optional) enables you to include comments about your template. The Description must follow the AWSTemplateFormatVersion section.",
+      "type": "string",
+      "maxLength": 1024
     },
     "Metadata" : {
       "type" : "object"
