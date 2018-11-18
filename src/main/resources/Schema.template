@@ -84,5 +84,5 @@
     }
   },
   "description" : "{{description}}",
-  "required" : [ "AWSTemplateFormatVersion", "Resources" ]
+  "required" : [ "Resources" ]
 }
