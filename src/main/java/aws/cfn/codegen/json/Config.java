@@ -38,6 +38,7 @@ public final class Config {
         private File outputDir;
         private Set<String> regions;
         private boolean singleResourceSpec = false;
+        private boolean includeIntrinsics = true;
         private final Map<String, URI> regionSpecs = new LinkedHashMap<>(12);
         private final Map<String, GroupSpec> groups = new LinkedHashMap<>(5);
 
@@ -55,6 +56,8 @@ public final class Config {
                 this.outputDir = settings.getOutput() != null ? settings.getOutput() : this.outputDir;
                 this.regions = settings.getRegions() != null ? settings.getRegions() : this.regions;
                 this.singleResourceSpec = settings.getSingle() != null ? settings.getSingle() : this.singleResourceSpec;
+                this.includeIntrinsics = settings.getIncludeIntrinsics() != null ? settings.getIncludeIntrinsics() :
+                    this.includeIntrinsics;
             }
             this.regionSpecs.putAll(other.getSpecifications());
             this.groups.putAll(other.getGroups());
@@ -102,6 +105,11 @@ public final class Config {
             return this;
         }
 
+        public Builder withIntrinsics(boolean includeIntrinsics) {
+            this.includeIntrinsics = includeIntrinsics;
+            return this;
+        }
+
         public Builder withGroup(String grpName, GroupSpec spec) {
             groups.put(grpName, spec);
             return this;
@@ -114,7 +122,8 @@ public final class Config {
                     draft,
                     regions,
                     outputDir,
-                    singleResourceSpec
+                    singleResourceSpec,
+                    includeIntrinsics
                 ),
                 groups
             );
@@ -130,16 +139,19 @@ public final class Config {
         private final Set<String> regions;
         private final File output;
         private final Boolean single;
+        private final Boolean includeIntrinsics;
 
         @JsonCreator
         public Settings(@JsonProperty("draft") SchemaDraft draft,
                         @JsonProperty("regions") Set<String> regions,
                         @JsonProperty("output") File output,
-                        @JsonProperty("single") Boolean single) {
+                        @JsonProperty("single") Boolean single,
+                        @JsonProperty("intrinsics") Boolean includeIntrinsics) {
             this.draft = draft;
             this.regions = regions == null ? Sets.newHashSet("us-east-1") : regions;
             this.output = output;
             this.single = single == null ? false : single;
+            this.includeIntrinsics = includeIntrinsics == null ? false : includeIntrinsics;
         }
     }
 

@@ -1,7 +1,5 @@
 package aws.cfn.codegen;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
