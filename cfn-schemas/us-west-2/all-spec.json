@@ -995,6 +995,342 @@
     "required" : [ "Type", "Properties" ],
     "additionalProperties" : false
   },
+  "AWS_AppStream_DirectoryConfig" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::AppStream::DirectoryConfig",
+        "type" : "string",
+        "enum" : [ "AWS::AppStream::DirectoryConfig" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "OrganizationalUnitDistinguishedNames" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html#cfn-appstream-directoryconfig-organizationalunitdistinguishednames",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "ServiceAccountCredentials" : {
+            "$ref" : "#/definitions/AWS_AppStream_DirectoryConfig_ServiceAccountCredentials"
+          },
+          "DirectoryName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html#cfn-appstream-directoryconfig-directoryname",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "OrganizationalUnitDistinguishedNames", "DirectoryName" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
+  "AWS_AppStream_Fleet" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::AppStream::Fleet",
+        "type" : "string",
+        "enum" : [ "AWS::AppStream::Fleet" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-description",
+            "type" : [ "string", "object" ]
+          },
+          "ComputeCapacity" : {
+            "$ref" : "#/definitions/AWS_AppStream_Fleet_ComputeCapacity"
+          },
+          "VpcConfig" : {
+            "$ref" : "#/definitions/AWS_AppStream_Fleet_VpcConfig"
+          },
+          "FleetType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-fleettype",
+            "type" : [ "string", "object" ]
+          },
+          "EnableDefaultInternetAccess" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-enabledefaultinternetaccess",
+            "type" : [ "boolean", "object" ]
+          },
+          "DomainJoinInfo" : {
+            "$ref" : "#/definitions/AWS_AppStream_Fleet_DomainJoinInfo"
+          },
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-name",
+            "type" : [ "string", "object" ]
+          },
+          "ImageName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-imagename",
+            "type" : [ "string", "object" ]
+          },
+          "MaxUserDurationInSeconds" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-maxuserdurationinseconds",
+            "type" : [ "integer", "object" ]
+          },
+          "DisconnectTimeoutInSeconds" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-disconnecttimeoutinseconds",
+            "type" : [ "integer", "object" ]
+          },
+          "DisplayName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-displayname",
+            "type" : [ "string", "object" ]
+          },
+          "InstanceType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-instancetype",
+            "type" : [ "string", "object" ]
+          },
+          "ImageArn" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-imagearn",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "InstanceType" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
+  "AWS_AppStream_ImageBuilder" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::AppStream::ImageBuilder",
+        "type" : "string",
+        "enum" : [ "AWS::AppStream::ImageBuilder" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "ImageName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-imagename",
+            "type" : [ "string", "object" ]
+          },
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-description",
+            "type" : [ "string", "object" ]
+          },
+          "VpcConfig" : {
+            "$ref" : "#/definitions/AWS_AppStream_ImageBuilder_VpcConfig"
+          },
+          "EnableDefaultInternetAccess" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-enabledefaultinternetaccess",
+            "type" : [ "boolean", "object" ]
+          },
+          "DisplayName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-displayname",
+            "type" : [ "string", "object" ]
+          },
+          "DomainJoinInfo" : {
+            "$ref" : "#/definitions/AWS_AppStream_ImageBuilder_DomainJoinInfo"
+          },
+          "AppstreamAgentVersion" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-appstreamagentversion",
+            "type" : [ "string", "object" ]
+          },
+          "InstanceType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-instancetype",
+            "type" : [ "string", "object" ]
+          },
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-name",
+            "type" : [ "string", "object" ]
+          },
+          "ImageArn" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-imagearn",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "InstanceType" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
+  "AWS_AppStream_Stack" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::AppStream::Stack",
+        "type" : "string",
+        "enum" : [ "AWS::AppStream::Stack" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "ApplicationSettings" : {
+            "$ref" : "#/definitions/AWS_AppStream_Stack_ApplicationSettings"
+          },
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-description",
+            "type" : [ "string", "object" ]
+          },
+          "StorageConnectors" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-storageconnectors",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_AppStream_Stack_StorageConnector"
+            },
+            "minItems" : 0
+          },
+          "DeleteStorageConnectors" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-deletestorageconnectors",
+            "type" : [ "boolean", "object" ]
+          },
+          "UserSettings" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-usersettings",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_AppStream_Stack_UserSetting"
+            },
+            "minItems" : 0
+          },
+          "AttributesToDelete" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-attributestodelete",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "DisplayName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-displayname",
+            "type" : [ "string", "object" ]
+          },
+          "RedirectURL" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-redirecturl",
+            "type" : [ "string", "object" ]
+          },
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-name",
+            "type" : [ "string", "object" ]
+          },
+          "FeedbackURL" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-feedbackurl",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type" ],
+    "additionalProperties" : false
+  },
+  "AWS_AppStream_StackFleetAssociation" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackfleetassociation.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::AppStream::StackFleetAssociation",
+        "type" : "string",
+        "enum" : [ "AWS::AppStream::StackFleetAssociation" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "FleetName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackfleetassociation.html#cfn-appstream-stackfleetassociation-fleetname",
+            "type" : [ "string", "object" ]
+          },
+          "StackName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackfleetassociation.html#cfn-appstream-stackfleetassociation-stackname",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "FleetName", "StackName" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
+  "AWS_AppStream_StackUserAssociation" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::AppStream::StackUserAssociation",
+        "type" : "string",
+        "enum" : [ "AWS::AppStream::StackUserAssociation" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "SendEmailNotification" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html#cfn-appstream-stackuserassociation-sendemailnotification",
+            "type" : [ "boolean", "object" ]
+          },
+          "UserName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html#cfn-appstream-stackuserassociation-username",
+            "type" : [ "string", "object" ]
+          },
+          "StackName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html#cfn-appstream-stackuserassociation-stackname",
+            "type" : [ "string", "object" ]
+          },
+          "AuthenticationType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html#cfn-appstream-stackuserassociation-authenticationtype",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "UserName", "StackName", "AuthenticationType" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
+  "AWS_AppStream_User" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-user.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::AppStream::User",
+        "type" : "string",
+        "enum" : [ "AWS::AppStream::User" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "UserName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-user.html#cfn-appstream-user-username",
+            "type" : [ "string", "object" ]
+          },
+          "FirstName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-user.html#cfn-appstream-user-firstname",
+            "type" : [ "string", "object" ]
+          },
+          "MessageAction" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-user.html#cfn-appstream-user-messageaction",
+            "type" : [ "string", "object" ]
+          },
+          "LastName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-user.html#cfn-appstream-user-lastname",
+            "type" : [ "string", "object" ]
+          },
+          "AuthenticationType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-user.html#cfn-appstream-user-authenticationtype",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "UserName", "AuthenticationType" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
   "AWS_AppSync_ApiKey" : {
     "type" : "object",
     "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html",
@@ -2479,6 +2815,99 @@
     "required" : [ "Type", "Properties" ],
     "additionalProperties" : false
   },
+  "AWS_CodeBuild_Project" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::CodeBuild::Project",
+        "type" : "string",
+        "enum" : [ "AWS::CodeBuild::Project" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-description",
+            "type" : [ "string", "object" ]
+          },
+          "VpcConfig" : {
+            "$ref" : "#/definitions/AWS_CodeBuild_Project_VpcConfig"
+          },
+          "SecondarySources" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondarysources",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_CodeBuild_Project_Source"
+            },
+            "minItems" : 0
+          },
+          "EncryptionKey" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-encryptionkey",
+            "type" : [ "string", "object" ]
+          },
+          "Triggers" : {
+            "$ref" : "#/definitions/AWS_CodeBuild_Project_ProjectTriggers"
+          },
+          "SecondaryArtifacts" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondaryartifacts",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_CodeBuild_Project_Artifacts"
+            },
+            "minItems" : 0
+          },
+          "Source" : {
+            "$ref" : "#/definitions/AWS_CodeBuild_Project_Source"
+          },
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-name",
+            "type" : [ "string", "object" ]
+          },
+          "Artifacts" : {
+            "$ref" : "#/definitions/AWS_CodeBuild_Project_Artifacts"
+          },
+          "BadgeEnabled" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-badgeenabled",
+            "type" : [ "boolean", "object" ]
+          },
+          "LogsConfig" : {
+            "$ref" : "#/definitions/AWS_CodeBuild_Project_LogsConfig"
+          },
+          "ServiceRole" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-servicerole",
+            "type" : [ "string", "object" ]
+          },
+          "QueuedTimeoutInMinutes" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-queuedtimeoutinminutes",
+            "type" : [ "integer", "object" ]
+          },
+          "Environment" : {
+            "$ref" : "#/definitions/AWS_CodeBuild_Project_Environment"
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          },
+          "TimeoutInMinutes" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-timeoutinminutes",
+            "type" : [ "integer", "object" ]
+          },
+          "Cache" : {
+            "$ref" : "#/definitions/AWS_CodeBuild_Project_ProjectCache"
+          }
+        },
+        "required" : [ "ServiceRole" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
   "AWS_CodeCommit_Repository" : {
     "type" : "object",
     "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html",
@@ -3387,6 +3816,152 @@
           }
         },
         "required" : [ "S3BucketName" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
+  "AWS_DAX_Cluster" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::DAX::Cluster",
+        "type" : "string",
+        "enum" : [ "AWS::DAX::Cluster" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "SSESpecification" : {
+            "$ref" : "#/definitions/AWS_DAX_Cluster_SSESpecification"
+          },
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-description",
+            "type" : [ "string", "object" ]
+          },
+          "ReplicationFactor" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-replicationfactor",
+            "type" : [ "integer", "object" ]
+          },
+          "ParameterGroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-parametergroupname",
+            "type" : [ "string", "object" ]
+          },
+          "AvailabilityZones" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-availabilityzones",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "IAMRoleARN" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-iamrolearn",
+            "type" : [ "string", "object" ]
+          },
+          "SubnetGroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-subnetgroupname",
+            "type" : [ "string", "object" ]
+          },
+          "PreferredMaintenanceWindow" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-preferredmaintenancewindow",
+            "type" : [ "string", "object" ]
+          },
+          "NotificationTopicARN" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-notificationtopicarn",
+            "type" : [ "string", "object" ]
+          },
+          "SecurityGroupIds" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-securitygroupids",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "NodeType" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-nodetype",
+            "type" : [ "string", "object" ]
+          },
+          "ClusterName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-clustername",
+            "type" : [ "string", "object" ]
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-tags",
+            "type" : "object"
+          }
+        },
+        "required" : [ "ReplicationFactor", "IAMRoleARN", "NodeType" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
+  "AWS_DAX_ParameterGroup" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::DAX::ParameterGroup",
+        "type" : "string",
+        "enum" : [ "AWS::DAX::ParameterGroup" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "ParameterNameValues" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html#cfn-dax-parametergroup-parameternamevalues",
+            "type" : "object"
+          },
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html#cfn-dax-parametergroup-description",
+            "type" : [ "string", "object" ]
+          },
+          "ParameterGroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html#cfn-dax-parametergroup-parametergroupname",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type" ],
+    "additionalProperties" : false
+  },
+  "AWS_DAX_SubnetGroup" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::DAX::SubnetGroup",
+        "type" : "string",
+        "enum" : [ "AWS::DAX::SubnetGroup" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Description" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html#cfn-dax-subnetgroup-description",
+            "type" : [ "string", "object" ]
+          },
+          "SubnetGroupName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html#cfn-dax-subnetgroup-subnetgroupname",
+            "type" : [ "string", "object" ]
+          },
+          "SubnetIds" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html#cfn-dax-subnetgroup-subnetids",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "SubnetIds" ],
         "additionalProperties" : false
       }
     },
@@ -6128,6 +6703,41 @@
           }
         },
         "required" : [ "FileSystemId", "SecurityGroups", "SubnetId" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
+  "AWS_EKS_Cluster" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EKS::Cluster",
+        "type" : "string",
+        "enum" : [ "AWS::EKS::Cluster" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Version" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-version",
+            "type" : [ "string", "object" ]
+          },
+          "RoleArn" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-rolearn",
+            "type" : [ "string", "object" ]
+          },
+          "ResourcesVpcConfig" : {
+            "$ref" : "#/definitions/AWS_EKS_Cluster_ResourcesVpcConfig"
+          },
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-name",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "RoleArn" ],
         "additionalProperties" : false
       }
     },
@@ -11898,6 +12508,154 @@
     "required" : [ "Type" ],
     "additionalProperties" : false
   },
+  "AWS_SES_ConfigurationSet" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::SES::ConfigurationSet",
+        "type" : "string",
+        "enum" : [ "AWS::SES::ConfigurationSet" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html#cfn-ses-configurationset-name",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type" ],
+    "additionalProperties" : false
+  },
+  "AWS_SES_ConfigurationSetEventDestination" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::SES::ConfigurationSetEventDestination",
+        "type" : "string",
+        "enum" : [ "AWS::SES::ConfigurationSetEventDestination" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "ConfigurationSetName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html#cfn-ses-configurationseteventdestination-configurationsetname",
+            "type" : [ "string", "object" ]
+          },
+          "EventDestination" : {
+            "$ref" : "#/definitions/AWS_SES_ConfigurationSetEventDestination_EventDestination"
+          }
+        },
+        "required" : [ "ConfigurationSetName" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
+  "AWS_SES_ReceiptFilter" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::SES::ReceiptFilter",
+        "type" : "string",
+        "enum" : [ "AWS::SES::ReceiptFilter" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Filter" : {
+            "$ref" : "#/definitions/AWS_SES_ReceiptFilter_Filter"
+          }
+        },
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type" ],
+    "additionalProperties" : false
+  },
+  "AWS_SES_ReceiptRule" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::SES::ReceiptRule",
+        "type" : "string",
+        "enum" : [ "AWS::SES::ReceiptRule" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "After" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-after",
+            "type" : [ "string", "object" ]
+          },
+          "Rule" : {
+            "$ref" : "#/definitions/AWS_SES_ReceiptRule_Rule"
+          },
+          "RuleSetName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-rulesetname",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "RuleSetName" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
+  "AWS_SES_ReceiptRuleSet" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptruleset.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::SES::ReceiptRuleSet",
+        "type" : "string",
+        "enum" : [ "AWS::SES::ReceiptRuleSet" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "RuleSetName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptruleset.html#cfn-ses-receiptruleset-rulesetname",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type" ],
+    "additionalProperties" : false
+  },
+  "AWS_SES_Template" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-template.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::SES::Template",
+        "type" : "string",
+        "enum" : [ "AWS::SES::Template" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "Template" : {
+            "$ref" : "#/definitions/AWS_SES_Template_Template"
+          }
+        },
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type" ],
+    "additionalProperties" : false
+  },
   "AWS_SNS_Subscription" : {
     "type" : "object",
     "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html",
@@ -13851,6 +14609,269 @@
     "required" : [ "Type", "Properties" ],
     "additionalProperties" : false
   },
+  "AWS_WAFRegional_ByteMatchSet" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-bytematchset.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::WAFRegional::ByteMatchSet",
+        "type" : "string",
+        "enum" : [ "AWS::WAFRegional::ByteMatchSet" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "ByteMatchTuples" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-bytematchset.html#cfn-wafregional-bytematchset-bytematchtuples",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_WAFRegional_ByteMatchSet_ByteMatchTuple"
+            },
+            "minItems" : 0
+          },
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-bytematchset.html#cfn-wafregional-bytematchset-name",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "Name" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
+  "AWS_WAFRegional_IPSet" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ipset.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::WAFRegional::IPSet",
+        "type" : "string",
+        "enum" : [ "AWS::WAFRegional::IPSet" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "IPSetDescriptors" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ipset.html#cfn-wafregional-ipset-ipsetdescriptors",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_WAFRegional_IPSet_IPSetDescriptor"
+            },
+            "minItems" : 0
+          },
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ipset.html#cfn-wafregional-ipset-name",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "Name" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
+  "AWS_WAFRegional_Rule" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-rule.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::WAFRegional::Rule",
+        "type" : "string",
+        "enum" : [ "AWS::WAFRegional::Rule" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "MetricName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-rule.html#cfn-wafregional-rule-metricname",
+            "type" : [ "string", "object" ]
+          },
+          "Predicates" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-rule.html#cfn-wafregional-rule-predicates",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_WAFRegional_Rule_Predicate"
+            },
+            "minItems" : 0
+          },
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-rule.html#cfn-wafregional-rule-name",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "MetricName", "Name" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
+  "AWS_WAFRegional_SizeConstraintSet" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sizeconstraintset.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::WAFRegional::SizeConstraintSet",
+        "type" : "string",
+        "enum" : [ "AWS::WAFRegional::SizeConstraintSet" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "SizeConstraints" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sizeconstraintset.html#cfn-wafregional-sizeconstraintset-sizeconstraints",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_WAFRegional_SizeConstraintSet_SizeConstraint"
+            },
+            "minItems" : 0
+          },
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sizeconstraintset.html#cfn-wafregional-sizeconstraintset-name",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "Name" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
+  "AWS_WAFRegional_SqlInjectionMatchSet" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sqlinjectionmatchset.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::WAFRegional::SqlInjectionMatchSet",
+        "type" : "string",
+        "enum" : [ "AWS::WAFRegional::SqlInjectionMatchSet" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "SqlInjectionMatchTuples" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sqlinjectionmatchset.html#cfn-wafregional-sqlinjectionmatchset-sqlinjectionmatchtuples",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_WAFRegional_SqlInjectionMatchSet_SqlInjectionMatchTuple"
+            },
+            "minItems" : 0
+          },
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sqlinjectionmatchset.html#cfn-wafregional-sqlinjectionmatchset-name",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "Name" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
+  "AWS_WAFRegional_WebACL" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::WAFRegional::WebACL",
+        "type" : "string",
+        "enum" : [ "AWS::WAFRegional::WebACL" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "MetricName" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-metricname",
+            "type" : [ "string", "object" ]
+          },
+          "DefaultAction" : {
+            "$ref" : "#/definitions/AWS_WAFRegional_WebACL_Action"
+          },
+          "Rules" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-rules",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_WAFRegional_WebACL_Rule"
+            },
+            "minItems" : 0
+          },
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-name",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "MetricName", "Name" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
+  "AWS_WAFRegional_WebACLAssociation" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::WAFRegional::WebACLAssociation",
+        "type" : "string",
+        "enum" : [ "AWS::WAFRegional::WebACLAssociation" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "ResourceArn" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html#cfn-wafregional-webaclassociation-resourcearn",
+            "type" : [ "string", "object" ]
+          },
+          "WebACLId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html#cfn-wafregional-webaclassociation-webaclid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "ResourceArn", "WebACLId" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
+  "AWS_WAFRegional_XssMatchSet" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-xssmatchset.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::WAFRegional::XssMatchSet",
+        "type" : "string",
+        "enum" : [ "AWS::WAFRegional::XssMatchSet" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "XssMatchTuples" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-xssmatchset.html#cfn-wafregional-xssmatchset-xssmatchtuples",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/AWS_WAFRegional_XssMatchSet_XssMatchTuple"
+            },
+            "minItems" : 0
+          },
+          "Name" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-xssmatchset.html#cfn-wafregional-xssmatchset-name",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "Name" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
   "AWS_WorkSpaces_Workspace" : {
     "type" : "object",
     "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html",
@@ -14576,6 +15597,166 @@
         "type" : [ "number", "object" ]
       }
     },
+    "additionalProperties" : false
+  },
+  "AWS_AppStream_DirectoryConfig_ServiceAccountCredentials" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-directoryconfig-serviceaccountcredentials.html",
+    "properties" : {
+      "AccountName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-directoryconfig-serviceaccountcredentials.html#cfn-appstream-directoryconfig-serviceaccountcredentials-accountname",
+        "type" : [ "string", "object" ]
+      },
+      "AccountPassword" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-directoryconfig-serviceaccountcredentials.html#cfn-appstream-directoryconfig-serviceaccountcredentials-accountpassword",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "AccountName", "AccountPassword" ],
+    "additionalProperties" : false
+  },
+  "AWS_AppStream_Fleet_ComputeCapacity" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-computecapacity.html",
+    "properties" : {
+      "DesiredInstances" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-computecapacity.html#cfn-appstream-fleet-computecapacity-desiredinstances",
+        "type" : [ "integer", "object" ]
+      }
+    },
+    "required" : [ "DesiredInstances" ],
+    "additionalProperties" : false
+  },
+  "AWS_AppStream_Fleet_DomainJoinInfo" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-domainjoininfo.html",
+    "properties" : {
+      "OrganizationalUnitDistinguishedName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-domainjoininfo.html#cfn-appstream-fleet-domainjoininfo-organizationalunitdistinguishedname",
+        "type" : [ "string", "object" ]
+      },
+      "DirectoryName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-domainjoininfo.html#cfn-appstream-fleet-domainjoininfo-directoryname",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "additionalProperties" : false
+  },
+  "AWS_AppStream_Fleet_VpcConfig" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-vpcconfig.html",
+    "properties" : {
+      "SubnetIds" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-vpcconfig.html#cfn-appstream-fleet-vpcconfig-subnetids",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "minItems" : 0
+      },
+      "SecurityGroupIds" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-vpcconfig.html#cfn-appstream-fleet-vpcconfig-securitygroupids",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "minItems" : 0
+      }
+    },
+    "additionalProperties" : false
+  },
+  "AWS_AppStream_ImageBuilder_DomainJoinInfo" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-domainjoininfo.html",
+    "properties" : {
+      "OrganizationalUnitDistinguishedName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-domainjoininfo.html#cfn-appstream-imagebuilder-domainjoininfo-organizationalunitdistinguishedname",
+        "type" : [ "string", "object" ]
+      },
+      "DirectoryName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-domainjoininfo.html#cfn-appstream-imagebuilder-domainjoininfo-directoryname",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "additionalProperties" : false
+  },
+  "AWS_AppStream_ImageBuilder_VpcConfig" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-vpcconfig.html",
+    "properties" : {
+      "SecurityGroupIds" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-vpcconfig.html#cfn-appstream-imagebuilder-vpcconfig-securitygroupids",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "minItems" : 0
+      },
+      "SubnetIds" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-vpcconfig.html#cfn-appstream-imagebuilder-vpcconfig-subnetids",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "minItems" : 0
+      }
+    },
+    "additionalProperties" : false
+  },
+  "AWS_AppStream_Stack_ApplicationSettings" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-applicationsettings.html",
+    "properties" : {
+      "SettingsGroup" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-applicationsettings.html#cfn-appstream-stack-applicationsettings-settingsgroup",
+        "type" : [ "string", "object" ]
+      },
+      "Enabled" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-applicationsettings.html#cfn-appstream-stack-applicationsettings-enabled",
+        "type" : [ "boolean", "object" ]
+      }
+    },
+    "required" : [ "Enabled" ],
+    "additionalProperties" : false
+  },
+  "AWS_AppStream_Stack_StorageConnector" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-storageconnector.html",
+    "properties" : {
+      "Domains" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-storageconnector.html#cfn-appstream-stack-storageconnector-domains",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "minItems" : 0
+      },
+      "ResourceIdentifier" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-storageconnector.html#cfn-appstream-stack-storageconnector-resourceidentifier",
+        "type" : [ "string", "object" ]
+      },
+      "ConnectorType" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-storageconnector.html#cfn-appstream-stack-storageconnector-connectortype",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "ConnectorType" ],
+    "additionalProperties" : false
+  },
+  "AWS_AppStream_Stack_UserSetting" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-usersetting.html",
+    "properties" : {
+      "Action" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-usersetting.html#cfn-appstream-stack-usersetting-action",
+        "type" : [ "string", "object" ]
+      },
+      "Permission" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-usersetting.html#cfn-appstream-stack-usersetting-permission",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Action", "Permission" ],
     "additionalProperties" : false
   },
   "AWS_AppSync_DataSource_AuthorizationConfig" : {
@@ -16642,6 +17823,264 @@
     "required" : [ "Name", "Value" ],
     "additionalProperties" : false
   },
+  "AWS_CodeBuild_Project_Artifacts" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html",
+    "properties" : {
+      "Path" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-path",
+        "type" : [ "string", "object" ]
+      },
+      "Type" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-type",
+        "type" : [ "string", "object" ]
+      },
+      "ArtifactIdentifier" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-artifactidentifier",
+        "type" : [ "string", "object" ]
+      },
+      "OverrideArtifactName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-overrideartifactname",
+        "type" : [ "boolean", "object" ]
+      },
+      "Packaging" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-packaging",
+        "type" : [ "string", "object" ]
+      },
+      "EncryptionDisabled" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-encryptiondisabled",
+        "type" : [ "boolean", "object" ]
+      },
+      "Location" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-location",
+        "type" : [ "string", "object" ]
+      },
+      "Name" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-name",
+        "type" : [ "string", "object" ]
+      },
+      "NamespaceType" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-namespacetype",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Type" ],
+    "additionalProperties" : false
+  },
+  "AWS_CodeBuild_Project_CloudWatchLogsConfig" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html",
+    "properties" : {
+      "Status" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-status",
+        "type" : [ "string", "object" ]
+      },
+      "GroupName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-groupname",
+        "type" : [ "string", "object" ]
+      },
+      "StreamName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-streamname",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Status" ],
+    "additionalProperties" : false
+  },
+  "AWS_CodeBuild_Project_Environment" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html",
+    "properties" : {
+      "Type" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-type",
+        "type" : [ "string", "object" ]
+      },
+      "EnvironmentVariables" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-environmentvariables",
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/definitions/AWS_CodeBuild_Project_EnvironmentVariable"
+        },
+        "minItems" : 0
+      },
+      "PrivilegedMode" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-privilegedmode",
+        "type" : [ "boolean", "object" ]
+      },
+      "Image" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-image",
+        "type" : [ "string", "object" ]
+      },
+      "ComputeType" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-computetype",
+        "type" : [ "string", "object" ]
+      },
+      "Certificate" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-certificate",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Type", "Image", "ComputeType" ],
+    "additionalProperties" : false
+  },
+  "AWS_CodeBuild_Project_EnvironmentVariable" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html",
+    "properties" : {
+      "Type" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html#cfn-codebuild-project-environmentvariable-type",
+        "type" : [ "string", "object" ]
+      },
+      "Value" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html#cfn-codebuild-project-environmentvariable-value",
+        "type" : [ "string", "object" ]
+      },
+      "Name" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html#cfn-codebuild-project-environmentvariable-name",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Value", "Name" ],
+    "additionalProperties" : false
+  },
+  "AWS_CodeBuild_Project_LogsConfig" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html",
+    "properties" : {
+      "CloudWatchLogs" : {
+        "$ref" : "#/definitions/AWS_CodeBuild_Project_CloudWatchLogsConfig"
+      },
+      "S3Logs" : {
+        "$ref" : "#/definitions/AWS_CodeBuild_Project_S3LogsConfig"
+      }
+    },
+    "additionalProperties" : false
+  },
+  "AWS_CodeBuild_Project_ProjectCache" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectcache.html",
+    "properties" : {
+      "Type" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectcache.html#cfn-codebuild-project-projectcache-type",
+        "type" : [ "string", "object" ]
+      },
+      "Location" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectcache.html#cfn-codebuild-project-projectcache-location",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Type" ],
+    "additionalProperties" : false
+  },
+  "AWS_CodeBuild_Project_ProjectTriggers" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html",
+    "properties" : {
+      "Webhook" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-webhook",
+        "type" : [ "boolean", "object" ]
+      }
+    },
+    "additionalProperties" : false
+  },
+  "AWS_CodeBuild_Project_S3LogsConfig" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-s3logsconfig.html",
+    "properties" : {
+      "Status" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-s3logsconfig.html#cfn-codebuild-project-s3logsconfig-status",
+        "type" : [ "string", "object" ]
+      },
+      "Location" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-s3logsconfig.html#cfn-codebuild-project-s3logsconfig-location",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Status" ],
+    "additionalProperties" : false
+  },
+  "AWS_CodeBuild_Project_Source" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html",
+    "properties" : {
+      "Type" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-type",
+        "type" : [ "string", "object" ]
+      },
+      "ReportBuildStatus" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-reportbuildstatus",
+        "type" : [ "boolean", "object" ]
+      },
+      "Auth" : {
+        "$ref" : "#/definitions/AWS_CodeBuild_Project_SourceAuth"
+      },
+      "SourceIdentifier" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-sourceidentifier",
+        "type" : [ "string", "object" ]
+      },
+      "BuildSpec" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-buildspec",
+        "type" : [ "string", "object" ]
+      },
+      "GitCloneDepth" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-gitclonedepth",
+        "type" : [ "integer", "object" ]
+      },
+      "InsecureSsl" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-insecuressl",
+        "type" : [ "boolean", "object" ]
+      },
+      "Location" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-location",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Type" ],
+    "additionalProperties" : false
+  },
+  "AWS_CodeBuild_Project_SourceAuth" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html",
+    "properties" : {
+      "Type" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html#cfn-codebuild-project-sourceauth-type",
+        "type" : [ "string", "object" ]
+      },
+      "Resource" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html#cfn-codebuild-project-sourceauth-resource",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Type" ],
+    "additionalProperties" : false
+  },
+  "AWS_CodeBuild_Project_VpcConfig" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-vpcconfig.html",
+    "properties" : {
+      "Subnets" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-vpcconfig.html#cfn-codebuild-project-vpcconfig-subnets",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "minItems" : 0
+      },
+      "VpcId" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-vpcconfig.html#cfn-codebuild-project-vpcconfig-vpcid",
+        "type" : [ "string", "object" ]
+      },
+      "SecurityGroupIds" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-vpcconfig.html#cfn-codebuild-project-vpcconfig-securitygroupids",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "minItems" : 0
+      }
+    },
+    "additionalProperties" : false
+  },
   "AWS_CodeCommit_Repository_RepositoryTrigger" : {
     "type" : "object",
     "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html",
@@ -17838,6 +19277,17 @@
       "DeliveryFrequency" : {
         "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-deliverychannel-configsnapshotdeliveryproperties.html#cfn-config-deliverychannel-configsnapshotdeliveryproperties-deliveryfrequency",
         "type" : [ "string", "object" ]
+      }
+    },
+    "additionalProperties" : false
+  },
+  "AWS_DAX_Cluster_SSESpecification" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dax-cluster-ssespecification.html",
+    "properties" : {
+      "SSEEnabled" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dax-cluster-ssespecification.html#cfn-dax-cluster-ssespecification-sseenabled",
+        "type" : [ "boolean", "object" ]
       }
     },
     "additionalProperties" : false
@@ -20386,6 +21836,30 @@
       }
     },
     "required" : [ "Key", "Value" ],
+    "additionalProperties" : false
+  },
+  "AWS_EKS_Cluster_ResourcesVpcConfig" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-resourcesvpcconfig.html",
+    "properties" : {
+      "SecurityGroupIds" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-resourcesvpcconfig.html#cfn-eks-cluster-resourcesvpcconfig-securitygroupids",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "minItems" : 0
+      },
+      "SubnetIds" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-resourcesvpcconfig.html#cfn-eks-cluster-resourcesvpcconfig-subnetids",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "minItems" : 0
+      }
+    },
+    "required" : [ "SubnetIds" ],
     "additionalProperties" : false
   },
   "AWS_EMR_Cluster_Application" : {
@@ -26190,6 +27664,342 @@
     },
     "additionalProperties" : false
   },
+  "AWS_SES_ConfigurationSetEventDestination_CloudWatchDestination" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-cloudwatchdestination.html",
+    "properties" : {
+      "DimensionConfigurations" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-cloudwatchdestination.html#cfn-ses-configurationseteventdestination-cloudwatchdestination-dimensionconfigurations",
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/definitions/AWS_SES_ConfigurationSetEventDestination_DimensionConfiguration"
+        },
+        "minItems" : 0
+      }
+    },
+    "additionalProperties" : false
+  },
+  "AWS_SES_ConfigurationSetEventDestination_DimensionConfiguration" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-dimensionconfiguration.html",
+    "properties" : {
+      "DimensionValueSource" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-dimensionconfiguration.html#cfn-ses-configurationseteventdestination-dimensionconfiguration-dimensionvaluesource",
+        "type" : [ "string", "object" ]
+      },
+      "DefaultDimensionValue" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-dimensionconfiguration.html#cfn-ses-configurationseteventdestination-dimensionconfiguration-defaultdimensionvalue",
+        "type" : [ "string", "object" ]
+      },
+      "DimensionName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-dimensionconfiguration.html#cfn-ses-configurationseteventdestination-dimensionconfiguration-dimensionname",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "DimensionValueSource", "DefaultDimensionValue", "DimensionName" ],
+    "additionalProperties" : false
+  },
+  "AWS_SES_ConfigurationSetEventDestination_EventDestination" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html",
+    "properties" : {
+      "CloudWatchDestination" : {
+        "$ref" : "#/definitions/AWS_SES_ConfigurationSetEventDestination_CloudWatchDestination"
+      },
+      "Enabled" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-enabled",
+        "type" : [ "boolean", "object" ]
+      },
+      "MatchingEventTypes" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-matchingeventtypes",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "minItems" : 0
+      },
+      "Name" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-name",
+        "type" : [ "string", "object" ]
+      },
+      "KinesisFirehoseDestination" : {
+        "$ref" : "#/definitions/AWS_SES_ConfigurationSetEventDestination_KinesisFirehoseDestination"
+      }
+    },
+    "required" : [ "MatchingEventTypes" ],
+    "additionalProperties" : false
+  },
+  "AWS_SES_ConfigurationSetEventDestination_KinesisFirehoseDestination" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-kinesisfirehosedestination.html",
+    "properties" : {
+      "IAMRoleARN" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-kinesisfirehosedestination.html#cfn-ses-configurationseteventdestination-kinesisfirehosedestination-iamrolearn",
+        "type" : [ "string", "object" ]
+      },
+      "DeliveryStreamARN" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-kinesisfirehosedestination.html#cfn-ses-configurationseteventdestination-kinesisfirehosedestination-deliverystreamarn",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "IAMRoleARN", "DeliveryStreamARN" ],
+    "additionalProperties" : false
+  },
+  "AWS_SES_ReceiptFilter_Filter" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-filter.html",
+    "properties" : {
+      "IpFilter" : {
+        "$ref" : "#/definitions/AWS_SES_ReceiptFilter_IpFilter"
+      },
+      "Name" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-filter.html#cfn-ses-receiptfilter-filter-name",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "additionalProperties" : false
+  },
+  "AWS_SES_ReceiptFilter_IpFilter" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-ipfilter.html",
+    "properties" : {
+      "Policy" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-ipfilter.html#cfn-ses-receiptfilter-ipfilter-policy",
+        "type" : [ "string", "object" ]
+      },
+      "Cidr" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-ipfilter.html#cfn-ses-receiptfilter-ipfilter-cidr",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Policy", "Cidr" ],
+    "additionalProperties" : false
+  },
+  "AWS_SES_ReceiptRule_Action" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html",
+    "properties" : {
+      "BounceAction" : {
+        "$ref" : "#/definitions/AWS_SES_ReceiptRule_BounceAction"
+      },
+      "S3Action" : {
+        "$ref" : "#/definitions/AWS_SES_ReceiptRule_S3Action"
+      },
+      "StopAction" : {
+        "$ref" : "#/definitions/AWS_SES_ReceiptRule_StopAction"
+      },
+      "SNSAction" : {
+        "$ref" : "#/definitions/AWS_SES_ReceiptRule_SNSAction"
+      },
+      "WorkmailAction" : {
+        "$ref" : "#/definitions/AWS_SES_ReceiptRule_WorkmailAction"
+      },
+      "AddHeaderAction" : {
+        "$ref" : "#/definitions/AWS_SES_ReceiptRule_AddHeaderAction"
+      },
+      "LambdaAction" : {
+        "$ref" : "#/definitions/AWS_SES_ReceiptRule_LambdaAction"
+      }
+    },
+    "additionalProperties" : false
+  },
+  "AWS_SES_ReceiptRule_AddHeaderAction" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-addheaderaction.html",
+    "properties" : {
+      "HeaderValue" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-addheaderaction.html#cfn-ses-receiptrule-addheaderaction-headervalue",
+        "type" : [ "string", "object" ]
+      },
+      "HeaderName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-addheaderaction.html#cfn-ses-receiptrule-addheaderaction-headername",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "HeaderValue", "HeaderName" ],
+    "additionalProperties" : false
+  },
+  "AWS_SES_ReceiptRule_BounceAction" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html",
+    "properties" : {
+      "Sender" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html#cfn-ses-receiptrule-bounceaction-sender",
+        "type" : [ "string", "object" ]
+      },
+      "SmtpReplyCode" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html#cfn-ses-receiptrule-bounceaction-smtpreplycode",
+        "type" : [ "string", "object" ]
+      },
+      "Message" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html#cfn-ses-receiptrule-bounceaction-message",
+        "type" : [ "string", "object" ]
+      },
+      "TopicArn" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html#cfn-ses-receiptrule-bounceaction-topicarn",
+        "type" : [ "string", "object" ]
+      },
+      "StatusCode" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html#cfn-ses-receiptrule-bounceaction-statuscode",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Sender", "SmtpReplyCode", "Message" ],
+    "additionalProperties" : false
+  },
+  "AWS_SES_ReceiptRule_LambdaAction" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-lambdaaction.html",
+    "properties" : {
+      "FunctionArn" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-lambdaaction.html#cfn-ses-receiptrule-lambdaaction-functionarn",
+        "type" : [ "string", "object" ]
+      },
+      "TopicArn" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-lambdaaction.html#cfn-ses-receiptrule-lambdaaction-topicarn",
+        "type" : [ "string", "object" ]
+      },
+      "InvocationType" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-lambdaaction.html#cfn-ses-receiptrule-lambdaaction-invocationtype",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "FunctionArn" ],
+    "additionalProperties" : false
+  },
+  "AWS_SES_ReceiptRule_Rule" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html",
+    "properties" : {
+      "ScanEnabled" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-scanenabled",
+        "type" : [ "boolean", "object" ]
+      },
+      "Recipients" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-recipients",
+        "type" : "array",
+        "items" : {
+          "type" : [ "string", "object" ]
+        },
+        "minItems" : 0
+      },
+      "Actions" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-actions",
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/definitions/AWS_SES_ReceiptRule_Action"
+        },
+        "minItems" : 0
+      },
+      "Enabled" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-enabled",
+        "type" : [ "boolean", "object" ]
+      },
+      "Name" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-name",
+        "type" : [ "string", "object" ]
+      },
+      "TlsPolicy" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-tlspolicy",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "additionalProperties" : false
+  },
+  "AWS_SES_ReceiptRule_S3Action" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-s3action.html",
+    "properties" : {
+      "BucketName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-s3action.html#cfn-ses-receiptrule-s3action-bucketname",
+        "type" : [ "string", "object" ]
+      },
+      "KmsKeyArn" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-s3action.html#cfn-ses-receiptrule-s3action-kmskeyarn",
+        "type" : [ "string", "object" ]
+      },
+      "TopicArn" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-s3action.html#cfn-ses-receiptrule-s3action-topicarn",
+        "type" : [ "string", "object" ]
+      },
+      "ObjectKeyPrefix" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-s3action.html#cfn-ses-receiptrule-s3action-objectkeyprefix",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "BucketName" ],
+    "additionalProperties" : false
+  },
+  "AWS_SES_ReceiptRule_SNSAction" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-snsaction.html",
+    "properties" : {
+      "TopicArn" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-snsaction.html#cfn-ses-receiptrule-snsaction-topicarn",
+        "type" : [ "string", "object" ]
+      },
+      "Encoding" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-snsaction.html#cfn-ses-receiptrule-snsaction-encoding",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "additionalProperties" : false
+  },
+  "AWS_SES_ReceiptRule_StopAction" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-stopaction.html",
+    "properties" : {
+      "Scope" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-stopaction.html#cfn-ses-receiptrule-stopaction-scope",
+        "type" : [ "string", "object" ]
+      },
+      "TopicArn" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-stopaction.html#cfn-ses-receiptrule-stopaction-topicarn",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Scope" ],
+    "additionalProperties" : false
+  },
+  "AWS_SES_ReceiptRule_WorkmailAction" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-workmailaction.html",
+    "properties" : {
+      "TopicArn" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-workmailaction.html#cfn-ses-receiptrule-workmailaction-topicarn",
+        "type" : [ "string", "object" ]
+      },
+      "OrganizationArn" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-workmailaction.html#cfn-ses-receiptrule-workmailaction-organizationarn",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "OrganizationArn" ],
+    "additionalProperties" : false
+  },
+  "AWS_SES_Template_Template" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html",
+    "properties" : {
+      "HtmlPart" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-htmlpart",
+        "type" : [ "string", "object" ]
+      },
+      "TextPart" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-textpart",
+        "type" : [ "string", "object" ]
+      },
+      "TemplateName" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-templatename",
+        "type" : [ "string", "object" ]
+      },
+      "SubjectPart" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-subjectpart",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "additionalProperties" : false
+  },
   "AWS_SNS_Topic_Subscription" : {
     "type" : "object",
     "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-subscription.html",
@@ -27019,6 +28829,217 @@
     "required" : [ "TextTransformation" ],
     "additionalProperties" : false
   },
+  "AWS_WAFRegional_ByteMatchSet_ByteMatchTuple" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-bytematchtuple.html",
+    "properties" : {
+      "TargetString" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-bytematchtuple.html#cfn-wafregional-bytematchset-bytematchtuple-targetstring",
+        "type" : [ "string", "object" ]
+      },
+      "TargetStringBase64" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-bytematchtuple.html#cfn-wafregional-bytematchset-bytematchtuple-targetstringbase64",
+        "type" : [ "string", "object" ]
+      },
+      "PositionalConstraint" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-bytematchtuple.html#cfn-wafregional-bytematchset-bytematchtuple-positionalconstraint",
+        "type" : [ "string", "object" ]
+      },
+      "TextTransformation" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-bytematchtuple.html#cfn-wafregional-bytematchset-bytematchtuple-texttransformation",
+        "type" : [ "string", "object" ]
+      },
+      "FieldToMatch" : {
+        "$ref" : "#/definitions/AWS_WAFRegional_ByteMatchSet_FieldToMatch"
+      }
+    },
+    "required" : [ "PositionalConstraint", "TextTransformation" ],
+    "additionalProperties" : false
+  },
+  "AWS_WAFRegional_ByteMatchSet_FieldToMatch" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-fieldtomatch.html",
+    "properties" : {
+      "Type" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-fieldtomatch.html#cfn-wafregional-bytematchset-fieldtomatch-type",
+        "type" : [ "string", "object" ]
+      },
+      "Data" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-fieldtomatch.html#cfn-wafregional-bytematchset-fieldtomatch-data",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Type" ],
+    "additionalProperties" : false
+  },
+  "AWS_WAFRegional_IPSet_IPSetDescriptor" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-ipset-ipsetdescriptor.html",
+    "properties" : {
+      "Type" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-ipset-ipsetdescriptor.html#cfn-wafregional-ipset-ipsetdescriptor-type",
+        "type" : [ "string", "object" ]
+      },
+      "Value" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-ipset-ipsetdescriptor.html#cfn-wafregional-ipset-ipsetdescriptor-value",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Type", "Value" ],
+    "additionalProperties" : false
+  },
+  "AWS_WAFRegional_Rule_Predicate" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-rule-predicate.html",
+    "properties" : {
+      "Type" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-rule-predicate.html#cfn-wafregional-rule-predicate-type",
+        "type" : [ "string", "object" ]
+      },
+      "DataId" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-rule-predicate.html#cfn-wafregional-rule-predicate-dataid",
+        "type" : [ "string", "object" ]
+      },
+      "Negated" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-rule-predicate.html#cfn-wafregional-rule-predicate-negated",
+        "type" : [ "boolean", "object" ]
+      }
+    },
+    "required" : [ "Type", "DataId", "Negated" ],
+    "additionalProperties" : false
+  },
+  "AWS_WAFRegional_SizeConstraintSet_FieldToMatch" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-fieldtomatch.html",
+    "properties" : {
+      "Type" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-fieldtomatch.html#cfn-wafregional-sizeconstraintset-fieldtomatch-type",
+        "type" : [ "string", "object" ]
+      },
+      "Data" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-fieldtomatch.html#cfn-wafregional-sizeconstraintset-fieldtomatch-data",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Type" ],
+    "additionalProperties" : false
+  },
+  "AWS_WAFRegional_SizeConstraintSet_SizeConstraint" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-sizeconstraint.html",
+    "properties" : {
+      "ComparisonOperator" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-sizeconstraint.html#cfn-wafregional-sizeconstraintset-sizeconstraint-comparisonoperator",
+        "type" : [ "string", "object" ]
+      },
+      "Size" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-sizeconstraint.html#cfn-wafregional-sizeconstraintset-sizeconstraint-size",
+        "type" : [ "integer", "object" ]
+      },
+      "TextTransformation" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-sizeconstraint.html#cfn-wafregional-sizeconstraintset-sizeconstraint-texttransformation",
+        "type" : [ "string", "object" ]
+      },
+      "FieldToMatch" : {
+        "$ref" : "#/definitions/AWS_WAFRegional_SizeConstraintSet_FieldToMatch"
+      }
+    },
+    "required" : [ "ComparisonOperator", "Size", "TextTransformation" ],
+    "additionalProperties" : false
+  },
+  "AWS_WAFRegional_SqlInjectionMatchSet_FieldToMatch" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sqlinjectionmatchset-fieldtomatch.html",
+    "properties" : {
+      "Type" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sqlinjectionmatchset-fieldtomatch.html#cfn-wafregional-sqlinjectionmatchset-fieldtomatch-type",
+        "type" : [ "string", "object" ]
+      },
+      "Data" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sqlinjectionmatchset-fieldtomatch.html#cfn-wafregional-sqlinjectionmatchset-fieldtomatch-data",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Type" ],
+    "additionalProperties" : false
+  },
+  "AWS_WAFRegional_SqlInjectionMatchSet_SqlInjectionMatchTuple" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sqlinjectionmatchset-sqlinjectionmatchtuple.html",
+    "properties" : {
+      "TextTransformation" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sqlinjectionmatchset-sqlinjectionmatchtuple.html#cfn-wafregional-sqlinjectionmatchset-sqlinjectionmatchtuple-texttransformation",
+        "type" : [ "string", "object" ]
+      },
+      "FieldToMatch" : {
+        "$ref" : "#/definitions/AWS_WAFRegional_SqlInjectionMatchSet_FieldToMatch"
+      }
+    },
+    "required" : [ "TextTransformation" ],
+    "additionalProperties" : false
+  },
+  "AWS_WAFRegional_WebACL_Action" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-action.html",
+    "properties" : {
+      "Type" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-action.html#cfn-wafregional-webacl-action-type",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Type" ],
+    "additionalProperties" : false
+  },
+  "AWS_WAFRegional_WebACL_Rule" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rule.html",
+    "properties" : {
+      "Action" : {
+        "$ref" : "#/definitions/AWS_WAFRegional_WebACL_Action"
+      },
+      "Priority" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rule.html#cfn-wafregional-webacl-rule-priority",
+        "type" : [ "integer", "object" ]
+      },
+      "RuleId" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rule.html#cfn-wafregional-webacl-rule-ruleid",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Priority", "RuleId" ],
+    "additionalProperties" : false
+  },
+  "AWS_WAFRegional_XssMatchSet_FieldToMatch" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-fieldtomatch.html",
+    "properties" : {
+      "Type" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-fieldtomatch.html#cfn-wafregional-xssmatchset-fieldtomatch-type",
+        "type" : [ "string", "object" ]
+      },
+      "Data" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-fieldtomatch.html#cfn-wafregional-xssmatchset-fieldtomatch-data",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Type" ],
+    "additionalProperties" : false
+  },
+  "AWS_WAFRegional_XssMatchSet_XssMatchTuple" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-xssmatchtuple.html",
+    "properties" : {
+      "TextTransformation" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-xssmatchtuple.html#cfn-wafregional-xssmatchset-xssmatchtuple-texttransformation",
+        "type" : [ "string", "object" ]
+      },
+      "FieldToMatch" : {
+        "$ref" : "#/definitions/AWS_WAFRegional_XssMatchSet_FieldToMatch"
+      }
+    },
+    "required" : [ "TextTransformation" ],
+    "additionalProperties" : false
+  },
   "AWS_WorkSpaces_Workspace_WorkspaceProperties" : {
     "type" : "object",
     "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html",
@@ -27048,18 +29069,18 @@
   },
   "Tag" : {
     "type" : "object",
-    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html",
     "properties" : {
-      "Value" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html#cfn-neptune-dbsubnetgroup-tag-value",
+      "Key" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html#cfn-resource-tags-key",
         "type" : [ "string", "object" ]
       },
-      "Key" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html#cfn-neptune-dbsubnetgroup-tag-key",
+      "Value" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html#cfn-resource-tags-value",
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "Value", "Key" ],
+    "required" : [ "Key", "Value" ],
     "additionalProperties" : false
   },
   "resources" : {
@@ -27107,6 +29128,20 @@
         "$ref" : "#/definitions/AWS_ApiGateway_UsagePlanKey"
       }, {
         "$ref" : "#/definitions/AWS_ApiGateway_VpcLink"
+      }, {
+        "$ref" : "#/definitions/AWS_AppStream_DirectoryConfig"
+      }, {
+        "$ref" : "#/definitions/AWS_AppStream_Fleet"
+      }, {
+        "$ref" : "#/definitions/AWS_AppStream_ImageBuilder"
+      }, {
+        "$ref" : "#/definitions/AWS_AppStream_Stack"
+      }, {
+        "$ref" : "#/definitions/AWS_AppStream_StackFleetAssociation"
+      }, {
+        "$ref" : "#/definitions/AWS_AppStream_StackUserAssociation"
+      }, {
+        "$ref" : "#/definitions/AWS_AppStream_User"
       }, {
         "$ref" : "#/definitions/AWS_AppSync_ApiKey"
       }, {
@@ -27168,6 +29203,8 @@
       }, {
         "$ref" : "#/definitions/AWS_CloudWatch_Dashboard"
       }, {
+        "$ref" : "#/definitions/AWS_CodeBuild_Project"
+      }, {
         "$ref" : "#/definitions/AWS_CodeCommit_Repository"
       }, {
         "$ref" : "#/definitions/AWS_CodeDeploy_Application"
@@ -27205,6 +29242,12 @@
         "$ref" : "#/definitions/AWS_Config_ConfigurationRecorder"
       }, {
         "$ref" : "#/definitions/AWS_Config_DeliveryChannel"
+      }, {
+        "$ref" : "#/definitions/AWS_DAX_Cluster"
+      }, {
+        "$ref" : "#/definitions/AWS_DAX_ParameterGroup"
+      }, {
+        "$ref" : "#/definitions/AWS_DAX_SubnetGroup"
       }, {
         "$ref" : "#/definitions/AWS_DLM_LifecyclePolicy"
       }, {
@@ -27321,6 +29364,8 @@
         "$ref" : "#/definitions/AWS_EFS_FileSystem"
       }, {
         "$ref" : "#/definitions/AWS_EFS_MountTarget"
+      }, {
+        "$ref" : "#/definitions/AWS_EKS_Cluster"
       }, {
         "$ref" : "#/definitions/AWS_EMR_Cluster"
       }, {
@@ -27546,6 +29591,18 @@
       }, {
         "$ref" : "#/definitions/AWS_SDB_Domain"
       }, {
+        "$ref" : "#/definitions/AWS_SES_ConfigurationSet"
+      }, {
+        "$ref" : "#/definitions/AWS_SES_ConfigurationSetEventDestination"
+      }, {
+        "$ref" : "#/definitions/AWS_SES_ReceiptFilter"
+      }, {
+        "$ref" : "#/definitions/AWS_SES_ReceiptRule"
+      }, {
+        "$ref" : "#/definitions/AWS_SES_ReceiptRuleSet"
+      }, {
+        "$ref" : "#/definitions/AWS_SES_Template"
+      }, {
         "$ref" : "#/definitions/AWS_SNS_Subscription"
       }, {
         "$ref" : "#/definitions/AWS_SNS_Topic"
@@ -27639,6 +29696,22 @@
         "$ref" : "#/definitions/AWS_WAF_WebACL"
       }, {
         "$ref" : "#/definitions/AWS_WAF_XssMatchSet"
+      }, {
+        "$ref" : "#/definitions/AWS_WAFRegional_ByteMatchSet"
+      }, {
+        "$ref" : "#/definitions/AWS_WAFRegional_IPSet"
+      }, {
+        "$ref" : "#/definitions/AWS_WAFRegional_Rule"
+      }, {
+        "$ref" : "#/definitions/AWS_WAFRegional_SizeConstraintSet"
+      }, {
+        "$ref" : "#/definitions/AWS_WAFRegional_SqlInjectionMatchSet"
+      }, {
+        "$ref" : "#/definitions/AWS_WAFRegional_WebACL"
+      }, {
+        "$ref" : "#/definitions/AWS_WAFRegional_WebACLAssociation"
+      }, {
+        "$ref" : "#/definitions/AWS_WAFRegional_XssMatchSet"
       }, {
         "$ref" : "#/definitions/AWS_WorkSpaces_Workspace"
       } ]

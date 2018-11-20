@@ -838,42 +838,6 @@
     "required" : [ "Type", "Properties" ],
     "additionalProperties" : false
   },
-  "AWS_ApiGateway_VpcLink" : {
-    "type" : "object",
-    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html",
-    "properties" : {
-      "Type" : {
-        "description" : "Type of resource equals only AWS::ApiGateway::VpcLink",
-        "type" : "string",
-        "enum" : [ "AWS::ApiGateway::VpcLink" ]
-      },
-      "Properties" : {
-        "type" : "object",
-        "properties" : {
-          "Description" : {
-            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-description",
-            "type" : [ "string", "object" ]
-          },
-          "TargetArns" : {
-            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-targetarns",
-            "type" : "array",
-            "items" : {
-              "type" : [ "string", "object" ]
-            },
-            "minItems" : 0
-          },
-          "Name" : {
-            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-name",
-            "type" : [ "string", "object" ]
-          }
-        },
-        "required" : [ "TargetArns", "Name" ],
-        "additionalProperties" : false
-      }
-    },
-    "required" : [ "Type", "Properties" ],
-    "additionalProperties" : false
-  },
   "AWS_IAM_AccessKey" : {
     "type" : "object",
     "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html",
@@ -2293,18 +2257,17 @@
   },
   "Tag" : {
     "type" : "object",
-    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-replicationtask-tag.html",
     "properties" : {
       "Value" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html#cfn-neptune-dbsubnetgroup-tag-value",
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-replicationtask-tag.html#cfn-dms-replicationtask-tag-value",
         "type" : [ "string", "object" ]
       },
       "Key" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html#cfn-neptune-dbsubnetgroup-tag-key",
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-replicationtask-tag.html#cfn-dms-replicationtask-tag-key",
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "Value", "Key" ],
     "additionalProperties" : false
   },
   "resources" : {
@@ -2346,8 +2309,6 @@
         "$ref" : "#/definitions/AWS_ApiGateway_UsagePlan"
       }, {
         "$ref" : "#/definitions/AWS_ApiGateway_UsagePlanKey"
-      }, {
-        "$ref" : "#/definitions/AWS_ApiGateway_VpcLink"
       }, {
         "$ref" : "#/definitions/AWS_IAM_AccessKey"
       }, {

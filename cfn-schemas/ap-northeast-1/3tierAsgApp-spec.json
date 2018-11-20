@@ -441,37 +441,6 @@
     "required" : [ "Type", "Properties" ],
     "additionalProperties" : false
   },
-  "AWS_AutoScalingPlans_ScalingPlan" : {
-    "type" : "object",
-    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html",
-    "properties" : {
-      "Type" : {
-        "description" : "Type of resource equals only AWS::AutoScalingPlans::ScalingPlan",
-        "type" : "string",
-        "enum" : [ "AWS::AutoScalingPlans::ScalingPlan" ]
-      },
-      "Properties" : {
-        "type" : "object",
-        "properties" : {
-          "ApplicationSource" : {
-            "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_ApplicationSource"
-          },
-          "ScalingInstructions" : {
-            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html#cfn-autoscalingplans-scalingplan-scalinginstructions",
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_ScalingInstruction"
-            },
-            "minItems" : 0
-          }
-        },
-        "required" : [ "ScalingInstructions" ],
-        "additionalProperties" : false
-      }
-    },
-    "required" : [ "Type", "Properties" ],
-    "additionalProperties" : false
-  },
   "AWS_ElasticLoadBalancingV2_Listener" : {
     "type" : "object",
     "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html",
@@ -2136,257 +2105,6 @@
     "required" : [ "TargetValue" ],
     "additionalProperties" : false
   },
-  "AWS_AutoScalingPlans_ScalingPlan_ApplicationSource" : {
-    "type" : "object",
-    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-applicationsource.html",
-    "properties" : {
-      "CloudFormationStackARN" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-applicationsource.html#cfn-autoscalingplans-scalingplan-applicationsource-cloudformationstackarn",
-        "type" : [ "string", "object" ]
-      },
-      "TagFilters" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-applicationsource.html#cfn-autoscalingplans-scalingplan-applicationsource-tagfilters",
-        "type" : "array",
-        "items" : {
-          "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_TagFilter"
-        },
-        "minItems" : 0
-      }
-    },
-    "additionalProperties" : false
-  },
-  "AWS_AutoScalingPlans_ScalingPlan_CustomizedLoadMetricSpecification" : {
-    "type" : "object",
-    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedloadmetricspecification.html",
-    "properties" : {
-      "MetricName" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedloadmetricspecification-metricname",
-        "type" : [ "string", "object" ]
-      },
-      "Statistic" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedloadmetricspecification-statistic",
-        "type" : [ "string", "object" ]
-      },
-      "Dimensions" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedloadmetricspecification-dimensions",
-        "type" : "array",
-        "items" : {
-          "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_MetricDimension"
-        },
-        "minItems" : 0
-      },
-      "Unit" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedloadmetricspecification-unit",
-        "type" : [ "string", "object" ]
-      },
-      "Namespace" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedloadmetricspecification-namespace",
-        "type" : [ "string", "object" ]
-      }
-    },
-    "required" : [ "MetricName", "Statistic", "Namespace" ],
-    "additionalProperties" : false
-  },
-  "AWS_AutoScalingPlans_ScalingPlan_CustomizedScalingMetricSpecification" : {
-    "type" : "object",
-    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html",
-    "properties" : {
-      "MetricName" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedscalingmetricspecification-metricname",
-        "type" : [ "string", "object" ]
-      },
-      "Statistic" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedscalingmetricspecification-statistic",
-        "type" : [ "string", "object" ]
-      },
-      "Dimensions" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedscalingmetricspecification-dimensions",
-        "type" : "array",
-        "items" : {
-          "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_MetricDimension"
-        },
-        "minItems" : 0
-      },
-      "Unit" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedscalingmetricspecification-unit",
-        "type" : [ "string", "object" ]
-      },
-      "Namespace" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedscalingmetricspecification-namespace",
-        "type" : [ "string", "object" ]
-      }
-    },
-    "required" : [ "MetricName", "Statistic", "Namespace" ],
-    "additionalProperties" : false
-  },
-  "AWS_AutoScalingPlans_ScalingPlan_MetricDimension" : {
-    "type" : "object",
-    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-metricdimension.html",
-    "properties" : {
-      "Value" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-metricdimension.html#cfn-autoscalingplans-scalingplan-metricdimension-value",
-        "type" : [ "string", "object" ]
-      },
-      "Name" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-metricdimension.html#cfn-autoscalingplans-scalingplan-metricdimension-name",
-        "type" : [ "string", "object" ]
-      }
-    },
-    "required" : [ "Value", "Name" ],
-    "additionalProperties" : false
-  },
-  "AWS_AutoScalingPlans_ScalingPlan_PredefinedLoadMetricSpecification" : {
-    "type" : "object",
-    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedloadmetricspecification.html",
-    "properties" : {
-      "PredefinedLoadMetricType" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-predefinedloadmetricspecification-predefinedloadmetrictype",
-        "type" : [ "string", "object" ]
-      },
-      "ResourceLabel" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-predefinedloadmetricspecification-resourcelabel",
-        "type" : [ "string", "object" ]
-      }
-    },
-    "required" : [ "PredefinedLoadMetricType" ],
-    "additionalProperties" : false
-  },
-  "AWS_AutoScalingPlans_ScalingPlan_PredefinedScalingMetricSpecification" : {
-    "type" : "object",
-    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedscalingmetricspecification.html",
-    "properties" : {
-      "ResourceLabel" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedscalingmetricspecification.html#cfn-autoscalingplans-scalingplan-predefinedscalingmetricspecification-resourcelabel",
-        "type" : [ "string", "object" ]
-      },
-      "PredefinedScalingMetricType" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedscalingmetricspecification.html#cfn-autoscalingplans-scalingplan-predefinedscalingmetricspecification-predefinedscalingmetrictype",
-        "type" : [ "string", "object" ]
-      }
-    },
-    "required" : [ "PredefinedScalingMetricType" ],
-    "additionalProperties" : false
-  },
-  "AWS_AutoScalingPlans_ScalingPlan_ScalingInstruction" : {
-    "type" : "object",
-    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html",
-    "properties" : {
-      "DisableDynamicScaling" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-disabledynamicscaling",
-        "type" : [ "boolean", "object" ]
-      },
-      "ServiceNamespace" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-servicenamespace",
-        "type" : [ "string", "object" ]
-      },
-      "PredictiveScalingMaxCapacityBehavior" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-predictivescalingmaxcapacitybehavior",
-        "type" : [ "string", "object" ]
-      },
-      "ScalableDimension" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-scalabledimension",
-        "type" : [ "string", "object" ]
-      },
-      "ScalingPolicyUpdateBehavior" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-scalingpolicyupdatebehavior",
-        "type" : [ "string", "object" ]
-      },
-      "MinCapacity" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-mincapacity",
-        "type" : [ "integer", "object" ]
-      },
-      "TargetTrackingConfigurations" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-targettrackingconfigurations",
-        "type" : "array",
-        "items" : {
-          "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_TargetTrackingConfiguration"
-        },
-        "minItems" : 0
-      },
-      "PredictiveScalingMaxCapacityBuffer" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-predictivescalingmaxcapacitybuffer",
-        "type" : [ "integer", "object" ]
-      },
-      "CustomizedLoadMetricSpecification" : {
-        "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_CustomizedLoadMetricSpecification"
-      },
-      "PredefinedLoadMetricSpecification" : {
-        "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_PredefinedLoadMetricSpecification"
-      },
-      "ResourceId" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-resourceid",
-        "type" : [ "string", "object" ]
-      },
-      "ScheduledActionBufferTime" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-scheduledactionbuffertime",
-        "type" : [ "integer", "object" ]
-      },
-      "MaxCapacity" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-maxcapacity",
-        "type" : [ "integer", "object" ]
-      },
-      "PredictiveScalingMode" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-predictivescalingmode",
-        "type" : [ "string", "object" ]
-      }
-    },
-    "required" : [ "ServiceNamespace", "ScalableDimension", "MinCapacity", "TargetTrackingConfigurations", "ResourceId", "MaxCapacity" ],
-    "additionalProperties" : false
-  },
-  "AWS_AutoScalingPlans_ScalingPlan_TagFilter" : {
-    "type" : "object",
-    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-tagfilter.html",
-    "properties" : {
-      "Values" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-tagfilter.html#cfn-autoscalingplans-scalingplan-tagfilter-values",
-        "type" : "array",
-        "items" : {
-          "type" : [ "string", "object" ]
-        },
-        "minItems" : 0
-      },
-      "Key" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-tagfilter.html#cfn-autoscalingplans-scalingplan-tagfilter-key",
-        "type" : [ "string", "object" ]
-      }
-    },
-    "required" : [ "Key" ],
-    "additionalProperties" : false
-  },
-  "AWS_AutoScalingPlans_ScalingPlan_TargetTrackingConfiguration" : {
-    "type" : "object",
-    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html",
-    "properties" : {
-      "ScaleOutCooldown" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-scaleoutcooldown",
-        "type" : [ "integer", "object" ]
-      },
-      "TargetValue" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-targetvalue",
-        "type" : [ "number", "object" ]
-      },
-      "PredefinedScalingMetricSpecification" : {
-        "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_PredefinedScalingMetricSpecification"
-      },
-      "DisableScaleIn" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-disablescalein",
-        "type" : [ "boolean", "object" ]
-      },
-      "ScaleInCooldown" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-scaleincooldown",
-        "type" : [ "integer", "object" ]
-      },
-      "EstimatedInstanceWarmup" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-estimatedinstancewarmup",
-        "type" : [ "integer", "object" ]
-      },
-      "CustomizedScalingMetricSpecification" : {
-        "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan_CustomizedScalingMetricSpecification"
-      }
-    },
-    "required" : [ "TargetValue" ],
-    "additionalProperties" : false
-  },
   "AWS_ElasticLoadBalancingV2_Listener_Action" : {
     "type" : "object",
     "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html",
@@ -2726,18 +2444,17 @@
   },
   "Tag" : {
     "type" : "object",
-    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-tag.html",
     "properties" : {
       "Value" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html#cfn-neptune-dbsubnetgroup-tag-value",
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-tag.html#cfn-sagemaker-endpoint-tag-value",
         "type" : [ "string", "object" ]
       },
       "Key" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html#cfn-neptune-dbsubnetgroup-tag-key",
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-tag.html#cfn-sagemaker-endpoint-tag-key",
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "Value", "Key" ],
     "additionalProperties" : false
   },
   "resources" : {
@@ -2753,8 +2470,6 @@
         "$ref" : "#/definitions/AWS_AutoScaling_ScalingPolicy"
       }, {
         "$ref" : "#/definitions/AWS_AutoScaling_ScheduledAction"
-      }, {
-        "$ref" : "#/definitions/AWS_AutoScalingPlans_ScalingPlan"
       }, {
         "$ref" : "#/definitions/AWS_ElasticLoadBalancingV2_Listener"
       }, {

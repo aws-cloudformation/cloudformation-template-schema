@@ -47,22 +47,22 @@
       "additionalProperties": {
         "oneOf": [
           {
-            "$ref": "../cfn-parameter.json#/definitions/StringParam"
+            "$ref": "{{{publishRef}}}cfn-parameter.json#/definitions/StringParam"
           },
           {
-            "$ref": "../cfn-parameter.json#/definitions/StringLikeParam"
+            "$ref": "{{{publishRef}}}cfn-parameter.json#/definitions/StringLikeParam"
           },
           {
-            "$ref": "../cfn-parameter.json#/definitions/NumberParam"
+            "$ref": "{{{publishRef}}}cfn-parameter.json#/definitions/NumberParam"
           },
           {
-            "$ref": "../cfn-parameter.json#/definitions/CommonDelimitedList"
+            "$ref": "{{{publishRef}}}cfn-parameter.json#/definitions/CommonDelimitedList"
           },
           {
-            "$ref": "../cfn-parameter.json#/definitions/StringLikeList"
+            "$ref": "{{{publishRef}}}cfn-parameter.json#/definitions/StringLikeList"
           },
           {
-            "$ref": "../cfn-parameter.json#/definitions/NumberList"
+            "$ref": "{{{publishRef}}}cfn-parameter.json#/definitions/NumberList"
           }
         ]
       }

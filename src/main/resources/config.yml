@@ -1,6 +1,6 @@
 settings:
   draft: draft07
-  region: us-east-2
+  regions: [us, ap, ca, eu, sa]
   output: cfn-schemas
   single: false
 

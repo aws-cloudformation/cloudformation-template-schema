@@ -1196,38 +1196,6 @@
     "required" : [ "Type", "Properties" ],
     "additionalProperties" : false
   },
-  "AWS_EC2_VPCEndpointServicePermissions" : {
-    "type" : "object",
-    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservicepermissions.html",
-    "properties" : {
-      "Type" : {
-        "description" : "Type of resource equals only AWS::EC2::VPCEndpointServicePermissions",
-        "type" : "string",
-        "enum" : [ "AWS::EC2::VPCEndpointServicePermissions" ]
-      },
-      "Properties" : {
-        "type" : "object",
-        "properties" : {
-          "AllowedPrincipals" : {
-            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservicepermissions.html#cfn-ec2-vpcendpointservicepermissions-allowedprincipals",
-            "type" : "array",
-            "items" : {
-              "type" : [ "string", "object" ]
-            },
-            "minItems" : 0
-          },
-          "ServiceId" : {
-            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservicepermissions.html#cfn-ec2-vpcendpointservicepermissions-serviceid",
-            "type" : [ "string", "object" ]
-          }
-        },
-        "required" : [ "ServiceId" ],
-        "additionalProperties" : false
-      }
-    },
-    "required" : [ "Type", "Properties" ],
-    "additionalProperties" : false
-  },
   "AWS_EC2_VPCGatewayAttachment" : {
     "type" : "object",
     "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html",
@@ -1620,18 +1588,18 @@
   },
   "Tag" : {
     "type" : "object",
-    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html",
     "properties" : {
-      "Value" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html#cfn-neptune-dbsubnetgroup-tag-value",
+      "Key" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html#cfn-resource-tags-key",
         "type" : [ "string", "object" ]
       },
-      "Key" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html#cfn-neptune-dbsubnetgroup-tag-key",
+      "Value" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html#cfn-resource-tags-value",
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "Value", "Key" ],
+    "required" : [ "Key", "Value" ],
     "additionalProperties" : false
   },
   "resources" : {
@@ -1693,8 +1661,6 @@
         "$ref" : "#/definitions/AWS_EC2_VPCDHCPOptionsAssociation"
       }, {
         "$ref" : "#/definitions/AWS_EC2_VPCEndpoint"
-      }, {
-        "$ref" : "#/definitions/AWS_EC2_VPCEndpointServicePermissions"
       }, {
         "$ref" : "#/definitions/AWS_EC2_VPCGatewayAttachment"
       }, {

@@ -1196,6 +1196,46 @@
     "required" : [ "Type", "Properties" ],
     "additionalProperties" : false
   },
+  "AWS_EC2_VPCEndpointConnectionNotification" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::VPCEndpointConnectionNotification",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::VPCEndpointConnectionNotification" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "ConnectionEvents" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-connectionevents",
+            "type" : "array",
+            "items" : {
+              "type" : [ "string", "object" ]
+            },
+            "minItems" : 0
+          },
+          "VPCEndpointId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-vpcendpointid",
+            "type" : [ "string", "object" ]
+          },
+          "ServiceId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-serviceid",
+            "type" : [ "string", "object" ]
+          },
+          "ConnectionNotificationArn" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-connectionnotificationarn",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "ConnectionEvents", "ConnectionNotificationArn" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
   "AWS_EC2_VPCEndpointServicePermissions" : {
     "type" : "object",
     "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservicepermissions.html",
@@ -1620,18 +1660,18 @@
   },
   "Tag" : {
     "type" : "object",
-    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html",
     "properties" : {
-      "Value" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html#cfn-neptune-dbsubnetgroup-tag-value",
+      "Key" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html#cfn-resource-tags-key",
         "type" : [ "string", "object" ]
       },
-      "Key" : {
-        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html#cfn-neptune-dbsubnetgroup-tag-key",
+      "Value" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html#cfn-resource-tags-value",
         "type" : [ "string", "object" ]
       }
     },
-    "required" : [ "Value", "Key" ],
+    "required" : [ "Key", "Value" ],
     "additionalProperties" : false
   },
   "resources" : {
@@ -1693,6 +1733,8 @@
         "$ref" : "#/definitions/AWS_EC2_VPCDHCPOptionsAssociation"
       }, {
         "$ref" : "#/definitions/AWS_EC2_VPCEndpoint"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_VPCEndpointConnectionNotification"
       }, {
         "$ref" : "#/definitions/AWS_EC2_VPCEndpointServicePermissions"
       }, {

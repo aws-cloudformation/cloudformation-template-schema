@@ -77,20 +77,24 @@ public class SpecificationLoader {
             if (nread < 4) {
                 throw new IOException("Can not read stream");
             }
-            int magicNum =  0x01 << (int)magic[3] | 0x01 << (int)magic[2] |
-                            0x01 << (int)magic[2] | 0x01 << (int)magic[2];
+            int magicNum = ((int)magic[0] & 0xFF) | ((int)magic[1] & 0xFF) << 8;
             Reader reader;
             if (GZIPInputStream.GZIP_MAGIC == magicNum) {
                 stream.unread(magic);
                 reader = new InputStreamReader(new GZIPInputStream(stream), StandardCharsets.UTF_8);
             }
-            else if (magicNum == 0x0403) {
+            else {
+                magicNum |= ((int)magic[2] & 0xFF) << 16 | ((int)magic[3] & 0xFF) << 24;
+                if (magicNum == 0x04034b50) {
+                    stream.unread(magic);
+                    reader = new InputStreamReader(new ZipInputStream(stream), StandardCharsets.UTF_8);
+                }
+                else {
+                    stream.unread(magic);
+                    reader = new InputStreamReader(stream, StandardCharsets.UTF_8);
+                }
                 stream.unread(magic);
                 reader = new InputStreamReader(new ZipInputStream(stream), StandardCharsets.UTF_8);
-            }
-            else {
-                stream.unread(magic);
-                reader = new InputStreamReader(stream, StandardCharsets.UTF_8);
             }
             return mapperForJSON.readValue(reader, SingleCfnSpecification.class);
         }

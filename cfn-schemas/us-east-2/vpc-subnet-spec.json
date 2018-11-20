@@ -1,0 +1,211 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "type" : "object",
+  "definitions" : {
+    "FnRef": {
+      "type": "object",
+      "properties": {
+        "Ref": {
+          "type": "string"
+        }
+      },
+      "required": ["Ref"],
+      "additionalProperties": false
+    },
+    "FnGetAtt": {
+      "type": "object",
+      "properties": {
+        "Fn::GetAtt": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "maxItems": 3,
+          "minItems": 2
+        }
+      },
+      "required": ["Fn::GetAtt"],
+      "additionalProperties": false
+    },
+    
+  "AWS_EC2_Subnet" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::Subnet",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::Subnet" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "AssignIpv6AddressOnCreation" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-assignipv6addressoncreation",
+            "type" : [ "boolean", "object" ]
+          },
+          "AvailabilityZone" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-availabilityzone",
+            "type" : [ "string", "object" ]
+          },
+          "CidrBlock" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-cidrblock",
+            "type" : [ "string", "object" ]
+          },
+          "Ipv6CidrBlock" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-ipv6cidrblock",
+            "type" : [ "string", "object" ]
+          },
+          "MapPublicIpOnLaunch" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-mappubliciponlaunch",
+            "type" : [ "boolean", "object" ]
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          },
+          "VpcId" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-awsec2subnet-prop-vpcid",
+            "type" : [ "string", "object" ]
+          }
+        },
+        "required" : [ "CidrBlock", "VpcId" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
+  "AWS_EC2_VPC" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html",
+    "properties" : {
+      "Type" : {
+        "description" : "Type of resource equals only AWS::EC2::VPC",
+        "type" : "string",
+        "enum" : [ "AWS::EC2::VPC" ]
+      },
+      "Properties" : {
+        "type" : "object",
+        "properties" : {
+          "CidrBlock" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-cidrblock",
+            "type" : [ "string", "object" ]
+          },
+          "EnableDnsHostnames" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-EnableDnsHostnames",
+            "type" : [ "boolean", "object" ]
+          },
+          "EnableDnsSupport" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-EnableDnsSupport",
+            "type" : [ "boolean", "object" ]
+          },
+          "InstanceTenancy" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-instancetenancy",
+            "type" : [ "string", "object" ]
+          },
+          "Tags" : {
+            "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-tags",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Tag"
+            },
+            "minItems" : 0
+          }
+        },
+        "required" : [ "CidrBlock" ],
+        "additionalProperties" : false
+      }
+    },
+    "required" : [ "Type", "Properties" ],
+    "additionalProperties" : false
+  },
+  "Tag" : {
+    "type" : "object",
+    "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html",
+    "properties" : {
+      "Value" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html#cfn-neptune-dbsubnetgroup-tag-value",
+        "type" : [ "string", "object" ]
+      },
+      "Key" : {
+        "description" : "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-neptune-dbsubnetgroup-tag.html#cfn-neptune-dbsubnetgroup-tag-key",
+        "type" : [ "string", "object" ]
+      }
+    },
+    "required" : [ "Value", "Key" ],
+    "additionalProperties" : false
+  },
+  "resources" : {
+    "type" : "object",
+    "additionalProperties" : {
+      "oneOf" : [ {
+        "$ref" : "#/definitions/AWS_EC2_Subnet"
+      }, {
+        "$ref" : "#/definitions/AWS_EC2_VPC"
+      } ]
+    }
+  }
+
+  },
+  "additionalProperties": false,
+  "properties" : {
+    "AWSTemplateFormatVersion" : {
+      "type" : "string",
+      "enum" : [ "2010-09-09" ]
+    },
+    "Description" : {
+      "type" : "string"
+    },
+    "Metadata" : {
+      "type" : "object"
+    },
+    "Parameters" : {
+      "type" : "object",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "$ref": "../cfn-parameter.json#/definitions/StringParam"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/StringLikeParam"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/NumberParam"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/CommonDelimitedList"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/StringLikeList"
+          },
+          {
+            "$ref": "../cfn-parameter.json#/definitions/NumberList"
+          }
+        ]
+      }
+    },
+    "Mappings" : {
+      "type" : "object"
+    },
+    "Conditions" : {
+      "type" : "object"
+    },
+    "Transform" : {
+      "type" : "object"
+    },
+    "Outputs" : {
+      "type" : "object"
+    },
+    "Resources" : {
+        "$ref": "#/definitions/resources"
+    }
+  },
+  "description" : "CFN JSON specification generated from version 2.13.0",
+  "required" : [ "AWSTemplateFormatVersion", "Resources" ]
+}
