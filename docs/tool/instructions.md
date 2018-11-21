@@ -1,19 +1,21 @@
-## Requirements To build and run the tool
+## Requirements to build and run the tool
 
 - JDK >= 1.8, 
 - Maven >= 3.x
 
 ## Building
 
-To build the project use standard mvn commands. Build standard package 
+To build the project use standard `mvn` commands. Build standard package; 
 
 ```
 mvn clean package 
 ```
 
-This will build into a single assembly executable. The tool can then be executed using 
+This will build into a single executable assembly.  
 
 ## Running the tool
+
+After build, the tool can be executed using the following syntax;
 
 ```sh
 java -jar target/aws-cloudformation-template-schema-1.0-SNAPSHOT-jar-with-dependencies.jar
@@ -46,11 +48,11 @@ groups:
 
 ```
 
-To generate you would save the file as cfg.yml and then run with 
+To generate your own subset, save the file as cfg.yml and then run with 
 
 ```sh
 java -jar target/aws-cloudformation-template-schema-1.0-SNAPSHOT-jar-with-dependencies.jar --config-file cfg.yml
 ```
 
-the files will be generated inside $PWD/cfn-schemas/us-east-2/\*-spec.json
+The files will be generated inside $PWD/cfn-schemas/us-east-2/\*-spec.json
 

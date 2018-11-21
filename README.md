@@ -2,28 +2,36 @@
 
 The CloudFormation template schema is intended to improve the authoring experience for our customers. 
 It is a simple code process which converts our existing Resource Specifications files into a 
-JSONSchema formatted document. This schema can be integrated into many publicly available IDEs 
+[JSON Schema](https://json-schema.org) formatted document. This schema can be integrated into many publicly available IDEs 
 such as Visual Studio Code & PyCharm to provide inline syntax checking and code completion.
 
 ## Key Features 
 
-1. complete type safe template authoring with intellisence based completion.
-1. Support for both YAML and JSON templates.
-1. Errors flagged for missing required properties 
-1. integrated deep links to CFN documentation pertinent to the resource you are editing
+1. Complete type-safe template authoring with IntelliSense-based completion
+1. Support for both YAML and JSON templates
+1. Errors flagged for missing required properties
+1. Integrated deep links to CloudFormation documentation for the resource or template section you are editing
 
-## How does an integration look like?
+## What does an integration look like?
 
 Here is a VSCode setup integration example
 ![VSCode](docs/images/VSCode.gif)
 
-## How do i set it up?
+## How do I set it up?
 
-For VSCode please follow the [setup/guidelines](docs/vscode/instructions.md)
+#### VS Code
 
-## How to run the tool?
+For [VS Code](https://code.visualstudio.com/) please follow the [setup/guidelines](docs/vscode/instructions.md)
 
-See [instructions](docs/tool/instructions.md) on running the tool locally to generate specifications for only subset of resources 
+#### PyCharm
+
+For [PyCharm](https://www.jetbrains.com/pycharm/) please follow the [setup/guidelines](docs/pycharm/instructions.md)
+
+
+## How do I build and run the tool?
+
+See [instructions](docs/tool/instructions.md) which describes how to run the tool locally, to generate specifications for only subset of resources or AWS regions.
+
 
 ## License
 
