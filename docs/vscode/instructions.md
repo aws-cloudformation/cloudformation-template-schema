@@ -42,7 +42,7 @@ VSCode instructions
     }
 }
 ```
-5. Create new file with the extension specified in the mapping network-cfn-us-east-1.json, or network-cfn-us-east-1.json. VSCode will use the mapping to determine code assist and more
+5. Create new file with the extension specified in the mapping network-cfn-us-east-1.json, or network-cfn-us-east-1.yaml. VSCode will use the mapping to determine code assist and more
 
 **YAML Gotchas**
 
