@@ -90,7 +90,14 @@
       "properties": {
         "Description": {
           "type": "string",
-          "maxLength": 200
+          "maxLength": 4000
+        },
+        "NoEcho": {
+          "type": "boolean"
+        },
+        "ConstraintDescription": {
+          "type": "string",
+          "maxLength": 4000
         }
       }
     },
@@ -206,14 +213,14 @@
         }
       ]
     },
-    "CommonDelimitedList": {
+    "CommaDelimitedList": {
       "allOf": [
         {
           "type": "object",
           "properties": {
             "Type": {
               "enum": [
-                "CommonDelimitedList",
+                "CommaDelimitedList",
                 "AWS::SSM::Parameter::Value<CommaDelimitedList>"
               ]
             },
@@ -312,7 +319,7 @@
               "$ref": "#/definitions/NumberParam"
             },
             {
-              "$ref": "#/definitions/CommonDelimitedList"
+              "$ref": "#/definitions/CommaDelimitedList"
             },
             {
               "$ref": "#/definitions/StringLikeList"

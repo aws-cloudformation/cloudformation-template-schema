@@ -125,7 +125,7 @@ public final class Codegen {
                 resourcesDefnSide.put("minProperties", 1);
                 ObjectNode patternProps = resourcesDefnSide.putObject("patternProperties");
                 ObjectNode resourceProps = patternProps.putObject("^[a-zA-Z0-9]{1,255}$");
-                ArrayNode oneOf = resourceProps.putArray("anyOf");
+                ArrayNode oneOf = resourceProps.putArray("oneOf");
                 for (String eachDefn: definitionNames) {
                     if (definitions.has(eachDefn)) {
                         ObjectNode ref = oneOf.addObject();
