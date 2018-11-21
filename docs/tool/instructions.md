@@ -16,7 +16,7 @@ This will build into a single assembly executable. The tool can then be executed
 ## Running the tool
 
 ```sh
-java -jar target/json-schema-mapping-1.0-SNAPSHOT-jar-with-dependencies.jar
+java -jar target/aws-cloudformation-template-schema-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
 
 ## Configuration 
@@ -49,7 +49,7 @@ groups:
 To generate you would save the file as cfg.yml and then run with 
 
 ```sh
-java -jar target/json-schema-mapping-1.0-SNAPSHOT-jar-with-dependencies.jar --config-file cfg.yml
+java -jar target/aws-cloudformation-template-schema-1.0-SNAPSHOT-jar-with-dependencies.jar --config-file cfg.yml
 ```
 
 the files will be generated inside $PWD/cfn-schemas/us-east-2/\*-spec.json
