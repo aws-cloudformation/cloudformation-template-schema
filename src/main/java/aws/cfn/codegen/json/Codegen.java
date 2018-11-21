@@ -145,7 +145,7 @@ public final class Codegen {
                     variables.put("resources", res.substring(1, res.length() - 1));
                     String description = "CFN JSON specification generated from version " +
                         specification.getResourceSpecificationVersion();
-                    variables.put("description", definitionNames);
+                    variables.put("description", description);
                     Mustache cfnSchema = new DefaultMustacheFactory().compile("Schema.template");
                     cfnSchema.execute(new OutputStreamWriter(
                         new FileOutputStream(groupSchemas.get(e.getKey())),

@@ -64,17 +64,11 @@ public final class Main {
         File outputDir = this.outputDir != null ? this.outputDir : settings.getOutput();
         SchemaDraft draft = this.draft != null ? this.draft : settings.getDraft();
         boolean single = this.single != null ? this.single : settings.getSingle();
-        URI location = this.location != null ? this.location : config.getSpecifications().get(region);
-
-        if (location == null) {
-            throw new IllegalArgumentException("Can not find resource location for region " + region);
-        }
 
         config = Config.builder(config)
             .withJsonSchema(draft)
             .withOutputDirectory(outputDir)
-            .addRegions(regions)
-            .withRegionSpec(region, location)
+            .setRegions(regions)
             .isSingleResourceSpec(single)
             .build();
 

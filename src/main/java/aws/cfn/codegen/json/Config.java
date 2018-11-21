@@ -36,7 +36,7 @@ public final class Config {
     public static class Builder {
         private SchemaDraft draft = SchemaDraft.draft07;
         private File outputDir;
-        private Set<String> region;
+        private Set<String> regions;
         private boolean singleResourceSpec = false;
         private final Map<String, URI> regionSpecs = new LinkedHashMap<>(12);
         private final Map<String, GroupSpec> groups = new LinkedHashMap<>(5);
@@ -51,10 +51,10 @@ public final class Config {
             Objects.requireNonNull(other);
             Settings settings = other.getSettings();
             if (settings != null) {
-                this.draft = settings.getDraft();
-                this.outputDir = settings.getOutput();
-                this.region = settings.getRegions();
-                this.singleResourceSpec = settings.getSingle();
+                this.draft = settings.getDraft() != null ? settings.getDraft() : this.draft;
+                this.outputDir = settings.getOutput() != null ? settings.getOutput() : this.outputDir;
+                this.regions = settings.getRegions() != null ? settings.getRegions() : this.regions;
+                this.singleResourceSpec = settings.getSingle() != null ? settings.getSingle() : this.singleResourceSpec;
             }
             this.regionSpecs.putAll(other.getSpecifications());
             this.groups.putAll(other.getGroups());
@@ -78,12 +78,17 @@ public final class Config {
         }
 
         public Builder addRegion(String region) {
-            this.region.add(Objects.requireNonNull(region));
+            this.regions.add(Objects.requireNonNull(region));
             return this;
         }
 
         public Builder addRegions(Set<String> regions) {
-            this.region.addAll(regions);
+            this.regions.addAll(regions);
+            return this;
+        }
+
+        public Builder setRegions(Set<String> regions) {
+            this.regions = Objects.requireNonNull(regions);
             return this;
         }
 
@@ -107,7 +112,7 @@ public final class Config {
                 regionSpecs,
                 new Settings(
                     draft,
-                    region,
+                    regions,
                     outputDir,
                     singleResourceSpec
                 ),
@@ -128,12 +133,12 @@ public final class Config {
 
         @JsonCreator
         public Settings(@JsonProperty("draft") SchemaDraft draft,
-                        @JsonProperty("regionSpecs") Set<String> regions,
+                        @JsonProperty("regions") Set<String> regions,
                         @JsonProperty("output") File output,
                         @JsonProperty("single") Boolean single) {
             this.draft = draft;
-            this.regions = regions == null ? Sets.newHashSet("us-east-2") : regions;
-            this.output = Objects.requireNonNull(output);
+            this.regions = regions == null ? Sets.newHashSet("us-east-1") : regions;
+            this.output = output;
             this.single = single == null ? false : single;
         }
     }
@@ -153,12 +158,7 @@ public final class Config {
     }
 
     private void validateRegionSpecs() {
-        if (specifications.isEmpty()) {
-            specifications.put("us-east-2",
-                URI.create("https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json"));
-        }
-
-        if (settings != null) {
+        if (settings != null && !specifications.isEmpty()) {
             for (String r: settings.getRegions()) {
                 if (!specifications.containsKey(r)) {
                     throw new IllegalArgumentException("No regions mapping was found " + settings.getRegions());
