@@ -65,7 +65,7 @@ configuration file
 ```yaml
 settings:
   draft: draft07
-  region: us-east-2
+  regions: [us-east-2]
   output: cfn-schemas
   single: false
 

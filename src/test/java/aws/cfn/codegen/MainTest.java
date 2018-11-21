@@ -35,8 +35,6 @@ public class MainTest {
                 "us-east-2",
                 "--output-dir",
                 "/tmp/cfn-v2/cfg-json/",
-                "--json-schema-version",
-                "draft04",
                 "--config-file",
                 "src/main/resources/config.yml"
             }

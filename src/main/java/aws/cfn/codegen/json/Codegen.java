@@ -1,7 +1,6 @@
 package aws.cfn.codegen.json;
 
 import aws.cfn.codegen.CfnSpecification;
-import aws.cfn.codegen.PropertyType;
 import aws.cfn.codegen.ResourceType;
 import aws.cfn.codegen.SingleCfnSpecification;
 import aws.cfn.codegen.SpecificationLoader;
@@ -10,6 +9,7 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.github.mustachejava.DefaultMustacheFactory;
 import com.github.mustachejava.Mustache;
+import org.checkerframework.checker.units.qual.A;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -33,23 +33,17 @@ public final class Codegen {
 
     private final ObjectMapper mapper;
     private final ObjectNode definitions;
-    private CfnSpecification specification;
     private final Config config;
-    private final Map<String, ObjectNode> groupSpecDefinitions;
-    private final Map<String, File> groupSchemas;
     public Codegen(Config config) throws IOException {
         this.mapper = new ObjectMapper();
         this.definitions = this.mapper.createObjectNode();
         this.config = Objects.requireNonNull(config);
-        this.specification = loadSpecification();
-        groupSpecDefinitions = loadGroupDefinitions();
-        groupSchemas = loadGroupsOutputLocation();
     }
 
-    private CfnSpecification loadSpecification() throws IOException {
+    private CfnSpecification loadSpecification(String region) throws IOException {
         CfnSpecification spec;
         Map<String, URI> regions = config.getSpecifications();
-        URI cfnResourceSpecification = regions.get(config.getSettings().getRegion());
+        URI cfnResourceSpecification = regions.get(region);
         if (this.config.getSettings().getSingle()) {
             SingleCfnSpecification single = new SpecificationLoader()
                 .loadSingleResourceSpecification(
@@ -67,10 +61,9 @@ public final class Codegen {
         return spec;
     }
 
-    private Map<String, File> loadGroupsOutputLocation() throws IOException {
+    private Map<String, File> loadGroupsOutputLocation(String region) throws IOException {
         File output = config.getSettings().getOutput();
         Map<String, GroupSpec> groups = config.getGroups();
-        String region = config.getSettings().getRegion();
         if (!output.exists() && !output.mkdirs()) {
             throw new IOException("Can not create out directory to write " + output);
         }
@@ -100,29 +93,28 @@ public final class Codegen {
                 (first, ign) -> first));
     }
 
-    private String description() {
-        return "CFN JSON specification generated from version " +
-            specification.getResourceSpecificationVersion();
-    }
-
 
     private String draft() {
         return config.getSettings().getDraft().getLocation();
     }
 
-    private void addToPerGroupRoots(Map<List<String>, ObjectNode> definitions) {
+    private void addToPerGroupRoots(Map<List<String>, ObjectNode> definitions,
+                                    Map<String, ObjectNode> groupSpecDefinitions) {
         for (Map.Entry<List<String>, ObjectNode> each: definitions.entrySet()) {
             List<String> key = each.getKey();
             String name = key.get(0);
             String defnName = key.get(1);
             this.config.getGroups().entrySet().stream()
                 .filter(e -> e.getValue().isIncluded(name))
-                .map(e -> this.groupSpecDefinitions.get(e.getKey()))
+                .map(e -> groupSpecDefinitions.get(e.getKey()))
                 .forEach(root -> root.replace(defnName, each.getValue()));
         }
     }
 
-    private void generatePerGroup(List<String> definitionNames) {
+    private void generatePerGroup(List<String> definitionNames,
+                                  Map<String, File> groupSchemas,
+                                  Map<String, ObjectNode> groupSpecDefinitions,
+                                  CfnSpecification specification) {
         groupSpecDefinitions.entrySet().stream()
             // Add resources block to each
             .map(e -> {
@@ -134,7 +126,7 @@ public final class Codegen {
                 resourcesDefnSide.put("minProperties", 1);
                 ObjectNode patternProps = resourcesDefnSide.putObject("patternProperties");
                 ObjectNode resourceProps = patternProps.putObject("^[a-zA-Z0-9]{1,255}$");
-                ArrayNode oneOf = resourceProps.putArray("oneOf");
+                ArrayNode oneOf = resourceProps.putArray("anyOf");
                 for (String eachDefn: definitionNames) {
                     if (definitions.has(eachDefn)) {
                         ObjectNode ref = oneOf.addObject();
@@ -151,7 +143,9 @@ public final class Codegen {
                     String res =
                         mapper.writerWithDefaultPrettyPrinter().writeValueAsString(e.getValue());
                     variables.put("resources", res.substring(1, res.length() - 1));
-                    variables.put("description", description());
+                    String description = "CFN JSON specification generated from version " +
+                        specification.getResourceSpecificationVersion();
+                    variables.put("description", definitionNames);
                     Mustache cfnSchema = new DefaultMustacheFactory().compile("Schema.template");
                     cfnSchema.execute(new OutputStreamWriter(
                         new FileOutputStream(groupSchemas.get(e.getKey())),
@@ -164,7 +158,42 @@ public final class Codegen {
             });
     }
 
+    @SuppressWarnings("unchecked")
     public void generate() throws Exception {
+        config.getSettings().getRegions().stream()
+            .map(region -> {
+                try {
+                    return new Object[] {
+                        region,
+                        loadSpecification(region),
+                        loadGroupsOutputLocation(region),
+                        loadGroupDefinitions()
+                    };
+                }
+                catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            })
+            .forEach(result -> {
+                String region = (String) result[0];
+                CfnSpecification spec = (CfnSpecification) result[1];
+                Map<String, File> locations = (Map<String, File>) result[2];
+                Map<String, ObjectNode> defns = (Map<String, ObjectNode>) result[3];
+                try {
+                    generate(region, spec, locations, defns);
+                }
+                catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            });
+    }
+
+    private void generate(String region,
+                          CfnSpecification specification,
+                          Map<String, File> groupSchemas,
+                          Map<String, ObjectNode> groupSpecDefinitions)
+        throws Exception {
+
         final Map<String, ResourceType> resources = specification.getResourceTypes();
         final Map<String, ResourceType> properties = specification.getPropertyTypes();
         final Set<String> propertyNames = properties.keySet();
@@ -181,7 +210,7 @@ public final class Codegen {
             handleType(typeDefn, defnName, name, type, true, propertyNames);
             definitions.put(Arrays.asList(name, defnName), typeDefn);
         }
-        addToPerGroupRoots(definitions);
+        addToPerGroupRoots(definitions, groupSpecDefinitions);
 
         sorted = new ArrayList<>(properties.keySet());
         Collections.sort(sorted);
@@ -207,8 +236,8 @@ public final class Codegen {
             }
 
         }
-        addToPerGroupRoots(definitions);
-        generatePerGroup(resDefns);
+        addToPerGroupRoots(definitions, groupSpecDefinitions);
+        generatePerGroup(resDefns, groupSchemas, groupSpecDefinitions, specification);
     }
 
     private final static Map<String, Supplier<String>> PrimitiveMappings =
