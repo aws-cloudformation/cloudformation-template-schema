@@ -1,7 +1,7 @@
 {
-  "$schema" : "{{{draft}}}",
-  "type" : "object",
-  "definitions" : {
+  "$schema": "{{{draft}}}",
+  "type": "object",
+  "definitions": {
     "Transform": {
       "type": "object",
       "oneOf": [
@@ -42,7 +42,12 @@
       "type": "object",
       "patternProperties": {
         "^[a-zA-Z0-9._-]{1,255}$": {
-          "type": [ "boolean", "integer", "number", "string" ]
+          "type": [
+            "boolean",
+            "integer",
+            "number",
+            "string"
+          ]
         }
       },
       "minProperties": 1,
@@ -67,7 +72,9 @@
           "type": "string"
         }
       },
-      "required": ["Ref"],
+      "required": [
+        "Ref"
+      ],
       "additionalProperties": false
     },
     "FnGetAtt": {
@@ -83,7 +90,9 @@
           "minItems": 2
         }
       },
-      "required": ["Fn::GetAtt"],
+      "required": [
+        "Fn::GetAtt"
+      ],
       "additionalProperties": false
     },
     "CommonParams": {
@@ -128,7 +137,9 @@
           "type": "object",
           "properties": {
             "Type": {
-              "enum": ["String"]
+              "enum": [
+                "String"
+              ]
             },
             "AllowedPattern": {
               "type": "string"
@@ -142,7 +153,9 @@
               "minimum": 1
             }
           },
-          "required": ["Type"]
+          "required": [
+            "Type"
+          ]
         },
         {
           "$ref": "#/definitions/StringParamCommon"
@@ -166,7 +179,6 @@
                 "AWS::EC2::VPC::Id",
                 "AWS::Route53::HostedZone::Id",
                 "AWS::EC2::KeyPair::KeyName",
-
                 "AWS::SSM::Parameter::Value<AWS::EC2::AvailabilityZone::Name>",
                 "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
                 "AWS::SSM::Parameter::Value<AWS::EC2::Instance::Id>",
@@ -180,7 +192,9 @@
               ]
             }
           },
-          "required": ["Type"]
+          "required": [
+            "Type"
+          ]
         },
         {
           "$ref": "#/definitions/StringParamCommon"
@@ -193,7 +207,9 @@
           "type": "object",
           "properties": {
             "Type": {
-              "enum": ["Number"]
+              "enum": [
+                "Number"
+              ]
             },
             "Default": {
               "type": "integer"
@@ -206,7 +222,9 @@
               "minItems": 1
             }
           },
-          "required": ["Type"]
+          "required": [
+            "Type"
+          ]
         },
         {
           "$ref": "#/definitions/CommonParams"
@@ -228,7 +246,9 @@
               "type": "string"
             }
           },
-          "required": ["Type"]
+          "required": [
+            "Type"
+          ]
         },
         {
           "$ref": "#/definitions/CommonParams"
@@ -251,7 +271,6 @@
                 "List<AWS::EC2::Volume::Id>",
                 "List<AWS::EC2::VPC::Id>",
                 "List<AWS::Route53::HostedZone::Id>",
-
                 "AWS::SSM::Parameter::Value<List<String>>",
                 "AWS::SSM::Parameter::Value<List<AWS::EC2::AvailabilityZone::Name>>",
                 "AWS::SSM::Parameter::Value<List<AWS::EC2::Image::Id>>",
@@ -262,7 +281,6 @@
                 "AWS::SSM::Parameter::Value<List<AWS::EC2::Volume::Id>>",
                 "AWS::SSM::Parameter::Value<List<AWS::EC2::VPC::Id>>",
                 "AWS::SSM::Parameter::Value<List<AWS::Route53::HostedZone::Id>>"
-
               ]
             },
             "Default": {
@@ -298,7 +316,9 @@
               "minItems": 1
             }
           },
-          "required": ["Type"]
+          "required": [
+            "Type"
+          ]
         },
         {
           "$ref": "#/definitions/CommonParams"
@@ -308,46 +328,48 @@
     "parameters": {
       "type": "object",
       "additionalProperties": {
-          "oneOf": [
-            {
-              "$ref": "#/definitions/StringParam"
-            },
-            {
-              "$ref": "#/definitions/StringLikeParam"
-            },
-            {
-              "$ref": "#/definitions/NumberParam"
-            },
-            {
-              "$ref": "#/definitions/CommaDelimitedList"
-            },
-            {
-              "$ref": "#/definitions/StringLikeList"
-            },
-            {
-              "$ref": "#/definitions/NumberList"
-            }
-          ]
+        "oneOf": [
+          {
+            "$ref": "#/definitions/StringParam"
+          },
+          {
+            "$ref": "#/definitions/StringLikeParam"
+          },
+          {
+            "$ref": "#/definitions/NumberParam"
+          },
+          {
+            "$ref": "#/definitions/CommaDelimitedList"
+          },
+          {
+            "$ref": "#/definitions/StringLikeList"
+          },
+          {
+            "$ref": "#/definitions/NumberList"
+          }
+        ]
       }
     },
     {{{resources}}}
   },
   "additionalProperties": false,
-  "properties" : {
-    "AWSTemplateFormatVersion" : {
-      "type" : "string",
-      "enum" : [ "2010-09-09" ]
+  "properties": {
+    "AWSTemplateFormatVersion": {
+      "type": "string",
+      "enum": [
+        "2010-09-09"
+      ]
     },
     "Description": {
       "$comment": "The Description section (optional) enables you to include comments about your template. The Description must follow the AWSTemplateFormatVersion section.",
       "type": "string",
       "maxLength": 1024
     },
-    "Metadata" : {
-      "type" : "object"
+    "Metadata": {
+      "type": "object"
     },
-    "Parameters" : {
-       "$ref": "#/definitions/parameters"
+    "Parameters": {
+      "$ref": "#/definitions/parameters"
     },
     "Mappings": {
       "type": "object",
@@ -359,20 +381,22 @@
       "maxProperties": 100,
       "additionalProperties": false
     },
-    "Conditions" : {
-      "type" : "object"
+    "Conditions": {
+      "type": "object"
     },
-    "Transform" : {
+    "Transform": {
       "$comment": "The optional Transform section specifies one or more transforms that AWS CloudFormation uses to process your template. The Transform section builds on the simple, declarative language of AWS CloudFormation with a powerful macro system.\nAWS CloudFormation transforms help simplify template authoring by condensing the expression of AWS infrastructure as code and enabling reuse of template components. For example, you can condense a multiple-line resource declaration into a single line in your template.\nAWS CloudFormation supports AWS::Serverless and AWS::Include transform types:\n- An AWS::Serverless transform specifies the version of the AWS Serverless Application Model (AWS SAM) to use. This model defines the AWS SAM syntax that you can use and how AWS CloudFormation processes it. When you create a change set, AWS CloudFormation resolves all Transform functions. For more information about serverless applications and AWS SAM, see Deploying Lambda-based Applications in the AWS Lambda Developer Guide.\n- An AWS::Include transform works with template snippets that are stored separately from the main AWS CloudFormation template. You can insert these snippets into your main template when Creating a Change Set or Updating Stacks Using Change Sets.\nYou can declare a single transform or multiple transforms within a template. AWS CloudFormation executes transformations in the order that they are specified.\nTo declare multiple transforms, use a list format and specify one or more AWS::Include transforms and (optionally) an AWS::Serverless transform. The following example declares two AWS::Include transforms.",
       "$ref": "#/definitions/Transform"
     },
-    "Outputs" : {
-      "type" : "object"
+    "Outputs": {
+      "type": "object"
     },
-    "Resources" : {
-        "$ref": "#/definitions/resources"
+    "Resources": {
+      "$ref": "#/definitions/resources"
     }
   },
-  "description" : "{{description}}",
-  "required" : [ "Resources" ]
+  "description": "{{description}}",
+  "required": [
+    "Resources"
+  ]
 }
