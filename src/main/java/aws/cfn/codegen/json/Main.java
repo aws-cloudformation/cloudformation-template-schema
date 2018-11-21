@@ -2,11 +2,13 @@ package aws.cfn.codegen.json;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import com.google.common.collect.Sets;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
 
 import java.io.File;
 import java.net.URI;
+import java.util.Set;
 
 public final class Main {
 
@@ -58,21 +60,15 @@ public final class Main {
 
         // are their overriding args sent in outside config file
         Config.Settings settings = config.getSettings();
-        String region = this.region != null ? this.region : settings.getRegion();
+        Set<String> regions = this.region != null ? Sets.newHashSet(this.region) : settings.getRegions();
         File outputDir = this.outputDir != null ? this.outputDir : settings.getOutput();
         SchemaDraft draft = this.draft != null ? this.draft : settings.getDraft();
         boolean single = this.single != null ? this.single : settings.getSingle();
-        URI location = this.location != null ? this.location : config.getSpecifications().get(region);
-
-        if (location == null) {
-            throw new IllegalArgumentException("Can not find resource location for region " + region);
-        }
 
         config = Config.builder(config)
             .withJsonSchema(draft)
             .withOutputDirectory(outputDir)
-            .withRegion(region)
-            .withRegionSpec(region, location)
+            .setRegions(regions)
             .isSingleResourceSpec(single)
             .build();
 

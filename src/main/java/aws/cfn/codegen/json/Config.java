@@ -2,6 +2,7 @@ package aws.cfn.codegen.json;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.common.collect.Sets;
 
 import java.io.File;
 import java.net.URI;
@@ -13,7 +14,7 @@ import java.util.Set;
 
 /**
  * This represent the configuration that dictate {@link Codegen} to determine specification
- * by region and generate appropriate template schemas based on the groups that we specified
+ * by regions and generate appropriate template schemas based on the groups that we specified
  * By default if the tool is not provided with a configuration, it loads the default configuration
  * file that is bundled with that package. See config.yml
  *
@@ -35,9 +36,9 @@ public final class Config {
     public static class Builder {
         private SchemaDraft draft = SchemaDraft.draft07;
         private File outputDir;
-        private String region;
+        private Set<String> regions;
         private boolean singleResourceSpec = false;
-        private final Map<String, URI> regions = new LinkedHashMap<>(12);
+        private final Map<String, URI> regionSpecs = new LinkedHashMap<>(12);
         private final Map<String, GroupSpec> groups = new LinkedHashMap<>(5);
 
         private Builder(Config existing) {
@@ -50,12 +51,12 @@ public final class Config {
             Objects.requireNonNull(other);
             Settings settings = other.getSettings();
             if (settings != null) {
-                this.draft = settings.getDraft();
-                this.outputDir = settings.getOutput();
-                this.region = settings.getRegion();
-                this.singleResourceSpec = settings.getSingle();
+                this.draft = settings.getDraft() != null ? settings.getDraft() : this.draft;
+                this.outputDir = settings.getOutput() != null ? settings.getOutput() : this.outputDir;
+                this.regions = settings.getRegions() != null ? settings.getRegions() : this.regions;
+                this.singleResourceSpec = settings.getSingle() != null ? settings.getSingle() : this.singleResourceSpec;
             }
-            this.regions.putAll(other.getSpecifications());
+            this.regionSpecs.putAll(other.getSpecifications());
             this.groups.putAll(other.getGroups());
             return this;
         }
@@ -70,14 +71,24 @@ public final class Config {
         }
 
         public Builder withRegionSpec(String region, URI location) {
-            regions.put(
+            regionSpecs.put(
                 Objects.requireNonNull(region),
                 location);
             return this;
         }
 
-        public Builder withRegion(String region) {
-            this.region = region;
+        public Builder addRegion(String region) {
+            this.regions.add(Objects.requireNonNull(region));
+            return this;
+        }
+
+        public Builder addRegions(Set<String> regions) {
+            this.regions.addAll(regions);
+            return this;
+        }
+
+        public Builder setRegions(Set<String> regions) {
+            this.regions = Objects.requireNonNull(regions);
             return this;
         }
 
@@ -98,10 +109,10 @@ public final class Config {
 
         public Config build() {
             return new Config(
-                regions,
+                regionSpecs,
                 new Settings(
                     draft,
-                    region,
+                    regions,
                     outputDir,
                     singleResourceSpec
                 ),
@@ -116,18 +127,18 @@ public final class Config {
     @lombok.EqualsAndHashCode
     public static class Settings {
         private final SchemaDraft draft;
-        private final String region;
+        private final Set<String> regions;
         private final File output;
         private final Boolean single;
 
         @JsonCreator
         public Settings(@JsonProperty("draft") SchemaDraft draft,
-                        @JsonProperty("region") String region,
+                        @JsonProperty("regions") Set<String> regions,
                         @JsonProperty("output") File output,
                         @JsonProperty("single") Boolean single) {
             this.draft = draft;
-            this.region = region == null ? "us-east-2" : region;
-            this.output = Objects.requireNonNull(output);
+            this.regions = regions == null ? Sets.newHashSet("us-east-1") : regions;
+            this.output = output;
             this.single = single == null ? false : single;
         }
     }
@@ -147,13 +158,12 @@ public final class Config {
     }
 
     private void validateRegionSpecs() {
-        if (specifications.isEmpty()) {
-            specifications.put("us-east-2",
-                URI.create("https://dnwj8swjjbsbt.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json"));
-        }
-
-        if (settings != null && !specifications.containsKey(settings.getRegion())) {
-            throw new IllegalArgumentException("No region mapping was found " + settings.getRegion());
+        if (settings != null && !specifications.isEmpty()) {
+            for (String r: settings.getRegions()) {
+                if (!specifications.containsKey(r)) {
+                    throw new IllegalArgumentException("No regions mapping was found " + settings.getRegions());
+                }
+            }
         }
     }
 
