@@ -28,6 +28,7 @@ settings:
     - sa-east-1
   output: /tmp/cfn-schemas/
   single: false
+  intrinsics: true
 
 # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-resource-specification.html
 specifications:

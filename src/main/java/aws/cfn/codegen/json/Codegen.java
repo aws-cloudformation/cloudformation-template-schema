@@ -117,12 +117,31 @@ public final class Codegen {
                                   Map<String, ObjectNode> groupSpecDefinitions,
                                   CfnSpecification specification) {
 
-        final String intrinsics = this.config.getSettings().getIncludeIntrinsics() ? intrinsics() : "";
+        final Boolean includeIntrinsics = this.config.getSettings().getIncludeIntrinsics();
+        final String intrinsics = includeIntrinsics != null && includeIntrinsics ?
+            intrinsics() : "";
 
         groupSpecDefinitions.entrySet().stream()
             // Add resources block to each
             .map(e -> {
                 ObjectNode definitions = e.getValue();
+
+                // Add alternative custom resources
+                ObjectNode customResource = definitions.putObject("altCustomResource");
+                customResource.put("type", "object");
+                ObjectNode custProperties = customResource.putObject("properties");
+                ObjectNode custType = custProperties.putObject("Type");
+                custType.put("type", "string");
+                custType.put("pattern", "Custom::[A-Za-z0-9]+");
+                custType.put("maxLength", 60);
+                ObjectNode custProp = custProperties.putObject("Properties");
+                custProp.put("type", "object");
+                ArrayNode required = customResource.putArray("required");
+                required.add("Type");
+                required.add("Properties");
+                customResource.put("additionalProperties", false);
+                addDependsOn(custProperties);
+
                 ObjectNode resourcesDefnSide = definitions.putObject("resources");
                 resourcesDefnSide.put("type", "object");
                 resourcesDefnSide.put("additionalProperties", false);
@@ -130,10 +149,12 @@ public final class Codegen {
                 resourcesDefnSide.put("minProperties", 1);
                 ObjectNode patternProps = resourcesDefnSide.putObject("patternProperties");
                 ObjectNode resourceProps = patternProps.putObject("^[a-zA-Z0-9]{1,255}$");
-                ArrayNode anyOf = resourceProps.putArray("anyOf");
+                ArrayNode anyOf = resourceProps.putArray("oneOf");
+                ObjectNode ref = anyOf.addObject();
+                ref.put("$ref", "#/definitions/altCustomResource");
                 for (String eachDefn: definitionNames) {
                     if (definitions.has(eachDefn)) {
-                        ObjectNode ref = anyOf.addObject();
+                        ref = anyOf.addObject();
                         ref.put("$ref", "#/definitions/" + eachDefn);
                     }
                 }
@@ -257,6 +278,15 @@ public final class Codegen {
 
         }};
 
+    private void addDependsOn(ObjectNode addTo) {
+        ObjectNode dependsOn = addTo.putObject("DependsOn");
+        ArrayNode dependsOnTypes = dependsOn.putArray("type");
+        dependsOnTypes.add("string");
+        dependsOnTypes.add("array");
+        ObjectNode items = dependsOn.putObject("items");
+        items.put("type", "string");
+    }
+
     private void handleType(ObjectNode typeDefn,
                             String defnName,
                             String name,
@@ -276,6 +306,8 @@ public final class Codegen {
             innerProps = resProps.putObject("Properties");
             innerProps.put("type", "object");
             properties = innerProps.putObject("properties");
+            // Add DependsOn
+            addDependsOn(resProps);
         }
         else {
             properties = typeDefn.putObject("properties");
