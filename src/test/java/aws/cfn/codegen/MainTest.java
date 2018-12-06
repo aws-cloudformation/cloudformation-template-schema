@@ -41,7 +41,7 @@ public class MainTest {
         );
     }
 
-    //@Test
+    @Test
     public void codegenDefault() throws Exception {
         Main.main(new String[0]);
     }

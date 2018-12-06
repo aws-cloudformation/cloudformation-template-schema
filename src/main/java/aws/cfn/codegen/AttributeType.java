@@ -42,7 +42,6 @@ public class AttributeType {
         return !isContainerType() && !isPrimitive() && type != null;
     }
 
-
     public boolean isContainerInnerTypePrimitive() {
         return isContainerType() && primitiveItemType != null;
     }

@@ -4,6 +4,7 @@ import aws.cfn.codegen.CfnSpecification;
 import aws.cfn.codegen.ResourceType;
 import aws.cfn.codegen.SingleCfnSpecification;
 import aws.cfn.codegen.SpecificationLoader;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -13,6 +14,7 @@ import com.github.mustachejava.Mustache;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
@@ -33,6 +35,7 @@ public final class Codegen {
     private final ObjectMapper mapper;
     private final ObjectNode definitions;
     private final Config config;
+
     public Codegen(Config config) throws IOException {
         this.mapper = new ObjectMapper();
         this.definitions = this.mapper.createObjectNode();
@@ -92,7 +95,6 @@ public final class Codegen {
                 (first, ign) -> first));
     }
 
-
     private String draft() {
         return config.getSettings().getDraft().getLocation();
     }
@@ -114,10 +116,32 @@ public final class Codegen {
                                   Map<String, File> groupSchemas,
                                   Map<String, ObjectNode> groupSpecDefinitions,
                                   CfnSpecification specification) {
+
+        final Boolean includeIntrinsics = this.config.getSettings().getIncludeIntrinsics();
+        final String intrinsics = includeIntrinsics != null && includeIntrinsics ?
+            intrinsics() : "";
+
         groupSpecDefinitions.entrySet().stream()
             // Add resources block to each
             .map(e -> {
                 ObjectNode definitions = e.getValue();
+
+                // Add alternative custom resources
+                ObjectNode customResource = definitions.putObject("altCustomResource");
+                customResource.put("type", "object");
+                ObjectNode custProperties = customResource.putObject("properties");
+                ObjectNode custType = custProperties.putObject("Type");
+                custType.put("type", "string");
+                custType.put("pattern", "Custom::[A-Za-z0-9]+");
+                custType.put("maxLength", 60);
+                ObjectNode custProp = custProperties.putObject("Properties");
+                custProp.put("type", "object");
+                ArrayNode required = customResource.putArray("required");
+                required.add("Type");
+                required.add("Properties");
+                customResource.put("additionalProperties", false);
+                addDependsOn(custProperties);
+
                 ObjectNode resourcesDefnSide = definitions.putObject("resources");
                 resourcesDefnSide.put("type", "object");
                 resourcesDefnSide.put("additionalProperties", false);
@@ -125,10 +149,12 @@ public final class Codegen {
                 resourcesDefnSide.put("minProperties", 1);
                 ObjectNode patternProps = resourcesDefnSide.putObject("patternProperties");
                 ObjectNode resourceProps = patternProps.putObject("^[a-zA-Z0-9]{1,255}$");
-                ArrayNode oneOf = resourceProps.putArray("oneOf");
+                ArrayNode anyOf = resourceProps.putArray("oneOf");
+                ObjectNode ref = anyOf.addObject();
+                ref.put("$ref", "#/definitions/altCustomResource");
                 for (String eachDefn: definitionNames) {
                     if (definitions.has(eachDefn)) {
-                        ObjectNode ref = oneOf.addObject();
+                        ref = anyOf.addObject();
                         ref.put("$ref", "#/definitions/" + eachDefn);
                     }
                 }
@@ -141,6 +167,7 @@ public final class Codegen {
                     variables.put("draft", draft());
                     String res =
                         mapper.writerWithDefaultPrettyPrinter().writeValueAsString(e.getValue());
+                    variables.put("intrinsics", intrinsics);
                     variables.put("resources", res.substring(1, res.length() - 1));
                     String description = "CFN JSON specification generated from version " +
                         specification.getResourceSpecificationVersion();
@@ -174,12 +201,11 @@ public final class Codegen {
                 }
             })
             .forEach(result -> {
-                String region = (String) result[0];
                 CfnSpecification spec = (CfnSpecification) result[1];
                 Map<String, File> locations = (Map<String, File>) result[2];
                 Map<String, ObjectNode> defns = (Map<String, ObjectNode>) result[3];
                 try {
-                    generate(region, spec, locations, defns);
+                    generate(spec, locations, defns);
                 }
                 catch (Exception e) {
                     throw new RuntimeException(e);
@@ -187,8 +213,7 @@ public final class Codegen {
             });
     }
 
-    private void generate(String region,
-                          CfnSpecification specification,
+    private void generate(CfnSpecification specification,
                           Map<String, File> groupSchemas,
                           Map<String, ObjectNode> groupSpecDefinitions)
         throws Exception {
@@ -253,6 +278,15 @@ public final class Codegen {
 
         }};
 
+    private void addDependsOn(ObjectNode addTo) {
+        ObjectNode dependsOn = addTo.putObject("DependsOn");
+        ArrayNode dependsOnTypes = dependsOn.putArray("type");
+        dependsOnTypes.add("string");
+        dependsOnTypes.add("array");
+        ObjectNode items = dependsOn.putObject("items");
+        items.put("type", "string");
+    }
+
     private void handleType(ObjectNode typeDefn,
                             String defnName,
                             String name,
@@ -272,6 +306,8 @@ public final class Codegen {
             innerProps = resProps.putObject("Properties");
             innerProps.put("type", "object");
             properties = innerProps.putObject("properties");
+            // Add DependsOn
+            addDependsOn(resProps);
         }
         else {
             properties = typeDefn.putObject("properties");
@@ -287,9 +323,6 @@ public final class Codegen {
                 }
                 else {
                     each.put("description", propType.getDocumentation());
-                    ObjectNode oldEach = each;
-                    // ArrayNode oneOf = each.putArray("oneOf");
-                    // each = oneOf.insertObject(0);
                     if (propType.isPrimitive()) {
                         addPrimitiveType(each, propType.getPrimitiveType());
                     } else if (propType.isCollectionType()) {
@@ -324,18 +357,6 @@ public final class Codegen {
                     if (requiredB != null && requiredB) {
                         required.add(propName);
                     }
-
-                    //
-                    // { "$ref": "#/definitions/FnRef" },
-                    // { "$ref": "#/definitions/FnGetAtt" },
-                    // { "type": "object" }
-                    //
-                    // each = oneOf.insertObject(1);
-                    // each.put("$ref", "#/definitions/FnRef");
-                    // each = oneOf.insertObject(2);
-                    // each.put("$ref", "#/definitions/FnGetAtt");
-                    // each = oneOf.insertObject(2);
-                    // each.put("type", "object");
                 }
             }
         );
@@ -364,19 +385,42 @@ public final class Codegen {
     private void addPrimitiveType(ObjectNode each, String propType) {
         if (config.getSettings().getDraft() == SchemaDraft.draft07) {
             String type = PrimitiveMappings.get(propType).get();
-            if (type.equals("object")) {
-                each.put("type", type);
-            }
-            else {
+
+            if (config.getSettings().getIncludeIntrinsics()) {
+                if (!type.equals("string")) {
+                    ArrayNode types = each.putArray("anyOf");
+                    types.addObject().put("type", type);
+                    types.addObject().put("$ref", "#/definitions/Expression");
+                } else {
+                    each.put("$ref", "#/definitions/Expression");
+                }
+            } else {
                 ArrayNode types = each.putArray("type");
                 types.add(type);
-                types.add("object");
+                if (!type.equals("object")) {
+                    types.add("object");
+                }
             }
         }
         else {
             each.put("type",
                 PrimitiveMappings.get(propType).get());
         }
+    }
 
+    private String intrinsics() {
+        ClassLoader loader = Thread.currentThread().getContextClassLoader();
+        loader = loader == null ? getClass().getClassLoader() : loader;
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            InputStream is = loader.getResourceAsStream("Intrinsics.json");
+            JsonNode root = mapper.readTree(is);
+            String intrinsics = mapper.writer().withDefaultPrettyPrinter().writeValueAsString(root);
+            return intrinsics.substring(1, intrinsics.length() - 1).concat(",");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return "";
     }
 }

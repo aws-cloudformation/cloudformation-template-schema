@@ -41,6 +41,10 @@ public final class Main {
             usage = "merge with the default configuration that we have")
     private boolean merge = true;
 
+    @Option(name = "--intrinsics",
+            usage = "Use this flag to include Intrinsic Functions in the schema")
+    private Boolean intrinsics;
+
     private Main() {}
 
     private void execute() throws Exception {
@@ -64,12 +68,14 @@ public final class Main {
         File outputDir = this.outputDir != null ? this.outputDir : settings.getOutput();
         SchemaDraft draft = this.draft != null ? this.draft : settings.getDraft();
         boolean single = this.single != null ? this.single : settings.getSingle();
+        boolean intrinsics = this.intrinsics != null ? this.intrinsics : settings.getIncludeIntrinsics();
 
         config = Config.builder(config)
             .withJsonSchema(draft)
             .withOutputDirectory(outputDir)
             .setRegions(regions)
             .isSingleResourceSpec(single)
+            .withIntrinsics(intrinsics)
             .build();
 
         new Codegen(config).generate();

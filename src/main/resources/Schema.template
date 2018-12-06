@@ -65,36 +65,6 @@
       "maxProperties": 64,
       "additionalProperties": false
     },
-    "FnRef": {
-      "type": "object",
-      "properties": {
-        "Ref": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "Ref"
-      ],
-      "additionalProperties": false
-    },
-    "FnGetAtt": {
-      "type": "object",
-      "properties": {
-        "Fn::GetAtt": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "uniqueItems": true,
-          "maxItems": 3,
-          "minItems": 2
-        }
-      },
-      "required": [
-        "Fn::GetAtt"
-      ],
-      "additionalProperties": false
-    },
     "CommonParams": {
       "properties": {
         "Description": {
@@ -350,6 +320,7 @@
         ]
       }
     },
+    {{{intrinsics}}}
     {{{resources}}}
   },
   "additionalProperties": false,
