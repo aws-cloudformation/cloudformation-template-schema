@@ -10,8 +10,9 @@ import org.junit.Test;
 public class MainTest {
     /**
      * Rigorous Test :-)
+     * Can't be run as part of CI/CD due to filesystem dependency
      */
-    @Test
+    //@Test
     public void codegen() throws Exception {
         Main.main(
             new String[] {
@@ -25,7 +26,7 @@ public class MainTest {
         );
     }
 
-    @Test
+    //@Test
     public void codegenConfigSpec() throws Exception {
         Main.main(
             new String[] {
