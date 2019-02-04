@@ -1,4 +1,4 @@
-## AWS Cloudformation Template Schema
+## AWS CloudFormation Template Schema
 
 The CloudFormation template schema is intended to improve the authoring experience for our customers. 
 It is a simple code process which converts our existing Resource Specifications files into a 
