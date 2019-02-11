@@ -50,17 +50,17 @@ VSCode instructions
     "json.schemas": [
         {
             "fileMatch": [
-                "*-cfn-us-east-1.json"
+                "*-template.json"
             ],
             "url": "https://s3.amazonaws.com/cfn-resource-specifications-us-east-1-prod/schemas/2.15.0/all-spec.json"
         }
     ],
     "yaml.schemas": {
-        "https://s3.amazonaws.com/cfn-resource-specifications-us-east-1-prod/schemas/2.15.0/all-spec.json": "/*-cfn-us-east-1.yaml"
+        "https://s3.amazonaws.com/cfn-resource-specifications-us-east-1-prod/schemas/2.15.0/all-spec.json": "*-template.yaml"
     }
 }
 ```
-5. Create new file with the extension specified in the mapping network-cfn-us-east-1.json, or network-cfn-us-east-1.yaml. VSCode will use the mapping to determine code assist and more
+5. Create new file with the extension specified in the mapping (e.g; my-app-template.json, or my-app-template.yaml). VSCode will use the mapping to determine which files should be treated as CloudFormation templates.
 
 **YAML Gotchas**
 
