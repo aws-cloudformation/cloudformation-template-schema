@@ -12,7 +12,7 @@ VSCode instructions
 2. In the search bar search for __json.schemas__ ![VS-Code-Setup](../images/VS-JsonSettings.png)
 3. Click on __settings.json__
 4. Cut-n-paste the following settings
-```
+```json
 {
     "[yaml]": {
         "editor.insertSpaces": true,
@@ -29,6 +29,24 @@ VSCode instructions
     "editor.autoIndent": true,
     "yaml.format.enable": true,
     "yaml.trace.server": "verbose",
+    "yaml.customTags": [
+        "!And",
+        "!If",
+        "!Not",
+        "!Equals",
+        "!Or",
+        "!FindInMap",
+        "!Base64",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!Select",
+        "!Split",
+        "!Join"
+    ],
     "json.schemas": [
         {
             "fileMatch": [
@@ -38,7 +56,7 @@ VSCode instructions
         }
     ],
     "yaml.schemas": {
-        "https://s3.amazonaws.com/cfn-resource-specifications-us-east-1-prod/schemas/2.15.0/all-spec.json": "*-us-east-1-cfn.yaml"
+        "https://s3.amazonaws.com/cfn-resource-specifications-us-east-1-prod/schemas/2.15.0/all-spec.json": "/*-cfn-us-east-1.yaml"
     }
 }
 ```
