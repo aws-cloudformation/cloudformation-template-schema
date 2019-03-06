@@ -51,6 +51,7 @@ specifications:
 
   # EU
   eu-central-1: https://d1mta8qj7i28i2.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json
+  eu-north-1: https://diy8iv58sj6ba.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json
   eu-west-1: https://d3teyb21fexa9r.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json
   eu-west-2: https://d1742qcu2c1ncx.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json
   eu-west-3: https://d2d0mfegowb3wk.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json
