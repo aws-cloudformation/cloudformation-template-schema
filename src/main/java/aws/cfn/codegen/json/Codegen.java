@@ -275,7 +275,7 @@ public final class Codegen {
             put("Json", () -> "object");
             put("Boolean", () -> "boolean");
             put("Timestamp", () -> "string");
-
+            put("Map", () -> "object");
         }};
 
     private void addDependsOn(ObjectNode addTo) {
@@ -384,6 +384,7 @@ public final class Codegen {
 
     private void addPrimitiveType(ObjectNode each, String propType) {
         if (config.getSettings().getDraft() == SchemaDraft.draft07) {
+            Supplier<String> supplier = PrimitiveMappings.get(propType);
             String type = PrimitiveMappings.get(propType).get();
 
             if (config.getSettings().getIncludeIntrinsics()) {
