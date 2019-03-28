@@ -202,7 +202,7 @@ public final class Codegen {
                     };
                 }
                 catch (Exception e) {
-                    logger.fatal(String.format("Loading specification for {} failed", region), e);
+                    logger.fatal(String.format("Loading specification for %s failed", region), e);
                     throw new RuntimeException(e);
                 }
             })
@@ -216,7 +216,7 @@ public final class Codegen {
                     generate(spec, locations, defns);
                 }
                 catch (Exception e) {
-                    logger.fatal(String.format("Generation for {} specification failed", region), e);
+                    logger.fatal(String.format("Generation for %s specification failed", region), e);
                     throw new RuntimeException(e);
                 }
             });
