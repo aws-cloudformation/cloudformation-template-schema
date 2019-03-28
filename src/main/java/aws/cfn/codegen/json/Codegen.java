@@ -10,6 +10,8 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.github.mustachejava.DefaultMustacheFactory;
 import com.github.mustachejava.Mustache;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -31,6 +33,8 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 public final class Codegen {
+
+    private static Logger logger = LogManager.getLogger(Codegen.class);
 
     private final ObjectMapper mapper;
     private final ObjectNode definitions;
@@ -189,6 +193,7 @@ public final class Codegen {
         config.getSettings().getRegions().stream()
             .map(region -> {
                 try {
+                    logger.debug("Loading specification for {}", region);
                     return new Object[] {
                         region,
                         loadSpecification(region),
@@ -197,10 +202,13 @@ public final class Codegen {
                     };
                 }
                 catch (Exception e) {
+                    logger.fatal(String.format("Loading specification for {} failed", region), e);
                     throw new RuntimeException(e);
                 }
             })
             .forEach(result -> {
+                String region = (String)result[0];
+                logger.debug("Starting generation for {} specification", region);
                 CfnSpecification spec = (CfnSpecification) result[1];
                 Map<String, File> locations = (Map<String, File>) result[2];
                 Map<String, ObjectNode> defns = (Map<String, ObjectNode>) result[3];
@@ -208,6 +216,7 @@ public final class Codegen {
                     generate(spec, locations, defns);
                 }
                 catch (Exception e) {
+                    logger.fatal(String.format("Generation for {} specification failed", region), e);
                     throw new RuntimeException(e);
                 }
             });
@@ -227,12 +236,26 @@ public final class Codegen {
 
         Map<List<String>, ObjectNode> definitions = new LinkedHashMap<>(sorted.size());
         for (final String name: sorted) {
-            ResourceType type = resources.get(name);
-            String defnName = name.replace("::", "_");
-            resDefns.add(defnName);
-            ObjectNode typeDefn = mapper.createObjectNode();
-            handleType(typeDefn, defnName, name, type, true, propertyNames);
-            definitions.put(Arrays.asList(name, defnName), typeDefn);
+            ResourceType type = null;
+            try {
+                type = resources.get(name);
+                String defnName = name.replace("::", "_");
+                resDefns.add(defnName);
+                ObjectNode typeDefn = mapper.createObjectNode();
+                handleType(typeDefn, defnName, name, type, true, propertyNames);
+                definitions.put(Arrays.asList(name, defnName), typeDefn);
+                logger.debug("Processed type {}", name);
+            }
+            catch (Exception e)
+            {
+                // ignore and emit warning for malformed types in the spec
+                if (type != null) {
+                    logger.error("An error occurred processing type {}", name);
+                }
+                else {
+                    throw e;
+                }
+            }
         }
         addToPerGroupRoots(definitions, groupSpecDefinitions);
 
