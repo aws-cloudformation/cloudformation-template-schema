@@ -15,22 +15,22 @@ such as Visual Studio Code & PyCharm to provide inline syntax checking and code 
 ## What does an integration look like?
 
 Here is a VSCode setup integration example
-![VSCode](docs/images/VSCode.gif)
+![VSCode](/../../docs/images/VSCode.gif)
 
 ## How do I set it up?
 
 #### VS Code
 
-For [VS Code](https://code.visualstudio.com/) please follow the [setup/guidelines](docs/vscode/instructions.md)
+For [VS Code](https://code.visualstudio.com/) please follow the [setup/guidelines](/../../docs/vscode/instructions.md)
 
 #### PyCharm
 
-For [PyCharm](https://www.jetbrains.com/pycharm/) please follow the [setup/guidelines](docs/pycharm/instructions.md)
+For [PyCharm](https://www.jetbrains.com/pycharm/) please follow the [setup/guidelines](/../../docs/pycharm/instructions.md)
 
 
 ## How do I build and run the tool?
 
-See [instructions](docs/tool/instructions.md) which describes how to run the tool locally, to generate specifications for only subset of resources or AWS regions.
+See [instructions](/../../docs/tool/instructions.md) which describes how to run the tool locally, to generate specifications for only subset of resources or AWS regions.
 
 
 ## License
