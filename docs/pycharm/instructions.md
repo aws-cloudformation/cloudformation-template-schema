@@ -1,4 +1,5 @@
-PyCharm instructions 
+PyCharm instructions
+------
 
 **Install PyCharm**
 
@@ -17,6 +18,25 @@ PyCharm instructions
 1. Click __OK__ to save.
 1. Create new file with the extension specified in the mapping (e.g; `my-app-template.json`) 
 
-**Gotchas**
+Gotchas
+------
 
 1. PyCharm does not provide the `description` context on mouse-hover (which other IDEs do)
+
+Troubleshooting 
+------
+**JSON Schema not found or contain error in 'all-spec.json': Can not load code model for JSON Schema file 'all-spec.json'**
+
+PyCharm uses the `idea.max.intellisense.filesize` platform property to set the maximum size of files for which PyCharm provides code assistance and to load a JSON schema.
+
+By default this property is set to `2500` kilobytes.
+
+In order to load a schema bigger than this size, you have to edit this property to a number greater than the size of your schema, for example `5000` kilobytes. In order to do that go to `Help | Edit Custom Properties` and add the following line: `idea.max.intellisense.filesize=5000`.
+
+Restart PyCharm, you can now load the file.
+
+This restriction only applies to local file, if for whatever reason you can't edit this file you can setup a local webserver (For example with `python -m SimpleHTTPServer`) and serve your schema file through http.
+
+
+
+
