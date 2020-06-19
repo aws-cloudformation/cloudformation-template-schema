@@ -1,17 +1,17 @@
 ## Requirements to build and run the tool
 
-- JDK >= 1.8, 
+- JDK >= 1.8,
 - Maven >= 3.x
 
 ## Building
 
-To build the project use standard `mvn` commands. Build standard package; 
+To build the project use standard `mvn` commands. Build standard package;
 
 ```
-mvn clean package 
+mvn clean package
 ```
 
-This will build into a single executable assembly.  
+This will build into a single executable assembly.
 
 ## Running the tool
 
@@ -21,7 +21,7 @@ After build, the tool can be executed using the following syntax;
 java -jar target/aws-cloudformation-template-schema-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
 
-## Configuration 
+## Configuration
 
 The tool can be used to generate multiple groups of schemas as needed for particular purposes. Here is a sample
 configuration file that generates for only us-east-2 region. It create 2 groups in addition to the default bundle
@@ -48,11 +48,10 @@ groups:
 
 ```
 
-To generate your own subset, save the file as cfg.yml and then run with 
+To generate your own subset, save the file as cfg.yml and then run with
 
 ```sh
 java -jar target/aws-cloudformation-template-schema-1.0-SNAPSHOT-jar-with-dependencies.jar --config-file cfg.yml
 ```
 
 The files will be generated inside $PWD/cfn-schemas/us-east-2/\*-spec.json
-

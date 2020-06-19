@@ -16,34 +16,73 @@
         "$comment": "Literal value",
         "type": "string"
       },
-      { "$ref": "#/definitions/FnAnd" },
-      { "$ref": "#/definitions/FnEquals" },
-      { "$ref": "#/definitions/FnIf" },
-      { "$ref": "#/definitions/FnNot" },
-      { "$ref": "#/definitions/FnOr" },
-      { "$ref": "#/definitions/FnFindInMap" },
-      { "$ref": "#/definitions/FnRef" }
+      {
+        "$ref": "#/definitions/FnAnd"
+      },
+      {
+        "$ref": "#/definitions/FnEquals"
+      },
+      {
+        "$ref": "#/definitions/FnIf"
+      },
+      {
+        "$ref": "#/definitions/FnNot"
+      },
+      {
+        "$ref": "#/definitions/FnOr"
+      },
+      {
+        "$ref": "#/definitions/FnFindInMap"
+      },
+      {
+        "$ref": "#/definitions/FnRef"
+      }
     ]
   },
   "Expression": {
     "$comment": "Intrinsic function token expression or literal value",
-    "type" : [ "string", "object" ],
+    "type": [
+      "string",
+      "object"
+    ],
     "anyOf": [
       {
         "$comment": "Literal string value",
         "type": "string"
       },
-      { "$ref": "#/definitions/FnBase64" },
-      { "$ref": "#/definitions/FnCidr" },
-      { "$ref": "#/definitions/FnFindInMap" },
-      { "$ref": "#/definitions/FnGetAtt" },
-      { "$ref": "#/definitions/FnGetAZs" },
-      { "$ref": "#/definitions/FnImportValue" },
-      { "$ref": "#/definitions/FnJoin" },
-      { "$ref": "#/definitions/FnRef" },
-      { "$ref": "#/definitions/FnSelect" },
-      { "$ref": "#/definitions/FnSplit" },
-      { "$ref": "#/definitions/FnSub" }
+      {
+        "$ref": "#/definitions/FnBase64"
+      },
+      {
+        "$ref": "#/definitions/FnCidr"
+      },
+      {
+        "$ref": "#/definitions/FnFindInMap"
+      },
+      {
+        "$ref": "#/definitions/FnGetAtt"
+      },
+      {
+        "$ref": "#/definitions/FnGetAZs"
+      },
+      {
+        "$ref": "#/definitions/FnImportValue"
+      },
+      {
+        "$ref": "#/definitions/FnJoin"
+      },
+      {
+        "$ref": "#/definitions/FnRef"
+      },
+      {
+        "$ref": "#/definitions/FnSelect"
+      },
+      {
+        "$ref": "#/definitions/FnSplit"
+      },
+      {
+        "$ref": "#/definitions/FnSub"
+      }
     ]
   },
   "FnBase64": {
@@ -198,7 +237,7 @@
       }
     ]
   },
-  "FnSelect":{
+  "FnSelect": {
     "type": "object",
     "properties": {
       "Fn::Select": {
@@ -207,7 +246,10 @@
         "items": [
           {
             "$comment": "The index of the object to retrieve. This must be a value from zero to N-1, where N represents the number of elements in the array.",
-            "type":  [ "integer", "string" ]
+            "type": [
+              "integer",
+              "string"
+            ]
           },
           {
             "$comment": "The list of objects to select from. This list must not be null, nor can it have null entries.",
@@ -225,7 +267,7 @@
   "FnSplit": {
     "type": "object",
     "properties": {
-      "Fn::Split" : {
+      "Fn::Split": {
         "description": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-split.html",
         "type": "array",
         "items": [
@@ -242,38 +284,40 @@
     },
     "additionalProperties": false
   },
-  "FnSub" : {
-    "type" : "object",
-    "properties" : {
-      "Fn::Sub" : {
-        "description" : "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-sub.html",
+  "FnSub": {
+    "type": "object",
+    "properties": {
+      "Fn::Sub": {
+        "description": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-sub.html",
         "oneOf": [
           {
             "type": "string"
           },
           {
             "type": "array",
-            "items" : [ {
-              "$comment" : "A string with variables that AWS CloudFormation substitutes with their associated values at runtime. Write variables as ${MyVarName}. Variables can be template parameter names, resource logical IDs, resource attributes, or a variable in a key-value map. If you specify only template parameter names, resource logical IDs, and resource attributes, don't specify a key-value map.\nIf you specify template parameter names or resource logical IDs, such as ${InstanceTypeParameter}, AWS CloudFormation returns the same values as if you used the Ref intrinsic function. If you specify resource attributes, such as ${MyInstance.PublicIp}, AWS CloudFormation returns the same values as if you used the Fn::GetAtt intrinsic function.\nTo write a dollar sign and curly braces (${}) literally, add an exclamation point (!) after the open curly brace, such as ${!Literal}. AWS CloudFormation resolves this text as ${Literal}.",
-              "type" : "string"
-            }, {
-              "$comment" : "The name of a variable that you included in the String parameter.",
-              "type" : "object",
-              "patternProperties" : {
-                "^[a-zA-Z0-9._-]{1,255}$" : {
-                  "$comment" : "The value that AWS CloudFormation substitutes for the associated variable name at runtime.",
-                  "$ref" : "#/definitions/Expression"
-                }
+            "items": [
+              {
+                "$comment": "A string with variables that AWS CloudFormation substitutes with their associated values at runtime. Write variables as ${MyVarName}. Variables can be template parameter names, resource logical IDs, resource attributes, or a variable in a key-value map. If you specify only template parameter names, resource logical IDs, and resource attributes, don't specify a key-value map.\nIf you specify template parameter names or resource logical IDs, such as ${InstanceTypeParameter}, AWS CloudFormation returns the same values as if you used the Ref intrinsic function. If you specify resource attributes, such as ${MyInstance.PublicIp}, AWS CloudFormation returns the same values as if you used the Fn::GetAtt intrinsic function.\nTo write a dollar sign and curly braces (${}) literally, add an exclamation point (!) after the open curly brace, such as ${!Literal}. AWS CloudFormation resolves this text as ${Literal}.",
+                "type": "string"
               },
-              "minProperties" : 1
-            } ],
-            "minItems" : 1
-
+              {
+                "$comment": "The name of a variable that you included in the String parameter.",
+                "type": "object",
+                "patternProperties": {
+                  "^[a-zA-Z0-9._-]{1,255}$": {
+                    "$comment": "The value that AWS CloudFormation substitutes for the associated variable name at runtime.",
+                    "$ref": "#/definitions/Expression"
+                  }
+                },
+                "minProperties": 1
+              }
+            ],
+            "minItems": 1
           }
         ]
       }
     },
-    "additionalProperties" : false
+    "additionalProperties": false
   },
   "FnTransform": {
     "type": "object",
@@ -309,7 +353,7 @@
     },
     "additionalProperties": false
   },
-  "FnEquals" : {
+  "FnEquals": {
     "type": "object",
     "properties": {
       "Fn::Equals": {
@@ -331,9 +375,15 @@
         "description": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-if",
         "type": "array",
         "items": [
-          { "type": "string" },
-          { "$ref": "#/definitions/Expression" },
-          { "$ref": "#/definitions/Expression" }
+          {
+            "type": "string"
+          },
+          {
+            "$ref": "#/definitions/Expression"
+          },
+          {
+            "$ref": "#/definitions/Expression"
+          }
         ],
         "minItems": 3,
         "maxItems": 3
@@ -348,7 +398,9 @@
         "description": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-not",
         "type": "array",
         "items": [
-          { "$ref": "#/definitions/Condition" }
+          {
+            "$ref": "#/definitions/Condition"
+          }
         ],
         "minItems": 1,
         "maxItems": 1

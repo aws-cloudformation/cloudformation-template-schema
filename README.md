@@ -1,11 +1,11 @@
 ## AWS CloudFormation Template Schema
 
-The CloudFormation template schema is intended to improve the authoring experience for our customers. 
-It is a simple code process which converts our existing Resource Specifications files into a 
-[JSON Schema](https://json-schema.org) formatted document. This schema can be integrated into many publicly available IDEs 
+The CloudFormation template schema is intended to improve the authoring experience for our customers.
+It is a simple code process which converts our existing Resource Specifications files into a
+[JSON Schema](https://json-schema.org) formatted document. This schema can be integrated into many publicly available IDEs
 such as Visual Studio Code & PyCharm to provide inline syntax checking and code completion.
 
-## Key Features 
+## Key Features
 
 1. Complete type-safe template authoring with IntelliSense-based completion
 1. Support for both YAML and JSON templates
@@ -35,4 +35,4 @@ See [instructions](docs/tool/instructions.md) which describes how to run the too
 
 ## License
 
-This library is licensed under the Apache 2.0 License. 
+This library is licensed under the Apache 2.0 License.
