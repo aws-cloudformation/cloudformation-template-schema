@@ -11,7 +11,7 @@ script:
   - mvn clean verify
   - mvn clean package
   - |
-  echo 'settings:
-  regions: [us-east-1]
-  output: cfn-schemas' > cfg.yml
+    echo 'settings:
+    regions: [us-east-1]
+    output: cfn-schemas' > cfg.yml
   - java -jar target/aws-cloudformation-template-schema-1.0-SNAPSHOT-jar-with-dependencies.jar --config-file cfg.yml
