@@ -16,14 +16,14 @@ PyCharm instructions
 1. Add a mapping to a folder or file path pattern (e.g; `"*-template.json`)
 1. Select the appropriate Schema Version: __JSON schema version 7__
 1. Click __OK__ to save.
-1. Create new file with the extension specified in the mapping (e.g; `my-app-template.json`) 
+1. Create new file with the extension specified in the mapping (e.g; `my-app-template.json`)
 
 Gotchas
 ------
 
 1. PyCharm does not provide the `description` context on mouse-hover (which other IDEs do)
 
-Troubleshooting 
+Troubleshooting
 ------
 **JSON Schema not found or contain error in 'all-spec.json': Can not load code model for JSON Schema file 'all-spec.json'**
 
@@ -36,7 +36,3 @@ In order to load a schema bigger than this size, you have to edit this property 
 Restart PyCharm, you can now load the file.
 
 This restriction only applies to local file, if for whatever reason you can't edit this file you can setup a local webserver (For example with `python -m SimpleHTTPServer`) and serve your schema file through http.
-
-
-
-
