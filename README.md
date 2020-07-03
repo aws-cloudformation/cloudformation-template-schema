@@ -21,7 +21,7 @@ Here is a VSCode setup integration example
 
 #### VS Code
 
-For [VS Code](https://code.visualstudio.com/) please follow the [setup/guidelines](docs/vscode/instructions.md)
+For [VS Code](https://code.visualstudio.com/) please follow the [setup/guidelines](docs/vscode/instructions.md) or install the pre-configured [CloudFormation Linter VS Code extension](https://github.com/aws-cloudformation/aws-cfn-lint-visual-studio-code)
 
 #### PyCharm
 
