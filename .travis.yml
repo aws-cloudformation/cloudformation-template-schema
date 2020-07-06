@@ -9,7 +9,6 @@ install:
 script:
   - pre-commit run --all-files --verbose
   - mvn clean verify
-  - mvn clean package
   - |
     echo 'settings:
       regions: [test]
