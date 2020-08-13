@@ -32,6 +32,7 @@ settings:
 
 # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-resource-specification.html
 specifications:
+  test: https://cfn-resource-specifications-us-east-1-prod.s3.us-east-1.amazonaws.com/14.1.0/gzip/CloudFormationResourceSpecification.json
   af-south-1: https://cfn-resource-specifications-af-south-1-prod.s3.af-south-1.amazonaws.com/latest/gzip/CloudFormationResourceSpecification.json
   ap-east-1: https://cfn-resource-specifications-ap-east-1-prod.s3.ap-east-1.amazonaws.com/latest/gzip/CloudFormationResourceSpecification.json
   ap-northeast-1: https://d33vqc0rt9ld30.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json

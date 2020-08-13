@@ -9,3 +9,8 @@ install:
 script:
   - pre-commit run --all-files --verbose
   - mvn clean verify
+  - |
+    echo 'settings:
+      regions: [test]
+      output: cfn-schemas' > cfg.yml
+  - java -jar target/aws-cloudformation-template-schema-1.0-SNAPSHOT-jar-with-dependencies.jar --config-file cfg.yml
