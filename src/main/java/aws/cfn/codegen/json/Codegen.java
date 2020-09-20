@@ -326,6 +326,15 @@ public final class Codegen {
             enumType.put("type", "string");
             ArrayNode array = enumType.putArray("enum");
             array.add(name);
+
+            for (String policyName: new String[]{"DeletionPolicy", "UpdateReplacePolicy"}) {
+                ObjectNode policy = resProps.putObject(policyName);
+                policy.put("description", "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-" + policyName.toLowerCase() + ".html");
+                policy.put("type", "string");
+                ArrayNode policyArray = policy.putArray("enum");
+                policyArray.add("Delete").add("Retain").add("Snapshot");
+            }
+
             innerProps = resProps.putObject("Properties");
             innerProps.put("type", "object");
             properties = innerProps.putObject("properties");
