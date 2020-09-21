@@ -322,7 +322,7 @@ public final class Codegen {
         if (isResource) {
             ObjectNode resProps = typeDefn.putObject("properties");
             ObjectNode enumType = resProps.putObject("Type");
-            enumType.put("description", "Type of resource equals only " + name);
+            enumType.put("description", type.getDocumentation());
             enumType.put("type", "string");
             ArrayNode array = enumType.putArray("enum");
             array.add(name);
