@@ -32,6 +32,9 @@
           "$comment": "Use a transform to simplify template authoring for serverless applications. ",
           "type": "string",
           "enum": [
+            "AWS::CodeDeployBlueGreen",
+            "AWS::CodeStar",
+            "AWS::SecretsManager-2020-07-23",
             "AWS::Serverless-2016-10-31"
           ]
         }
@@ -371,6 +374,14 @@
     "Resources": {
       "description": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html",
       "$ref": "#/definitions/resources"
+    },
+    "Hooks": {
+      "description": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/blue-green.html",
+      "type": "object"
+    },
+    "Rules": {
+      "description": "https://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html",
+      "type": "object"
     }
   },
   "description": "{{description}}",
