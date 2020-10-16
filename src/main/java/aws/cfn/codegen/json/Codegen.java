@@ -149,7 +149,6 @@ public final class Codegen {
                 ObjectNode resourcesDefnSide = definitions.putObject("resources");
                 resourcesDefnSide.put("type", "object");
                 resourcesDefnSide.put("additionalProperties", false);
-                resourcesDefnSide.put("maxProperties", 200);
                 resourcesDefnSide.put("minProperties", 1);
                 ObjectNode patternProps = resourcesDefnSide.putObject("patternProperties");
                 ObjectNode resourceProps = patternProps.putObject("^[a-zA-Z0-9]{1,255}$");
