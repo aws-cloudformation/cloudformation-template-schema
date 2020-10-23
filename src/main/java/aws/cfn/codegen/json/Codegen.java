@@ -334,7 +334,7 @@ public final class Codegen {
                 policyArray.add("Delete").add("Retain").add("Snapshot");
             }
 
-            for (String attributeName: new String[]{"Metadata"}) {
+            for (String attributeName: new String[]{"Metadata", "CreationPolicy", "UpdatePolicy"}) {
                 ObjectNode attribute = resProps.putObject(attributeName);
                 attribute.put("description", "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-" + attributeName.toLowerCase() + ".html");
                 attribute.put("type", "object");
