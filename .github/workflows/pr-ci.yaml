@@ -1,0 +1,23 @@
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [8, 11]
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-java@v1
+      with:
+        java-version: ${{ matrix.java }}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3
+    - run: |
+        pip3 install --quiet pre-commit
+        pre-commit run --all-files
+        mvn clean verify --no-transfer-progress
+        echo 'settings:
+          regions: [test]
+          output: cfn-schemas' > cfg.yml
+        java -jar target/aws-cloudformation-template-schema-1.0-SNAPSHOT-jar-with-dependencies.jar --config-file cfg.yml
