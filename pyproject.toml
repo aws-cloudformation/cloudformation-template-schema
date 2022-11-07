@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "cloudformation-template-schema"
+version = "0.1.0"
+description = ""
+authors = ["Kevin DeJong <kddejong@amazon.com>"]
+
+[tool.poetry.scripts]
+cfn-template-schema = 'cloudformation_template_schema.cli:main'
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Jinja2 = "^3.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

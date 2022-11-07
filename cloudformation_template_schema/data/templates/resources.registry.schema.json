@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "description": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-{{ docName }}.html",
+  "allOf": [
+    {
+      "type": "object",
+      "properties": {
+        "Type": {
+          "description": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-{{ docName }}.html",
+          "type": "string",
+          "enum": ["{{ resourceName }}"]
+        },
+        "Properties": {
+          "$ref": "resources/{{ fileName }}.json"
+        }
+      },
+      "required": ["Type"]
+    },
+    {
+      "$ref": "resource.attributes.schema.json#/definitions/ResourceAttributes"
+    }
+  ],
+
+  "additionalProperties": false
+}

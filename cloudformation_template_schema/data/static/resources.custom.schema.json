@@ -1,0 +1,23 @@
+{
+  "CustomResource": {
+    "type": "object",
+    "properties": {
+      "Type": {
+        "type": "string",
+        "pattern": "Custom::[A-Za-z0-9]+",
+        "maxLength": 60
+      },
+      "Properties": {
+        "type": "object"
+      },
+      "DependsOn": {
+        "type": ["string", "array"],
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": ["Type", "Properties"],
+    "additionalProperties": false
+  }
+}
