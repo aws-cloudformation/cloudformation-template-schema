@@ -30,22 +30,22 @@ VSCode instructions
     "yaml.format.enable": true,
     "yaml.trace.server": "verbose",
     "yaml.customTags": [
-        "!And",
-        "!If",
+        "!And scalar",
+        "!If scalar",
         "!Not",
-        "!Equals",
-        "!Or",
-        "!FindInMap",
+        "!Equals scalar",
+        "!Or scalar",
+        "!FindInMap scalar",
         "!Base64",
         "!Cidr",
         "!Ref",
         "!Sub",
-        "!GetAtt",
+        "!GetAtt sequence",
         "!GetAZs",
-        "!ImportValue",
-        "!Select",
-        "!Split",
-        "!Join"
+        "!ImportValue sequence",
+        "!Select sequence",
+        "!Split sequence",
+        "!Join sequence"
     ],
     "json.schemas": [
         {
