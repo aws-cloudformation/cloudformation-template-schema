@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "markdownDescription": {{ markdownDescription }},
+  "allOf": [
+    {
+      "type": "object",
+      "properties": {
+        "Type": {
+          "type": "string",
+          "enum": ["{{ resourceName }}"],
+          "markdownEnumDescriptions": [ {{ markdownDescription }} ]
+        },
+        "Properties": {
+          "$ref": "resources/{{ fileName }}.json"
+        }
+      },
+      "required": {{ required }}
+    },
+    {
+      "$ref": "resource.attributes.schema.json#/definitions/ResourceAttributes"
+    }
+  ],
+
+  "additionalProperties": false
+}

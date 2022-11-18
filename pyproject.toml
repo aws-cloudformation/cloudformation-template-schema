@@ -10,6 +10,7 @@ cfn-template-schema = 'cloudformation_template_schema.cli:main'
 [tool.poetry.dependencies]
 python = "^3.8"
 Jinja2 = "^3.1"
+ordered-set = "^4.0.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

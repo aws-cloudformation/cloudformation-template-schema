@@ -2,10 +2,9 @@
 """
 import argparse
 import logging
-import sys
 import time
 from importlib import metadata
-from .generator import generate_setup_subparser
+from .generate import generate_setup_subparser
 
 EXIT_UNHANDLED_EXCEPTION = 127
 
@@ -48,6 +47,5 @@ def main(args_in=None):  # pylint: disable=too-many-statements
     log.debug("Logging set up successfully")
     log.debug("Running with: %s", args)
 
-    print(args.command)
     args.command(args)
     log.debug("Finished %s", args)
