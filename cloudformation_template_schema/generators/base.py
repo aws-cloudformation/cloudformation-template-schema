@@ -66,6 +66,8 @@ class BaseGenerator:
         }
 
     def _write_json(self, filename: str, data: Dict) -> None:
+        if os.path.exists(filename) == True:
+            return
         with open(filename, "w") as fh:
             json.dump(data, fh, indent=2)
 

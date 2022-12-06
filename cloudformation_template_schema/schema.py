@@ -61,6 +61,7 @@ class Schema:
 
     schema_urls = {
         "us-east-1": "https://schema.cloudformation.us-east-1.amazonaws.com/CloudformationSchema.zip",
+        "us-west-2": "https://schema.cloudformation.us-west-2.amazonaws.com/CloudformationSchema.zip",
     }
 
     def __init__(self) -> None:
@@ -92,6 +93,10 @@ class Schema:
     def get_resources(self) -> Generator[Resource, None, None]:
         # There isn't one complete schema. We must process each region
 
+        # do us-eat-1 first
+        for resource in self._load_region(region="us-east-1"):
+            yield resource
         for region in self.schema_urls.keys():
-            for resource in self._load_region(region=region):
-                yield resource
+            if region != "us-east-1":
+                for resource in self._load_region(region=region):
+                    yield resource
