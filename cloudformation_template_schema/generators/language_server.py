@@ -2,6 +2,7 @@ from typing import Dict, List, Union
 from .base import BaseGenerator
 from ..schema import Resource
 import json
+import re
 
 
 class RequiredProperty:
@@ -116,6 +117,19 @@ class LanguageServerGenerator(BaseGenerator):
 
         # cleanup the additional properties we needed
         for k in list(schema):
+            if k == "patternProperties":
+                pp_keys = list(schema[k].keys())
+                for pp_k in pp_keys:
+                    if pp_k == "^([\\p{L}\\p{Z}\\p{N}_.:\\/=+\\-@]*)${1,256}":
+                        print(pp_k)
+                    try:
+                        re.compile(pp_k)
+                    except Exception as e:
+                        if pp_k == "^([\\p{L}\\p{Z}\\p{N}_.:\\/=+\\-@]*)${1,256}":
+                            print(e)
+                        resource.setval(path + [k, ".*"], schema[k][pp_k])
+                        resource.delval(path + [k, pp_k])
+
             # pattern doesn't always work in typescript. For sanity we are removing it
             if k in ["___IsRequired", "___Conditional", "___CreateOnly", "pattern"]:
                 resource.delval(path + [k])
