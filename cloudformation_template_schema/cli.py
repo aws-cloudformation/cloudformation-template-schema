@@ -1,5 +1,6 @@
 """This tool provides support for creating generating JSON Schemas for CloudFormation
 """
+
 import argparse
 import logging
 import time

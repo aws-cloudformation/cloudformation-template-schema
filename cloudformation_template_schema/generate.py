@@ -8,7 +8,7 @@ def ignore_abort(function):
     def wrapper(args):
         try:
             function(args)
-        except (KeyboardInterrupt):
+        except KeyboardInterrupt:
             print("\naborted")
             # pylint: disable=W0707
             raise SystemExit(1)

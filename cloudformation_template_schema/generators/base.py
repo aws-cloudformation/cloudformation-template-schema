@@ -84,7 +84,6 @@ class BaseGenerator:
             for name in list(resource.schema.get(section, {})):
                 if f"/{section}/{name}" in read_only_properties:
                     attributes[name] = resource.schema[section][name]
-                    del resource.schema[section][name]
 
         resource.schema["attributes"] = attributes
         self._write_json(
