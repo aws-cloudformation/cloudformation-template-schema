@@ -1,4 +1,6 @@
-from typing import Dict, List, Union
+from __future__ import annotations
+
+from typing import Dict, List, Union, Any
 from .base import BaseGenerator
 from ..schema import Resource
 import json
@@ -27,9 +29,9 @@ class RequiredProperty:
 
 
 class RequiredManager:
-    def __init__(self, schema: Dict) -> None:
-        self._properties = {}
-        for item in schema.get("properties").keys():
+    def __init__(self, schema: dict[str, dict]) -> None:
+        self._properties: dict[str, RequiredProperty | None] = {}
+        for item in schema.get("properties", {}).keys():
             self._properties[item] = None
 
         self._walk(schema, True)
@@ -131,7 +133,13 @@ class LanguageServerGenerator(BaseGenerator):
                         resource.delval(path + [k, pp_k])
 
             # pattern doesn't always work in typescript. For sanity we are removing it
-            if k in ["___IsRequired", "___Conditional", "___CreateOnly", "pattern"]:
+            if k in [
+                "___IsRequired",
+                "___Conditional",
+                "___CreateOnly",
+                "___ReadOnlyProperty",
+                "pattern",
+            ]:
                 resource.delval(path + [k])
 
     def _resource(self, resource: Resource) -> None:
@@ -141,6 +149,11 @@ class LanguageServerGenerator(BaseGenerator):
 
         for property_path in resource.schema.get("createOnlyProperties", []):
             resource.setval(property_path.split("/")[1:] + ["___CreateOnly"], True)
+
+        for property_path in resource.schema.get("readOnlyProperties", []):
+            resource.setval(
+                property_path.split("/")[1:] + ["___ReadOnlyProperty"], True
+            )
 
         self._walk(resource.schema, [], resource)
 

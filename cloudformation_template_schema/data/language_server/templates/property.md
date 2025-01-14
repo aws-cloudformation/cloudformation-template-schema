@@ -11,3 +11,4 @@ Pattern: {{ prop.pattern }}  {% endif %}{% if prop.___CreateOnly %}
 Update requires: Replacement{% elif prop.___Conditional %}
 Update requires: Some interruptions{% else %}
 Update requires: No interruption{% endif %}
+{% if prop.___ReadOnlyProperty %}Read only property: Yes{% endif %}
